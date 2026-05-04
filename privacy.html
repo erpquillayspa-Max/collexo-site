@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collexo — Política de Privacidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--wc-blue:#0033a0;--wc-red:#c8102e;--wc-gold:#f0a500;--wc-dark:#0a0f1e;--wc-grass:#1a6b1a;--g:#2d7a00;--gl:#e8f5d8;--o:#c8102e;--lime:#7ec800;--gold:#f0a500;--ink:#0a0f1e;--ink2:#1a2240;--ink3:#556;--ink4:#889;--w:#fff;--bg:#f5f6fa;--bg2:#eceef5;--border:#d8dae8;--border2:#b0b4cc;}
+html{scroll-behavior:smooth}
+body{background:var(--wc-dark);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(10,15,30,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:#fff;text-decoration:none;display:flex;flex-direction:column;line-height:1;gap:2px}
+.logo em{font-style:normal;color:#7ec800}
+.logo-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;text-transform:uppercase;line-height:1}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-back{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 14px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-back:hover{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
+.lang-sel{position:relative}
+.lang-trigger{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;user-select:none}
+.lang-trigger:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
+.lang-caret{font-size:8px;color:rgba(255,255,255,.5);display:inline-block;transition:transform .2s}
+.lang-menu{position:fixed;top:52px;right:auto;left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.3);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transition:all .15s;pointer-events:none}
+.lang-menu.show{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.lang-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .1s}
+.lang-item:hover{background:var(--bg)}.lang-item.cur{background:var(--gl);color:var(--g)}
+/* HERO */
+.priv-hero{padding:100px 28px 56px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08);background:#0d2010}
+.priv-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 160% 80% at 50% 140%,rgba(18,110,18,.7),transparent 52%),radial-gradient(ellipse 50% 50% at 0% 60%,rgba(0,51,160,.15),transparent 55%),radial-gradient(ellipse 45% 45% at 100% 20%,rgba(200,16,46,.12),transparent 55%)}
+.hero-lines{position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0px,rgba(255,255,255,.0) 60px,rgba(255,255,255,.03) 60px,rgba(255,255,255,.03) 61px)}
+.priv-hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.priv-eye{font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.3);border-radius:100px;padding:6px 16px;margin-bottom:18px;display:inline-block}
+.priv-title{font-family:'Unbounded',sans-serif;font-size:clamp(26px,5vw,50px);font-weight:900;color:#fff;line-height:1;margin-bottom:12px;letter-spacing:-.02em}
+.priv-title em{font-style:normal;background:linear-gradient(135deg,#f0a500,#fff 60%,#c8102e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.priv-sub{font-size:14px;color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 12px;line-height:1.7}
+.priv-updated{font-family:'Unbounded',sans-serif;font-size:8px;color:rgba(255,255,255,.22);letter-spacing:1.5px;text-transform:uppercase;margin-top:12px}
+/* BODY */
+.priv-body{max-width:800px;margin:0 auto;padding:52px 28px 80px}
+/* TOC */
+.toc-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 24px;margin-bottom:36px}
+.toc-title{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.toc-list{list-style:none}
+.toc-list li{border-bottom:1px solid rgba(255,255,255,.05)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li a{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s}
+.toc-list li a:hover{color:#fff}
+/* SECTIONS */
+.priv-section{margin-bottom:44px;scroll-margin-top:80px}
+.priv-section h2{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08)}
+.priv-section p{font-size:13px;color:rgba(255,255,255,.68);margin-bottom:10px;line-height:1.75}
+.priv-section ul{list-style:none;margin-bottom:12px}
+.priv-section ul li{font-size:13px;color:rgba(255,255,255,.68);padding:5px 0 5px 18px;position:relative;line-height:1.65;border-bottom:1px solid rgba(255,255,255,.04)}
+.priv-section ul li::before{content:'·';position:absolute;left:0;color:var(--gold);font-weight:900;font-size:18px;line-height:1}
+.priv-section a{color:var(--gold);text-decoration:none}.priv-section a:hover{text-decoration:underline}
+.priv-section strong{color:#fff;font-weight:700}
+/* INFO BOXES */
+.info-box{border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:13px;line-height:1.65}
+.ib-g{background:rgba(126,200,0,.1);border:1px solid rgba(126,200,0,.25);color:#9fda50}.ib-g strong{color:#b0f060}
+.ib-o{background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.25);color:#ff8898}.ib-o strong{color:#ff6677}
+.ib-b{background:rgba(0,51,160,.15);border:1px solid rgba(0,51,160,.3);color:#88aaff}.ib-b strong{color:#aabbff}
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:12px}
+.data-table th{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);padding:10px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.data-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.68);vertical-align:top}
+.data-table td:first-child{font-weight:700;color:#fff}
+/* RIGHTS GRID */
+.rights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:16px}
+.right-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;transition:border-color .2s}
+.right-card:hover{border-color:rgba(255,255,255,.25)}
+.right-icon{font-size:20px;margin-bottom:6px}
+.right-name{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:.5px}
+.right-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+/* FOOTER */
+footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.08);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.f-logo{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff}
+.f-logo em{font-style:normal;color:#7ec800}
+.f-links{display:flex;gap:18px;flex-wrap:wrap}
+.f-links a{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:rgba(255,255,255,.8)}
+.f-note{font-size:11px;color:rgba(255,255,255,.2);width:100%}
+@media(max-width:600px){nav{padding:0 14px}.priv-body{padding:36px 16px 60px}.data-table{font-size:11px}.priv-hero{padding:86px 18px 44px}.rights-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Colle<em>xo</em><span class="logo-sub">The Sticker Exchange</span></a>
+  <div class="nav-right">
+    <div class="lang-sel" id="langSel">
+      <div class="lang-trigger" id="langTrigger"><span id="langFlag">🇪🇸</span><span id="langCode">ES</span><span class="lang-caret" id="langCaret">▾</span></div>
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-item cur" data-lang="es" onclick="setLang('es')"><span>🇪🇸</span> Español</button>
+        <button class="lang-item" data-lang="en" onclick="setLang('en')"><span>🇺🇸</span> English</button>
+        <button class="lang-item" data-lang="pt" onclick="setLang('pt')"><span>🇧🇷</span> Português</button>
+        <button class="lang-item" data-lang="fr" onclick="setLang('fr')"><span>🇫🇷</span> Français</button>
+      </div>
+    </div>
+    <a class="nav-back" href="terms.html" id="navTerms">Términos</a>
+    <a class="nav-back" href="index.html" id="navHome">← Inicio</a>
+  </div>
+</nav>
+
+<div class="priv-hero">
+  <div class="hero-lines"></div>
+  <div class="priv-hero-inner">
+    <div class="priv-eye" id="heroEye">Collexo · Política de Privacidad</div>
+    <h1 class="priv-title" id="heroTitle">Tu <em>privacidad</em><br>es lo primero.</h1>
+    <p class="priv-sub" id="heroSub">Solo recopilamos los datos mínimos necesarios. Nunca vendemos tu información.</p>
+    <div class="priv-updated" id="heroUpdated">Última actualización: Mayo 2026</div>
+  </div>
+</div>
+
+<div class="priv-body">
+
+  <!-- TOC -->
+  <div class="toc-wrap">
+    <div class="toc-title" id="tocTitle">Contenido</div>
+    <ul class="toc-list" id="tocList">
+      <li><a href="#datos">1. Datos que recopilamos</a></li>
+      <li><a href="#uso">2. Cómo usamos tus datos</a></li>
+      <li><a href="#almacenamiento">3. Almacenamiento y seguridad</a></li>
+      <li><a href="#terceros">4. Terceros y servicios externos</a></li>
+      <li><a href="#derechos">5. Tus derechos</a></li>
+      <li><a href="#cookies">6. Cookies</a></li>
+      <li><a href="#menores">7. Menores de edad</a></li>
+      <li><a href="#cambios">8. Cambios a esta política</a></li>
+      <li><a href="#contacto">9. Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="priv-section" id="datos">
+    <h2 id="s1title">1. Datos que recopilamos</h2>
+    <div class="info-box ib-g">
+      <strong>Principio de mínimos datos:</strong> Solo recopilamos lo estrictamente necesario para que la plataforma funcione. No recopilamos datos de geolocalización, contactos, ni información sensible.
+    </div>
+    <table class="data-table">
+      <thead><tr><th id="th1">Dato</th><th id="th2">Por qué lo recopilamos</th><th id="th3">Base legal</th></tr></thead>
+      <tbody>
+        <tr><td id="td1a">Email</td><td id="td1b">Registro, comunicaciones, recuperación de cuenta</td><td id="td1c">Contrato</td></tr>
+        <tr><td id="td2a">País</td><td id="td2b">Ajustar disponibilidad regional y moneda</td><td id="td2c">Interés legítimo</td></tr>
+        <tr><td id="td3a">Historial de transacciones</td><td id="td3b">Registro de intercambios y compras dentro de la plataforma</td><td id="td3c">Contrato</td></tr>
+        <tr><td id="td4a">Datos de pago</td><td id="td4b">Procesados exclusivamente por Stripe o Mercado Pago — nunca almacenamos datos de tarjeta</td><td id="td4c">Contrato</td></tr>
+        <tr><td id="td5a">Láminas del álbum</td><td id="td5b">Mostrar tu colección e identificar duplicados disponibles para intercambio</td><td id="td5c">Contrato</td></tr>
+        <tr><td id="td6a">Datos de uso</td><td id="td6b">Mejorar la experiencia y corregir errores (anonimizados)</td><td id="td6c">Interés legítimo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="priv-section" id="uso">
+    <h2 id="s2title">2. Cómo usamos tus datos</h2>
+    <p id="s2p1">Usamos tu información exclusivamente para operar, mantener y mejorar Collexo. En concreto:</p>
+    <ul id="s2list">
+      <li>Gestionar tu cuenta y perfil de coleccionista</li>
+      <li>Facilitar intercambios y transacciones entre usuarios</li>
+      <li>Enviarte notificaciones sobre tu cuenta (confirmaciones, alertas de intercambio)</li>
+      <li>Procesar pagos de forma segura a través de nuestros procesadores</li>
+      <li>Mejorar la plataforma basándonos en datos de uso anonimizados</li>
+      <li>Cumplir obligaciones legales cuando sea requerido</li>
+    </ul>
+    <div class="info-box ib-o">
+      <strong>Nunca usamos tus datos para:</strong> publicidad de terceros, perfilado para venta, ni compartimos tu información con otras empresas fuera de lo descrito en esta política.
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="priv-section" id="almacenamiento">
+    <h2 id="s3title">3. Almacenamiento y seguridad</h2>
+    <p id="s3p1">Tus datos se almacenan en servidores seguros con cifrado en reposo y en tránsito (TLS 1.2+). Implementamos controles de acceso estrictos y auditorías periódicas de seguridad.</p>
+    <p id="s3p2">Los datos de tarjeta de crédito <strong>nunca pasan por nuestros servidores</strong> — son procesados directamente por Stripe (USA) o Mercado Pago (Latinoamérica), ambos certificados PCI DSS.</p>
+    <p id="s3p3">Conservamos tus datos mientras tu cuenta esté activa. Al eliminar tu cuenta, borramos tus datos personales en un plazo máximo de 30 días, excepto los que debamos conservar por obligaciones legales.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="priv-section" id="terceros">
+    <h2 id="s4title">4. Terceros y servicios externos</h2>
+    <p id="s4p1">Trabajamos con proveedores de confianza que pueden tener acceso limitado a tus datos para prestar sus servicios:</p>
+    <table class="data-table">
+      <thead><tr><th id="th4a">Servicio</th><th id="th4b">Propósito</th><th id="th4c">Datos compartidos</th></tr></thead>
+      <tbody>
+        <tr><td>Stripe / Mercado Pago</td><td id="stripe-purpose">Procesamiento de pagos</td><td id="stripe-data">Datos de pago (no almacenados por nosotros)</td></tr>
+        <tr><td>EmailJS / Zoho Mail</td><td id="email-purpose">Envío de emails transaccionales</td><td id="email-data">Email únicamente</td></tr>
+        <tr><td>Netlify</td><td id="netlify-purpose">Hosting de la plataforma web</td><td id="netlify-data">Logs de acceso anonimizados</td></tr>
+        <tr><td>Anthropic Claude API</td><td id="claude-purpose">Noticias del Mundial (agente automático)</td><td id="claude-data">Sin datos personales</td></tr>
+      </tbody>
+    </table>
+    <p id="s4p2">No transferimos datos personales a países fuera del marco de adecuación de protección de datos sin las garantías apropiadas.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="priv-section" id="derechos">
+    <h2 id="s5title">5. Tus derechos</h2>
+    <p id="s5p1">Dependiendo de tu país de residencia, tenés los siguientes derechos sobre tus datos personales:</p>
+    <div class="rights-grid">
+      <div class="right-card"><div class="right-icon">👁️</div><div class="right-name" id="r1name">Acceso</div><div class="right-desc" id="r1desc">Solicitar una copia de todos los datos que tenemos sobre ti</div></div>
+      <div class="right-card"><div class="right-icon">✏️</div><div class="right-name" id="r2name">Rectificación</div><div class="right-desc" id="r2desc">Corregir datos incorrectos o incompletos</div></div>
+      <div class="right-card"><div class="right-icon">🗑️</div><div class="right-name" id="r3name">Eliminación</div><div class="right-desc" id="r3desc">Solicitar la eliminación de tu cuenta y datos personales</div></div>
+      <div class="right-card"><div class="right-icon">⏸️</div><div class="right-name" id="r4name">Limitación</div><div class="right-desc" id="r4desc">Restringir el procesamiento de tus datos en ciertos casos</div></div>
+      <div class="right-card"><div class="right-icon">📦</div><div class="right-name" id="r5name">Portabilidad</div><div class="right-desc" id="r5desc">Recibir tus datos en un formato estructurado y legible</div></div>
+      <div class="right-card"><div class="right-icon">🚫</div><div class="right-name" id="r6name">Oposición</div><div class="right-desc" id="r6desc">Oponerte al procesamiento basado en interés legítimo</div></div>
+    </div>
+    <div class="info-box ib-b">
+      Para ejercer cualquiera de estos derechos, enviá un email a <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong>. Respondemos en un plazo máximo de 30 días.
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="priv-section" id="cookies">
+    <h2 id="s6title">6. Cookies</h2>
+    <p id="s6p1">Collexo utiliza únicamente cookies técnicas esenciales para el funcionamiento de la plataforma:</p>
+    <ul id="s6list">
+      <li><strong>Sesión:</strong> para mantener tu sesión iniciada</li>
+      <li><strong>Preferencia de idioma:</strong> guardamos tu idioma elegido en localStorage</li>
+      <li><strong>Preferencias de UI:</strong> tema, filtros activos</li>
+    </ul>
+    <p id="s6p2">No utilizamos cookies de seguimiento, analíticas de terceros, ni cookies publicitarias. No mostramos publicidad.</p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="priv-section" id="menores">
+    <h2 id="s7title">7. Menores de edad</h2>
+    <p id="s7p1">Collexo no está dirigido a menores de 13 años. No recopilamos intencionalmente datos de menores de 13 años. Si sos padre/madre o tutor y creés que tu hijo/a nos ha proporcionado datos personales, contactanos en <a href="mailto:privacy@collexo.app">privacy@collexo.app</a> y eliminaremos esa información de inmediato.</p>
+    <p id="s7p2">Para usuarios entre 13 y 17 años, recomendamos revisar esta política con un adulto.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="priv-section" id="cambios">
+    <h2 id="s8title">8. Cambios a esta política</h2>
+    <p id="s8p1">Podemos actualizar esta Política de Privacidad ocasionalmente. Cuando hagamos cambios significativos, te notificaremos por email con al menos 14 días de anticipación.</p>
+    <p id="s8p2">La fecha de última actualización aparece en la parte superior de esta página. Te recomendamos revisar esta política periódicamente.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="priv-section" id="contacto">
+    <h2 id="s9title">9. Contacto</h2>
+    <p id="s9p1">Para cualquier consulta sobre privacidad, ejercicio de derechos o incidentes de seguridad:</p>
+    <div class="info-box ib-g">
+      📧 <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong><br>
+      <span id="s9response">Respondemos en un plazo máximo de 30 días hábiles.</span>
+    </div>
+    <p id="s9p2">Si residís en la Unión Europea y considerás que hemos tratado tus datos de forma incorrecta, tenés derecho a presentar una reclamación ante la autoridad de control de tu país.</p>
+  </div>
+
+</div>
+<footer>
+  <div class="f-logo">Colle<em>xo</em></div>
+  <div class="f-links">
+    <a href="index.html" id="fHome">Inicio</a>
+    <a href="terms.html" id="fTerms">Términos</a>
+    <a href="mundial.html" id="fMundial">Mundial 2026</a>
+    <a href="mailto:hello@collexo.app">hello@collexo.app</a>
+  </div>
+  <div class="f-note" id="fNote">© 2026 Collexo · The Sticker Exchange Community</div>
+</footer>
+
+<script>
+var T = {
+  es:{
+    pageTitle:'Collexo — Política de Privacidad',
+    heroEye:'Collexo · Política de Privacidad',
+    heroTitle:'Tu privacidad<br>es nuestra prioridad.',
+    heroSub:'Recopilamos solo los datos mínimos necesarios para operar la plataforma. Nunca vendemos tu información ni la compartimos con terceros para fines publicitarios.',
+    heroUpdated:'Última actualización: Mayo 2026',
+    tocTitle:'Contenido',
+    navTerms:'Términos', navHome:'← Inicio',
+    s1title:'1. Datos que recopilamos',
+    s1info:'<strong>Principio de mínimos datos:</strong> Solo recopilamos lo estrictamente necesario para que la plataforma funcione. No recopilamos datos de geolocalización, contactos, ni información sensible.',
+    th1:'Dato', th2:'Por qué lo recopilamos', th3:'Base legal',
+    td1a:'Email', td1b:'Registro, comunicaciones, recuperación de cuenta', td1c:'Contrato',
+    td2a:'País', td2b:'Ajustar disponibilidad regional y moneda', td2c:'Interés legítimo',
+    td3a:'Historial de transacciones', td3b:'Registro de intercambios y compras dentro de la plataforma', td3c:'Contrato',
+    td4a:'Datos de pago', td4b:'Procesados exclusivamente por Stripe o Mercado Pago — nunca almacenamos datos de tarjeta', td4c:'Contrato',
+    td5a:'Láminas del álbum', td5b:'Mostrar tu colección e identificar duplicados disponibles para intercambio', td5c:'Contrato',
+    td6a:'Datos de uso', td6b:'Mejorar la experiencia y corregir errores (anonimizados)', td6c:'Interés legítimo',
+    s2title:'2. Cómo usamos tus datos',
+    s2p1:'Usamos tu información exclusivamente para operar, mantener y mejorar Collexo. En concreto:',
+    s2list:['Gestionar tu cuenta y perfil de coleccionista','Facilitar intercambios y transacciones entre usuarios','Enviarte notificaciones sobre tu cuenta (confirmaciones, alertas de intercambio)','Procesar pagos de forma segura a través de nuestros procesadores','Mejorar la plataforma basándonos en datos de uso anonimizados','Cumplir obligaciones legales cuando sea requerido'],
+    s2warn:'<strong>Nunca usamos tus datos para:</strong> publicidad de terceros, perfilado para venta, ni compartimos tu información con otras empresas fuera de lo descrito en esta política.',
+    s3title:'3. Almacenamiento y seguridad',
+    s3p1:'Tus datos se almacenan en servidores seguros con cifrado en reposo y en tránsito (TLS 1.2+). Implementamos controles de acceso estrictos y auditorías periódicas de seguridad.',
+    s3p2:'Los datos de tarjeta de crédito <strong>nunca pasan por nuestros servidores</strong> — son procesados directamente por Stripe (USA) o Mercado Pago (Latinoamérica), ambos certificados PCI DSS.',
+    s3p3:'Conservamos tus datos mientras tu cuenta esté activa. Al eliminar tu cuenta, borramos tus datos personales en un plazo máximo de 30 días, excepto los que debamos conservar por obligaciones legales.',
+    s4title:'4. Terceros y servicios externos',
+    s4p1:'Trabajamos con proveedores de confianza que pueden tener acceso limitado a tus datos para prestar sus servicios:',
+    th4a:'Servicio', th4b:'Propósito', th4c:'Datos compartidos',
+    'stripe-purpose':'Procesamiento de pagos', 'stripe-data':'Datos de pago (no almacenados por nosotros)',
+    'email-purpose':'Envío de emails transaccionales', 'email-data':'Email únicamente',
+    'netlify-purpose':'Hosting de la plataforma web', 'netlify-data':'Logs de acceso anonimizados',
+    'claude-purpose':'Noticias del Mundial (agente automático)', 'claude-data':'Sin datos personales',
+    s4p2:'No transferimos datos personales a países fuera del marco de adecuación de protección de datos sin las garantías apropiadas.',
+    s5title:'5. Tus derechos',
+    s5p1:'Dependiendo de tu país de residencia, tenés los siguientes derechos sobre tus datos personales:',
+    r1name:'Acceso', r1desc:'Solicitar una copia de todos los datos que tenemos sobre ti',
+    r2name:'Rectificación', r2desc:'Corregir datos incorrectos o incompletos',
+    r3name:'Eliminación', r3desc:'Solicitar la eliminación de tu cuenta y datos personales',
+    r4name:'Limitación', r4desc:'Restringir el procesamiento de tus datos en ciertos casos',
+    r5name:'Portabilidad', r5desc:'Recibir tus datos en un formato estructurado y legible',
+    r6name:'Oposición', r6desc:'Oponerte al procesamiento basado en interés legítimo',
+    s5info:'Para ejercer cualquiera de estos derechos, enviá un email a <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong>. Respondemos en un plazo máximo de 30 días.',
+    s6title:'6. Cookies',
+    s6p1:'Collexo utiliza únicamente cookies técnicas esenciales para el funcionamiento de la plataforma:',
+    s6list:['<strong>Sesión:</strong> para mantener tu sesión iniciada','<strong>Preferencia de idioma:</strong> guardamos tu idioma elegido en localStorage','<strong>Preferencias de UI:</strong> tema, filtros activos'],
+    s6p2:'No utilizamos cookies de seguimiento, analíticas de terceros, ni cookies publicitarias. No mostramos publicidad.',
+    s7title:'7. Menores de edad',
+    s7p1:'Collexo no está dirigido a menores de 13 años. No recopilamos intencionalmente datos de menores de 13 años. Si sos padre/madre o tutor y creés que tu hijo/a nos ha proporcionado datos personales, contactanos en <a href="mailto:privacy@collexo.app">privacy@collexo.app</a> y eliminaremos esa información de inmediato.',
+    s7p2:'Para usuarios entre 13 y 17 años, recomendamos revisar esta política con un adulto.',
+    s8title:'8. Cambios a esta política',
+    s8p1:'Podemos actualizar esta Política de Privacidad ocasionalmente. Cuando hagamos cambios significativos, te notificaremos por email con al menos 14 días de anticipación.',
+    s8p2:'La fecha de última actualización aparece en la parte superior de esta página. Te recomendamos revisar esta política periódicamente.',
+    s9title:'9. Contacto',
+    s9p1:'Para cualquier consulta sobre privacidad, ejercicio de derechos o incidentes de seguridad:',
+    s9response:'Respondemos en un plazo máximo de 30 días hábiles.',
+    s9p2:'Si residís en la Unión Europea y considerás que hemos tratado tus datos de forma incorrecta, tenés derecho a presentar una reclamación ante la autoridad de control de tu país.',
+    fHome:'Inicio', fTerms:'Términos', fPrivacy:'Privacidad', fMundial:'Mundial 2026',
+    fNote:'© 2026 Collexo · The Sticker Exchange Community',
+    tocLinks:['1. Datos que recopilamos','2. Cómo usamos tus datos','3. Almacenamiento y seguridad','4. Terceros y servicios externos','5. Tus derechos','6. Cookies','7. Menores de edad','8. Cambios a esta política','9. Contacto'],
+  },
+  en:{
+    pageTitle:'Collexo — Privacy Policy',
+    heroEye:'Collexo · Privacy Policy',
+    heroTitle:'Your privacy<br>is our priority.',
+    heroSub:'We collect only the minimum data needed to operate the platform. We never sell your information or share it with third parties for advertising purposes.',
+    heroUpdated:'Last updated: May 2026',
+    tocTitle:'Contents',
+    navTerms:'Terms', navHome:'← Home',
+    s1title:'1. Data we collect',
+    s1info:'<strong>Data minimization principle:</strong> We only collect what is strictly necessary for the platform to function. We do not collect geolocation data, contacts, or sensitive information.',
+    th1:'Data', th2:'Why we collect it', th3:'Legal basis',
+    td1a:'Email', td1b:'Registration, communications, account recovery', td1c:'Contract',
+    td2a:'Country', td2b:'Adjust regional availability and currency', td2c:'Legitimate interest',
+    td3a:'Transaction history', td3b:'Record of exchanges and purchases within the platform', td3c:'Contract',
+    td4a:'Payment data', td4b:'Processed exclusively by Stripe or Mercado Pago — we never store card data', td4c:'Contract',
+    td5a:'Album stickers', td5b:'Display your collection and identify duplicates available for exchange', td5c:'Contract',
+    td6a:'Usage data', td6b:'Improve the experience and fix errors (anonymized)', td6c:'Legitimate interest',
+    s2title:'2. How we use your data',
+    s2p1:'We use your information exclusively to operate, maintain and improve Collexo. Specifically:',
+    s2list:['Manage your account and collector profile','Facilitate exchanges and transactions between users','Send you notifications about your account (confirmations, exchange alerts)','Process payments securely through our processors','Improve the platform based on anonymized usage data','Comply with legal obligations when required'],
+    s2warn:'<strong>We never use your data for:</strong> third-party advertising, profiling for sale, or sharing your information with other companies outside what is described in this policy.',
+    s3title:'3. Storage and security',
+    s3p1:'Your data is stored on secure servers with encryption at rest and in transit (TLS 1.2+). We implement strict access controls and regular security audits.',
+    s3p2:'Credit card data <strong>never passes through our servers</strong> — it is processed directly by Stripe (USA) or Mercado Pago (Latin America), both PCI DSS certified.',
+    s3p3:'We keep your data while your account is active. When you delete your account, we delete your personal data within 30 days, except for data we must retain due to legal obligations.',
+    s4title:'4. Third parties and external services',
+    s4p1:'We work with trusted providers who may have limited access to your data to provide their services:',
+    th4a:'Service', th4b:'Purpose', th4c:'Data shared',
+    'stripe-purpose':'Payment processing', 'stripe-data':'Payment data (not stored by us)',
+    'email-purpose':'Transactional email delivery', 'email-data':'Email address only',
+    'netlify-purpose':'Web platform hosting', 'netlify-data':'Anonymized access logs',
+    'claude-purpose':'World Cup news (automated agent)', 'claude-data':'No personal data',
+    s4p2:'We do not transfer personal data to countries outside the data protection adequacy framework without appropriate safeguards.',
+    s5title:'5. Your rights',
+    s5p1:'Depending on your country of residence, you have the following rights over your personal data:',
+    r1name:'Access', r1desc:'Request a copy of all data we hold about you',
+    r2name:'Rectification', r2desc:'Correct inaccurate or incomplete data',
+    r3name:'Erasure', r3desc:'Request deletion of your account and personal data',
+    r4name:'Restriction', r4desc:'Restrict processing of your data in certain cases',
+    r5name:'Portability', r5desc:'Receive your data in a structured, machine-readable format',
+    r6name:'Objection', r6desc:'Object to processing based on legitimate interest',
+    s5info:'To exercise any of these rights, email <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong>. We respond within 30 days.',
+    s6title:'6. Cookies',
+    s6p1:'Collexo uses only essential technical cookies for the platform to function:',
+    s6list:['<strong>Session:</strong> to keep you logged in','<strong>Language preference:</strong> we save your chosen language in localStorage','<strong>UI preferences:</strong> theme, active filters'],
+    s6p2:'We do not use tracking cookies, third-party analytics, or advertising cookies. We do not show ads.',
+    s7title:'7. Minors',
+    s7p1:'Collexo is not directed at children under 13. We do not knowingly collect data from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, contact us at <a href="mailto:privacy@collexo.app">privacy@collexo.app</a> and we will delete that information immediately.',
+    s7p2:'For users between 13 and 17, we recommend reviewing this policy with an adult.',
+    s8title:'8. Changes to this policy',
+    s8p1:'We may update this Privacy Policy occasionally. When we make significant changes, we will notify you by email at least 14 days in advance.',
+    s8p2:'The date of the last update appears at the top of this page. We recommend reviewing this policy periodically.',
+    s9title:'9. Contact',
+    s9p1:'For any privacy questions, rights requests, or security incidents:',
+    s9response:'We respond within 30 business days.',
+    s9p2:'If you reside in the European Union and believe we have processed your data incorrectly, you have the right to file a complaint with your national supervisory authority.',
+    fHome:'Home', fTerms:'Terms', fPrivacy:'Privacy', fMundial:'World Cup 2026',
+    fNote:'© 2026 Collexo · The Sticker Exchange Community',
+    tocLinks:['1. Data we collect','2. How we use your data','3. Storage and security','4. Third parties and external services','5. Your rights','6. Cookies','7. Minors','8. Changes to this policy','9. Contact'],
+  },
+  pt:{
+    pageTitle:'Collexo — Política de Privacidade',
+    heroEye:'Collexo · Política de Privacidade',
+    heroTitle:'Sua privacidade<br>é nossa prioridade.',
+    heroSub:'Coletamos apenas os dados mínimos necessários para operar a plataforma. Nunca vendemos suas informações nem as compartilhamos com terceiros para fins publicitários.',
+    heroUpdated:'Última atualização: Maio de 2026',
+    tocTitle:'Conteúdo',
+    navTerms:'Termos', navHome:'← Início',
+    s1title:'1. Dados que coletamos',
+    s1info:'<strong>Princípio de minimização de dados:</strong> Coletamos apenas o estritamente necessário para o funcionamento da plataforma. Não coletamos dados de geolocalização, contatos, nem informações sensíveis.',
+    th1:'Dado', th2:'Por que coletamos', th3:'Base legal',
+    td1a:'E-mail', td1b:'Cadastro, comunicações, recuperação de conta', td1c:'Contrato',
+    td2a:'País', td2b:'Ajustar disponibilidade regional e moeda', td2c:'Interesse legítimo',
+    td3a:'Histórico de transações', td3b:'Registro de trocas e compras dentro da plataforma', td3c:'Contrato',
+    td4a:'Dados de pagamento', td4b:'Processados exclusivamente pelo Stripe ou Mercado Pago — nunca armazenamos dados de cartão', td4c:'Contrato',
+    td5a:'Figurinhas do álbum', td5b:'Exibir sua coleção e identificar repetidas disponíveis para troca', td5c:'Contrato',
+    td6a:'Dados de uso', td6b:'Melhorar a experiência e corrigir erros (anonimizados)', td6c:'Interesse legítimo',
+    s2title:'2. Como usamos seus dados',
+    s2p1:'Usamos suas informações exclusivamente para operar, manter e melhorar o Collexo. Especificamente:',
+    s2list:['Gerenciar sua conta e perfil de colecionador','Facilitar trocas e transações entre usuários','Enviar notificações sobre sua conta (confirmações, alertas de troca)','Processar pagamentos com segurança por meio dos nossos processadores','Melhorar a plataforma com base em dados de uso anonimizados','Cumprir obrigações legais quando necessário'],
+    s2warn:'<strong>Nunca usamos seus dados para:</strong> publicidade de terceiros, perfilamento para venda, nem compartilhamos suas informações com outras empresas fora do descrito nesta política.',
+    s3title:'3. Armazenamento e segurança',
+    s3p1:'Seus dados são armazenados em servidores seguros com criptografia em repouso e em trânsito (TLS 1.2+). Implementamos controles de acesso rigorosos e auditorias periódicas de segurança.',
+    s3p2:'Dados de cartão de crédito <strong>nunca passam pelos nossos servidores</strong> — são processados diretamente pelo Stripe (EUA) ou Mercado Pago (América Latina), ambos certificados PCI DSS.',
+    s3p3:'Mantemos seus dados enquanto sua conta estiver ativa. Ao excluir sua conta, deletamos seus dados pessoais em no máximo 30 dias, exceto os que devemos manter por obrigações legais.',
+    s4title:'4. Terceiros e serviços externos',
+    s4p1:'Trabalhamos com fornecedores confiáveis que podem ter acesso limitado aos seus dados para prestar seus serviços:',
+    th4a:'Serviço', th4b:'Finalidade', th4c:'Dados compartilhados',
+    'stripe-purpose':'Processamento de pagamentos', 'stripe-data':'Dados de pagamento (não armazenados por nós)',
+    'email-purpose':'Envio de e-mails transacionais', 'email-data':'Somente e-mail',
+    'netlify-purpose':'Hospedagem da plataforma web', 'netlify-data':'Logs de acesso anonimizados',
+    'claude-purpose':'Notícias da Copa (agente automático)', 'claude-data':'Sem dados pessoais',
+    s4p2:'Não transferimos dados pessoais para países fora do marco de adequação de proteção de dados sem as garantias apropriadas.',
+    s5title:'5. Seus direitos',
+    s5p1:'Dependendo do seu país de residência, você tem os seguintes direitos sobre seus dados pessoais:',
+    r1name:'Acesso', r1desc:'Solicitar uma cópia de todos os dados que temos sobre você',
+    r2name:'Retificação', r2desc:'Corrigir dados incorretos ou incompletos',
+    r3name:'Exclusão', r3desc:'Solicitar a exclusão da sua conta e dados pessoais',
+    r4name:'Limitação', r4desc:'Restringir o processamento dos seus dados em determinados casos',
+    r5name:'Portabilidade', r5desc:'Receber seus dados em um formato estruturado e legível por máquina',
+    r6name:'Oposição', r6desc:'Opor-se ao processamento baseado em interesse legítimo',
+    s5info:'Para exercer qualquer um desses direitos, envie um e-mail para <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong>. Respondemos em até 30 dias.',
+    s6title:'6. Cookies',
+    s6p1:'O Collexo utiliza apenas cookies técnicos essenciais para o funcionamento da plataforma:',
+    s6list:['<strong>Sessão:</strong> para manter você logado','<strong>Preferência de idioma:</strong> salvamos seu idioma escolhido no localStorage','<strong>Preferências de UI:</strong> tema, filtros ativos'],
+    s6p2:'Não utilizamos cookies de rastreamento, analytics de terceiros, nem cookies publicitários. Não exibimos publicidade.',
+    s7title:'7. Menores de idade',
+    s7p1:'O Collexo não é direcionado a menores de 13 anos. Não coletamos intencionalmente dados de menores de 13 anos. Se você é pai/mãe ou responsável e acredita que seu filho nos forneceu dados pessoais, entre em contato em <a href="mailto:privacy@collexo.app">privacy@collexo.app</a> e excluiremos essas informações imediatamente.',
+    s7p2:'Para usuários entre 13 e 17 anos, recomendamos revisar esta política com um adulto.',
+    s8title:'8. Alterações nesta política',
+    s8p1:'Podemos atualizar esta Política de Privacidade ocasionalmente. Quando fizermos alterações significativas, notificaremos você por e-mail com pelo menos 14 dias de antecedência.',
+    s8p2:'A data da última atualização aparece no topo desta página. Recomendamos revisar esta política periodicamente.',
+    s9title:'9. Contato',
+    s9p1:'Para qualquer dúvida sobre privacidade, exercício de direitos ou incidentes de segurança:',
+    s9response:'Respondemos em até 30 dias úteis.',
+    s9p2:'Se você reside na União Europeia e acredita que processamos seus dados incorretamente, você tem o direito de apresentar uma reclamação à autoridade supervisora nacional.',
+    fHome:'Início', fTerms:'Termos', fPrivacy:'Privacidade', fMundial:'Copa 2026',
+    fNote:'© 2026 Collexo · The Sticker Exchange Community',
+    tocLinks:['1. Dados que coletamos','2. Como usamos seus dados','3. Armazenamento e segurança','4. Terceiros e serviços externos','5. Seus direitos','6. Cookies','7. Menores de idade','8. Alterações nesta política','9. Contato'],
+  },
+  fr:{
+    pageTitle:'Collexo — Politique de confidentialité',
+    heroEye:'Collexo · Politique de confidentialité',
+    heroTitle:'Votre vie privée<br>est notre priorité.',
+    heroSub:"Nous collectons uniquement les données minimales nécessaires au fonctionnement de la plateforme. Nous ne vendons jamais vos informations ni ne les partageons avec des tiers à des fins publicitaires.",
+    heroUpdated:'Dernière mise à jour : Mai 2026',
+    tocTitle:'Sommaire',
+    navTerms:"Conditions d'utilisation", navHome:'← Accueil',
+    s1title:'1. Données que nous collectons',
+    s1info:"<strong>Principe de minimisation des données :</strong> Nous ne collectons que le strict nécessaire au fonctionnement de la plateforme. Nous ne collectons pas de données de géolocalisation, de contacts, ni d'informations sensibles.",
+    th1:'Donnée', th2:'Pourquoi nous la collectons', th3:'Base légale',
+    td1a:'E-mail', td1b:"Inscription, communications, récupération de compte", td1c:'Contrat',
+    td2a:'Pays', td2b:'Ajuster la disponibilité régionale et la devise', td2c:'Intérêt légitime',
+    td3a:'Historique des transactions', td3b:"Enregistrement des échanges et achats sur la plateforme", td3c:'Contrat',
+    td4a:'Données de paiement', td4b:"Traitées exclusivement par Stripe ou Mercado Pago — nous ne stockons jamais les données de carte", td4c:'Contrat',
+    td5a:'Vignettes de l\'album', td5b:"Afficher votre collection et identifier les doublons disponibles pour l'échange", td5c:'Contrat',
+    td6a:"Données d'utilisation", td6b:"Améliorer l'expérience et corriger les erreurs (anonymisées)", td6c:'Intérêt légitime',
+    s2title:'2. Comment nous utilisons vos données',
+    s2p1:"Nous utilisons vos informations exclusivement pour exploiter, maintenir et améliorer Collexo. Concrètement :",
+    s2list:["Gérer votre compte et votre profil de collectionneur","Faciliter les échanges et transactions entre utilisateurs","Vous envoyer des notifications sur votre compte (confirmations, alertes d'échange)","Traiter les paiements en toute sécurité via nos processeurs","Améliorer la plateforme sur la base de données d'utilisation anonymisées","Respecter les obligations légales lorsque requis"],
+    s2warn:"<strong>Nous n'utilisons jamais vos données pour :</strong> la publicité de tiers, le profilage à des fins de vente, ni le partage de vos informations avec d'autres entreprises en dehors de ce qui est décrit dans cette politique.",
+    s3title:'3. Stockage et sécurité',
+    s3p1:"Vos données sont stockées sur des serveurs sécurisés avec chiffrement au repos et en transit (TLS 1.2+). Nous mettons en œuvre des contrôles d'accès stricts et des audits de sécurité réguliers.",
+    s3p2:"Les données de carte bancaire <strong>ne transitent jamais par nos serveurs</strong> — elles sont traitées directement par Stripe (USA) ou Mercado Pago (Amérique latine), tous deux certifiés PCI DSS.",
+    s3p3:"Nous conservons vos données tant que votre compte est actif. Lors de la suppression de votre compte, nous supprimons vos données personnelles dans un délai maximum de 30 jours, sauf les données que nous devons conserver en vertu d'obligations légales.",
+    s4title:'4. Tiers et services externes',
+    s4p1:"Nous travaillons avec des prestataires de confiance qui peuvent avoir un accès limité à vos données pour fournir leurs services :",
+    th4a:'Service', th4b:'Finalité', th4c:'Données partagées',
+    'stripe-purpose':'Traitement des paiements', 'stripe-data':'Données de paiement (non stockées par nous)',
+    'email-purpose':'Envoi d\'e-mails transactionnels', 'email-data':'Adresse e-mail uniquement',
+    'netlify-purpose':'Hébergement de la plateforme web', 'netlify-data':"Journaux d'accès anonymisés",
+    'claude-purpose':'Actualités de la Coupe du Monde (agent automatique)', 'claude-data':'Aucune donnée personnelle',
+    s4p2:"Nous ne transférons pas de données personnelles vers des pays en dehors du cadre d'adéquation de la protection des données sans garanties appropriées.",
+    s5title:'5. Vos droits',
+    s5p1:"Selon votre pays de résidence, vous disposez des droits suivants sur vos données personnelles :",
+    r1name:'Accès', r1desc:"Demander une copie de toutes les données que nous détenons sur vous",
+    r2name:'Rectification', r2desc:"Corriger des données inexactes ou incomplètes",
+    r3name:'Suppression', r3desc:"Demander la suppression de votre compte et de vos données personnelles",
+    r4name:'Limitation', r4desc:"Restreindre le traitement de vos données dans certains cas",
+    r5name:'Portabilité', r5desc:"Recevoir vos données dans un format structuré et lisible par machine",
+    r6name:'Opposition', r6desc:"Vous opposer au traitement fondé sur l'intérêt légitime",
+    s5info:'Pour exercer l\'un de ces droits, envoyez un e-mail à <strong><a href="mailto:privacy@collexo.app">privacy@collexo.app</a></strong>. Nous répondons dans un délai de 30 jours.',
+    s6title:'6. Cookies',
+    s6p1:"Collexo n'utilise que des cookies techniques essentiels au fonctionnement de la plateforme :",
+    s6list:["<strong>Session :</strong> pour maintenir votre connexion","<strong>Préférence de langue :</strong> nous sauvegardons votre langue choisie dans localStorage","<strong>Préférences d'interface :</strong> thème, filtres actifs"],
+    s6p2:"Nous n'utilisons pas de cookies de suivi, d'analyses tierces, ni de cookies publicitaires. Nous n'affichons pas de publicité.",
+    s7title:'7. Mineurs',
+    s7p1:'Collexo n\'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données d\'enfants de moins de 13 ans. Si vous êtes un parent ou tuteur et pensez que votre enfant nous a fourni des données personnelles, contactez-nous à <a href="mailto:privacy@collexo.app">privacy@collexo.app</a> et nous supprimerons ces informations immédiatement.',
+    s7p2:'Pour les utilisateurs de 13 à 17 ans, nous recommandons de consulter cette politique avec un adulte.',
+    s8title:'8. Modifications de cette politique',
+    s8p1:"Nous pouvons mettre à jour cette Politique de confidentialité à l'occasion. Lorsque nous apportons des modifications significatives, nous vous en informerons par e-mail au moins 14 jours à l'avance.",
+    s8p2:"La date de la dernière mise à jour figure en haut de cette page. Nous vous recommandons de consulter cette politique périodiquement.",
+    s9title:'9. Contact',
+    s9p1:"Pour toute question sur la confidentialité, l'exercice des droits ou les incidents de sécurité :",
+    s9response:"Nous répondons dans un délai maximum de 30 jours ouvrables.",
+    s9p2:"Si vous résidez dans l'Union européenne et estimez que nous avons traité vos données de manière incorrecte, vous avez le droit de déposer une plainte auprès de l'autorité de contrôle de votre pays.",
+    fHome:'Accueil', fTerms:"Conditions d'utilisation", fPrivacy:'Confidentialité', fMundial:'Mondial 2026',
+    fNote:'© 2026 Collexo · The Sticker Exchange Community',
+    tocLinks:["1. Données que nous collectons","2. Comment nous utilisons vos données","3. Stockage et sécurité","4. Tiers et services externes","5. Vos droits","6. Cookies","7. Mineurs","8. Modifications de cette politique","9. Contact"],
+  }
+};
+function applyLang(lang) {
+  var t = T[lang] || T.es;
+  document.documentElement.lang = lang;
+  document.title = t.pageTitle;
+
+  var flagEl=document.getElementById('langFlag'), codeEl=document.getElementById('langCode');
+  if(flagEl) flagEl.textContent=LFLAGS[lang];
+  if(codeEl) codeEl.textContent=LCODES[lang];
+  document.querySelectorAll('.lang-item').forEach(function(el){
+    el.className=el.dataset.lang===lang?'lang-item cur':'lang-item';
+  });
+
+  function st(id,v){var el=document.getElementById(id);if(el)el.textContent=v;}
+  function sh(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;}
+
+  sh('heroEye',t.heroEye); sh('heroTitle',t.heroTitle); st('heroSub',t.heroSub);
+  st('heroUpdated',t.heroUpdated); st('tocTitle',t.tocTitle);
+  st('navTerms',t.navTerms); st('navHome',t.navHome);
+
+  // TOC links
+  var tocLinks=document.querySelectorAll('#tocList a');
+  for(var i=0;i<tocLinks.length&&i<t.tocLinks.length;i++) tocLinks[i].textContent=t.tocLinks[i];
+
+  // Sections
+  st('s1title',t.s1title); sh('s1info',t.s1info);
+  st('th1',t.th1); st('th2',t.th2); st('th3',t.th3);
+  var tdKeys=['td1a','td1b','td1c','td2a','td2b','td2c','td3a','td3b','td3c','td4a','td4b','td4c','td5a','td5b','td5c','td6a','td6b','td6c'];
+  for(var i=0;i<tdKeys.length;i++) st(tdKeys[i],t[tdKeys[i]]);
+  st('s2title',t.s2title); st('s2p1',t.s2p1);
+  var s2ul=document.getElementById('s2list');
+  if(s2ul){s2ul.innerHTML='';t.s2list.forEach(function(item){var li=document.createElement('li');li.innerHTML=item;s2ul.appendChild(li);});}
+  sh('s2warn',t.s2warn);
+  st('s3title',t.s3title); sh('s3p1',t.s3p1); sh('s3p2',t.s3p2); st('s3p3',t.s3p3);
+  st('s4title',t.s4title); st('s4p1',t.s4p1);
+  st('th4a',t.th4a); st('th4b',t.th4b); st('th4c',t.th4c);
+  ['stripe-purpose','stripe-data','email-purpose','email-data','netlify-purpose','netlify-data','claude-purpose','claude-data'].forEach(function(k){st(k,t[k]);});
+  st('s4p2',t.s4p2);
+  st('s5title',t.s5title); st('s5p1',t.s5p1);
+  ['r1name','r1desc','r2name','r2desc','r3name','r3desc','r4name','r4desc','r5name','r5desc','r6name','r6desc'].forEach(function(k){st(k,t[k]);});
+  sh('s5info',t.s5info);
+  st('s6title',t.s6title); st('s6p1',t.s6p1);
+  var s6ul=document.getElementById('s6list');
+  if(s6ul){s6ul.innerHTML='';t.s6list.forEach(function(item){var li=document.createElement('li');li.innerHTML=item;s6ul.appendChild(li);});}
+  st('s6p2',t.s6p2);
+  sh('s7title',t.s7title); sh('s7p1',t.s7p1); st('s7p2',t.s7p2);
+  st('s8title',t.s8title); st('s8p1',t.s8p1); st('s8p2',t.s8p2);
+  st('s9title',t.s9title); st('s9p1',t.s9p1); st('s9response',t.s9response); sh('s9p2',t.s9p2);
+  st('fHome',t.fHome); st('fTerms',t.fTerms); st('fPrivacy',t.fPrivacy); st('fMundial',t.fMundial); st('fNote',t.fNote);
+
+  try{localStorage.setItem('sm_lang',lang);}catch(e){}
+}
+
+var LFLAGS={en:'🇺🇸',es:'🇪🇸',pt:'🇧🇷',fr:'🇫🇷'};
+var LCODES={en:'EN',es:'ES',pt:'PT',fr:'FR'};
+var menuOpen=false;
+function toggleLangMenu(){menuOpen=!menuOpen;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className=menuOpen?'lang-menu show':'lang-menu';if(c)c.style.transform=menuOpen?'rotate(180deg)':'';}
+function setLang(lang){applyLang(lang);menuOpen=false;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className='lang-menu';if(c)c.style.transform='';}
+document.addEventListener('DOMContentLoaded',function(){
+  var trigger=document.getElementById('langTrigger');
+  if(trigger)trigger.addEventListener('click',function(e){e.stopPropagation();toggleLangMenu();});
+  document.addEventListener('click',function(e){if(!menuOpen)return;var sel=document.getElementById('langSel');if(sel&&!sel.contains(e.target)){menuOpen=false;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className='lang-menu';if(c)c.style.transform='';}});
+  var lang='es';
+  try{var s=localStorage.getItem('sm_lang');if(s&&T[s])lang=s;}catch(e){}
+  if(lang==='es'&&!localStorage.getItem('sm_lang')){var nav=(navigator.language||'es').toLowerCase();if(nav.indexOf('en')===0)lang='en';else if(nav.indexOf('pt')===0)lang='pt';else if(nav.indexOf('fr')===0)lang='fr';}
+  applyLang(lang);
+});
+</script>
+</body>
+</html>

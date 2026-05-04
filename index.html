@@ -5,29 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collexo — The Sticker Exchange Community</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- AGE VERIFICATION MODAL -->
+<div class="age-modal-overlay" id="ageModal">
+  <div class="age-modal">
+    <div class="am-logo">Colle<em>xo</em></div>
+    <div class="am-title" id="amTitle">¿Cuántos años tenés?</div>
+    <div class="am-sub" id="amSub">El marketplace y las compras están disponibles solo para mayores de 18. Podés usar el tracking del álbum libremente sin importar tu edad.</div>
+    <div class="am-btns">
+      <button class="am-yes" id="amYes" onclick="confirmAge(true)">Tengo 18 o más ✓</button>
+      <button class="am-no" id="amNo" onclick="confirmAge(false)">Tengo menos de 18</button>
+    </div>
+    <div class="tutor-form" id="tutorForm">
+      <div style="font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.5px" id="tfTitle">APROBACIÓN DE TUTOR</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:14px;line-height:1.55" id="tfDesc">Para usar el marketplace, necesitamos la aprobación de un padre o tutor. Ingresá su email y le enviaremos un link de aprobación.</p>
+      <input class="tutor-input" id="tutorEmail" type="email" placeholder="Email del padre/tutor">
+      <input class="tutor-input" id="minorName" type="text" placeholder="Tu nombre">
+      <button class="tutor-submit" id="tfBtn" onclick="sendTutorRequest()">Enviar solicitud al tutor →</button>
+      <div class="tutor-sent" id="tutorSent">
+        ✅ <span id="tutorSentMsg">Email enviado al tutor. Una vez que apruebe, tendrás acceso al marketplace.</span>
+      </div>
+    </div>
+    <div class="am-note" id="amNote">Tu edad no afecta el uso gratuito del álbum ni las noticias del Mundial. Solo aplica al marketplace y compras.</div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('Rj7rnxMpenOIugaKq');</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --g:#2d7a00;--gl:#e8f5d8;--o:#c94000;--ol:#fff0e8;--r:#b5003e;--b:#005fa3;
-  --ink:#111;--ink2:#333;--ink3:#555;--ink4:#888;
-  --w:#fff;--bg:#f9f9f7;--bg2:#fff;--border:#e2e2dd;--border2:#ccc;
-  --dk:#111;--dkt:#eee;--dkm:#aaa;
+  /* Mundial 2026 */
+  --wc-blue:#0033a0;--wc-red:#c8102e;--wc-gold:#f0a500;--wc-dark:#0a0f1e;--wc-grass:#1a6b1a;
+  /* Brand */
+  --g:#2d7a00;--gl:#e8f5d8;--o:#c8102e;--ol:#fff0f0;--r:#c8102e;--b:#0033a0;
+  --lime:#7ec800;--gold:#f0a500;
+  --ink:#0a0f1e;--ink2:#1a2240;--ink3:#556;--ink4:#889;
+  --w:#fff;--bg:#f5f6fa;--bg2:#eceef5;--border:#d8dae8;--border2:#b0b4cc;
+  --dk:#0a0f1e;--dkt:#eee;--dkm:#aaa;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+body{background:#f0f1f8;color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 h1,h2,h3{font-family:'Unbounded',sans-serif;letter-spacing:-.02em;line-height:1.05;color:var(--ink)}
 p{color:var(--ink3)}
 a{color:var(--o)}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.06)}
-.logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;line-height:1;gap:2px}
-.logo em{font-style:normal;color:var(--g)}
-.logo-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:600;color:var(--ink4);letter-spacing:.5px;text-transform:uppercase;line-height:1}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(10,15,30,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:#fff;text-decoration:none;display:flex;flex-direction:column;line-height:1;gap:2px}
+.logo em{font-style:normal;color:#7ec800}
+.logo-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;text-transform:uppercase;line-height:1}
 .nav-right{display:flex;align-items:center;gap:10px}
-.nav-cd{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--o);letter-spacing:1px;background:var(--ol);border:1px solid #f0c0a0;padding:5px 12px;border-radius:100px}
+.nav-cd{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.3);padding:5px 12px;border-radius:100px}
 .nav-news{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--g);color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;transition:all .2s;white-space:nowrap}
 .nav-news:hover{background:#1f5a00;color:#fff}
 .news-hub-banner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--ink);border-radius:16px;padding:20px 24px;margin-bottom:28px;flex-wrap:wrap}
@@ -37,33 +65,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 .nhb-sub{font-size:12px;color:#666}
 .nhb-btn{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--lime);color:#000;padding:11px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:all .2s;flex-shrink:0}
 .nhb-btn:hover{background:#6dcc00;transform:translateY(-2px)}
-.nav-cta{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--ink);color:#fff;padding:9px 18px;border-radius:8px;text-decoration:none;transition:all .2s;white-space:nowrap}
-.nav-cta:hover{background:var(--o)}
+.nav-cta{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.45);padding:8px 18px;border-radius:8px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--wc-red);border-color:var(--wc-red)}
 
 /* LANG SELECTOR — standalone, no conflicts */
 .lang-sel{position:relative}
-.lang-trigger{display:flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--ink2);cursor:pointer;transition:all .2s;user-select:none}
-.lang-trigger:hover{border-color:var(--ink);background:#fff}
-.lang-caret{font-size:8px;color:var(--ink4);display:inline-block;transition:transform .2s}
-.lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transform:translateY(-6px);transition:all .15s;pointer-events:none}
-.lang-menu.show{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+.lang-trigger{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;user-select:none}
+.lang-trigger:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
+.lang-caret{font-size:8px;color:rgba(255,255,255,.5);display:inline-block;transition:transform .2s}
+.lang-menu{position:fixed;top:52px;right:auto;left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transition:all .15s;pointer-events:none}
+.lang-menu.show{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
 .lang-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .1s}
 .lang-item:hover{background:var(--bg)}
 .lang-item.cur{background:var(--gl);color:var(--g)}
 
 /* BLINK */
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.pulse{width:6px;height:6px;border-radius:50%;background:var(--g);animation:blink 1.4s ease-in-out infinite;flex-shrink:0}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.4s ease-in-out infinite;flex-shrink:0}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 80px;background:var(--w);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 40% at 10% 15%,rgba(45,122,0,.07),transparent 55%),radial-gradient(ellipse 45% 35% at 90% 80%,rgba(201,64,0,.06),transparent 55%)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--gl);border:1px solid #b0db80;border-radius:100px;padding:7px 18px;margin-bottom:28px;font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--g);position:relative;z-index:1}
-h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;letter-spacing:-.03em;color:var(--ink);position:relative;z-index:1;margin-bottom:22px}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 80px;background:#0d2010;position:relative;overflow:hidden}
+/* Field lines background */
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    /* Verde cancha — cubre TODO el hero de forma uniforme */
+    radial-gradient(ellipse 200% 120% at 50% 160%, rgba(18,110,18,.98), transparent 52%),
+    radial-gradient(ellipse 200% 80%  at 50% 130%, rgba(12,80,12,.90),  transparent 50%),
+    radial-gradient(ellipse 200% 60%  at 50% 100%, rgba(20,100,20,.70), transparent 48%),
+    radial-gradient(ellipse 200% 40%  at 50%  70%, rgba(16,90,16,.50),  transparent 46%),
+    radial-gradient(ellipse 200% 25%  at 50%  40%, rgba(14,80,14,.30),  transparent 44%),
+    /* Acento azul/rojo muy sutil en bordes */
+    radial-gradient(ellipse 35% 50% at 0%  50%, rgba(0,51,160,.15), transparent 55%),
+    radial-gradient(ellipse 30% 45% at 100% 30%, rgba(200,16,46,.10), transparent 55%)}
+
+/* Center circle line */
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:none}
+
+/* Field stripes — more visible, larger bands */
+.hero-field{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    /* Franjas alternadas del campo — dirección correcta */
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.0)  0px,
+      rgba(255,255,255,.0)  60px,
+      rgba(255,255,255,.04) 60px,
+      rgba(255,255,255,.04) 120px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.4);border-radius:100px;padding:7px 18px;margin-bottom:28px;font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);position:relative;z-index:1}
+h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;letter-spacing:-.03em;color:#fff;position:relative;z-index:1;margin-bottom:22px}
 .h1-accent{color:var(--o);display:block}
 .h1-ghost{color:transparent;-webkit-text-stroke:2px var(--border2);display:block}
-.hero-sub{font-size:clamp(15px,1.8vw,18px);color:var(--ink3);max-width:500px;line-height:1.7;margin-bottom:40px;position:relative;z-index:1}
-.hero-sub strong{color:var(--ink2);font-weight:700}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.65);max-width:500px;line-height:1.7;margin-bottom:40px;position:relative;z-index:1}
+.hero-sub strong{color:#fff;font-weight:700}
 
 /* PAY BADGES */
 .pay-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-bottom:36px;position:relative;z-index:1}
@@ -77,8 +130,8 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 
 /* WAITLIST FORM */
 .wl-wrap{width:100%;max-width:500px;position:relative;z-index:1;margin-bottom:40px}
-.wl-card{background:var(--w);border:1.5px solid var(--border2);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
-.wl-label{font-family:'Unbounded',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:14px}
+.wl-card{background:rgba(255,255,255,.06);border:1.5px solid var(--border2);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.wl-label{font-family:'Unbounded',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);display:block;margin-bottom:14px}
 .wl-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .wl-inp{flex:1;min-width:200px;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:13px 18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:var(--ink);outline:none;transition:all .2s}
 .wl-inp::placeholder{color:var(--ink4)}
@@ -109,8 +162,8 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 /* COUNTERS */
 .ctr-row{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
 .ctr{text-align:center}
-.ctr-n{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:var(--ink);display:block;line-height:1}
-.ctr-n.g{color:var(--g)}.ctr-n.o{color:var(--o)}
+.ctr-n{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:#ffffff;display:block;line-height:1}
+.ctr-n.g{color:var(--gold)}.ctr-n.o{color:var(--wc-red)}
 .ctr-l{font-size:10px;color:var(--ink4);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;display:block}
 .ctr-sep{width:1px;height:38px;background:var(--border)}
 
@@ -130,13 +183,13 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 
 /* HOW IT WORKS */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.step{background:var(--w);border:1px solid var(--border);border-radius:18px;padding:26px;position:relative;overflow:hidden;transition:all .25s}
+.step{background:#ffffff;border:1.5px solid #dde0f0;border-radius:18px;padding:26px;position:relative;overflow:hidden;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .step:hover{border-color:var(--g);box-shadow:0 6px 24px rgba(45,122,0,.1);transform:translateY(-4px)}
-.step-n{font-family:'Unbounded',sans-serif;font-size:72px;font-weight:900;color:var(--border);position:absolute;bottom:-10px;right:10px;line-height:1;pointer-events:none;z-index:0}
+.step-n{font-family:'Unbounded',sans-serif;font-size:72px;font-weight:900;color:#e0e4f0;position:absolute;bottom:-10px;right:10px;line-height:1;pointer-events:none;z-index:0}
 .step-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:16px;position:relative;z-index:1}
 .si1{background:var(--gl)}.si2{background:var(--ol)}.si3{background:#fde8f0}.si4{background:#e8f0fd}
 .step-title{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:8px;position:relative;z-index:1}
-.step-desc{font-size:13px;color:var(--ink3);line-height:1.6;position:relative;z-index:1}
+.step-desc{font-size:13px;color:#333344;line-height:1.6;position:relative;z-index:1}
 
 /* ESCROW */
 .escrow-box{background:var(--dk);border-radius:24px;overflow:hidden}
@@ -175,7 +228,7 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 .pt-main{background:var(--gl);color:var(--g)}.pt-bio{background:var(--ol);color:var(--o)}.pt-eu{background:#e8f0fd;color:var(--b)}
 
 /* PRICING */
-.pricing-inner{background:var(--w);border:1px solid var(--border);border-radius:24px;padding:44px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.pricing-inner{background:#0d1428;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:44px;box-shadow:0 8px 40px rgba(0,0,0,.4)}
 .eb-banner{background:linear-gradient(135deg,var(--o),var(--r));border-radius:16px;padding:24px;margin-bottom:28px;display:flex;flex-direction:column;gap:18px}
 .eb-top{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;justify-content:space-between}
 .eb-eye-lbl{font-family:'Unbounded',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:4px}
@@ -188,58 +241,58 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 .eb-desc{font-size:11px;color:rgba(255,255,255,.9);font-weight:700;margin-top:3px}
 .eb-note{font-size:10px;color:rgba(255,255,255,.6);margin-top:2px}
 /* plan guide */
-.plan-guide{background:var(--gl);border:1px solid #b0db80;border-radius:12px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:var(--g);display:flex;gap:10px;align-items:flex-start}
+.plan-guide{background:rgba(126,200,0,.1);border:1px solid rgba(126,200,0,.3);border-radius:12px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:#9fda50;display:flex;gap:10px;align-items:flex-start}
 /* tiers */
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.tier{background:var(--w);border:2px solid var(--border);border-radius:18px;padding:26px;position:relative;overflow:hidden;transition:all .2s}
+.tier{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:18px;padding:26px;position:relative;overflow:hidden;transition:all .2s}
 .tier:hover{box-shadow:0 8px 28px rgba(0,0,0,.08)}
 .tier.best{border-color:var(--g)}
 .tier.best::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--g),#6dcc00)}
-.tier.hot{border-color:var(--o);background:var(--ol)}
-.tier.hot::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--o),var(--r))}
+.tier.hot{border-color:var(--gold);background:rgba(240,165,0,.08)}
+.tier.hot::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),#ffcc00)}
 .tbadge{font-family:'Unbounded',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:14px}
-.tb-free{background:var(--bg);color:var(--ink3)}
+.tb-free{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
 .tb-prem{background:var(--g);color:#fff}
 .tb-world{background:linear-gradient(90deg,var(--g),#6dcc00);color:#fff}
 .tb-early{background:linear-gradient(90deg,var(--o),var(--r));color:#fff}
 .popular{position:absolute;top:12px;right:12px;background:var(--g);color:#fff;font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px}
-.tname{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;color:var(--ink);margin-bottom:8px}
+.tname{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:8px}
 .price-row{display:flex;align-items:baseline;gap:4px;flex-wrap:wrap;margin-bottom:4px}
-.pmain{font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:var(--ink);line-height:1}
-.pper{font-size:13px;color:var(--ink4)}
-.pcross{font-family:'Unbounded',sans-serif;font-size:14px;color:var(--ink4);text-decoration:line-through;margin-left:4px}
+.pmain{font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:#fff;line-height:1}
+.pper{font-size:13px;color:rgba(255,255,255,.55)}
+.pcross{font-family:'Unbounded',sans-serif;font-size:14px;color:rgba(255,255,255,.35);text-decoration:line-through;margin-left:4px}
 .psave{display:inline-block;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:14px}
-.ps-g{background:var(--gl);color:var(--g)}.ps-o{background:var(--ol);color:var(--o)}
-.tnote{font-size:12px;color:var(--ink4);margin-bottom:20px}
+.ps-g{background:rgba(126,200,0,.18);color:#9fda50}.ps-o{background:rgba(240,165,0,.18);color:var(--gold)}
+.tnote{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px}
 .tfeats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-.tfeats li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--ink2);line-height:1.4}
-.tfeats li.dim{color:var(--ink4)}
-.tfi{flex-shrink:0;width:18px;font-size:13px;margin-top:1px}
+.tfeats li{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.82);line-height:1.4}
+.tfeats li.dim{color:rgba(255,255,255,.3)}
+.tfi{flex-shrink:0;width:18px;font-size:13px;margin-top:1px;color:rgba(255,255,255,.3)}
 /* Early bird toggle inside tier */
 .eb-toggle{display:flex;gap:6px;margin-bottom:14px}
-.ebt{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;padding:7px 14px;border-radius:8px;border:1.5px solid var(--o);color:var(--o);background:transparent;cursor:pointer;transition:all .2s}
-.ebt.on{background:var(--o);color:#fff}
+.ebt{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;padding:7px 14px;border-radius:8px;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);background:transparent;cursor:pointer;transition:all .2s}
+.ebt.on{background:var(--wc-red);color:#fff;border-color:var(--wc-red)}
 /* buttons */
 .tbtn{display:block;text-align:center;text-decoration:none;padding:13px;border-radius:12px;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;cursor:pointer;border:none;width:100%}
-.tbtn-free{background:var(--bg);color:var(--ink);border:1.5px solid var(--border2)}
-.tbtn-free:hover{background:var(--border)}
+.tbtn-free{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.tbtn-free:hover{background:rgba(255,255,255,.18)}
 .tbtn-prem{background:linear-gradient(90deg,var(--g),#6dcc00);color:#fff;box-shadow:0 5px 20px rgba(45,122,0,.25)}
 .tbtn-prem:hover{box-shadow:0 9px 32px rgba(45,122,0,.4);transform:translateY(-2px)}
 .tbtn-early{background:linear-gradient(90deg,var(--o),var(--r));color:#fff;box-shadow:0 5px 20px rgba(201,64,0,.25)}
 .tbtn-early:hover{box-shadow:0 9px 32px rgba(201,64,0,.4);transform:translateY(-2px)}
 
 /* POLICIES */
-.pol-wrap{background:var(--w);border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.pol-tabs{display:flex;border-bottom:1px solid var(--border);overflow-x:auto}
+.pol-wrap{background:#ffffff;border:1.5px solid #dde0f0;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.pol-tabs{display:flex;border-bottom:1.5px solid #e8eaf4;overflow-x:auto;background:#f8f9ff}
 .pol-tabs::-webkit-scrollbar{display:none}
-.ptab{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:1px;padding:14px 18px;white-space:nowrap;cursor:pointer;color:var(--ink3);border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;transition:all .2s}
-.ptab:hover{color:var(--ink)}.ptab.on{color:var(--o);border-bottom-color:var(--o)}
-.pol-body{padding:28px}
+.ptab{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:1px;padding:14px 18px;white-space:nowrap;cursor:pointer;color:#778;border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;transition:all .2s}
+.ptab:hover{color:#0a0f1e}.ptab.on{color:var(--wc-red);border-bottom-color:var(--wc-red)}
+.pol-body{padding:28px;border-top:1.5px solid #e8eaf4}
 .pp{display:none}.pp.on{display:block}
-.pol-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;margin-top:20px}
+.pol-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:#0a0f1e;margin-bottom:6px;margin-top:20px}
 .pol-h:first-child{margin-top:0}
-.pol-p{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:10px}
-.pol-ul{font-size:13px;color:var(--ink3);line-height:1.7;padding-left:20px;margin-bottom:12px}
+.pol-p{font-size:13px;color:#334;line-height:1.7;margin-bottom:10px}
+.pol-ul{font-size:13px;color:#334;line-height:1.7;padding-left:20px;margin-bottom:12px}
 .pol-ul li{margin-bottom:5px}
 .pol-note{background:var(--ol);border-left:3px solid var(--o);padding:12px 16px;border-radius:0 10px 10px 0;font-size:12px;color:var(--ink2);margin-top:10px}
 
@@ -316,11 +369,11 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 .ms-sub{font-size:13px;color:var(--ink3);line-height:1.6}
 
 /* FINAL CTA */
-.final{text-align:center;padding:100px 28px;background:var(--w);position:relative;overflow:hidden}
-.final::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 50% 50%,rgba(45,122,0,.07),transparent 65%)}
-.final-title{font-family:'Unbounded',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:900;line-height:.95;color:var(--ink);margin-bottom:18px;position:relative;z-index:1}
-.final-title em{font-style:normal;color:var(--o)}
-.final-sub{font-size:16px;color:var(--ink3);margin-bottom:36px;position:relative;z-index:1}
+.final{text-align:center;padding:100px 28px;background:var(--wc-dark);position:relative;overflow:hidden}
+.final::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 80%,rgba(18,110,18,.4),transparent 60%),radial-gradient(ellipse 50% 40% at 50% 100%,rgba(18,110,18,.25),transparent 55%)}
+.final-title{font-family:'Unbounded',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:900;line-height:.95;color:#fff;margin-bottom:18px;position:relative;z-index:1}
+.final-title em{font-style:normal;color:var(--wc-red)}
+.final-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:36px;position:relative;z-index:1}
 .final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .fbtn-free{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:15px 28px;border-radius:12px;text-decoration:none;border:1.5px solid var(--border2);transition:all .2s}
 .fbtn-free:hover{background:var(--border)}
@@ -339,6 +392,50 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 .reveal.vis{opacity:1;transform:none}
+
+/* ── ADS ── */
+.ad-slot{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:0;overflow:hidden;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center;position:relative}
+.ad-slot-label{position:absolute;top:5px;left:10px;font-size:9px;color:var(--ink5);font-family:'Unbounded',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.ad-slot-banner{width:100%;min-height:90px}
+.ad-slot-square{min-height:250px}
+.ad-hidden{display:none!important}
+
+/* ── STICKER MARKET BANNER ── */
+.stickermarket-banner{background:linear-gradient(135deg,#0a0f1e 0%,#001a5a 60%,#0a0f1e 100%);border-radius:14px;padding:18px 20px;margin:20px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;cursor:pointer;transition:all .2s;border:1px solid rgba(126,200,0,.2)}
+.stickermarket-banner:hover{border-color:rgba(126,200,0,.5);transform:translateY(-2px)}
+.smb-left{display:flex;align-items:center;gap:12px}
+.smb-icon{font-size:28px;flex-shrink:0}
+.smb-title{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff;margin-bottom:2px}
+.smb-sub{font-size:12px;color:rgba(255,255,255,.45)}
+.smb-price{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:900;color:var(--lime);flex-shrink:0}
+.smb-btn{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--lime);color:#000;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;flex-shrink:0}
+.smb-btn:hover{background:#6dcc00}
+
+/* ── AGE VERIFICATION MODAL ── */
+.age-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
+.age-modal-overlay.show{opacity:1;pointer-events:auto}
+.age-modal{background:var(--w);border-radius:20px;padding:36px 32px;max-width:460px;width:100%;position:relative;transform:translateY(20px);transition:transform .25s}
+.age-modal-overlay.show .age-modal{transform:translateY(0)}
+.am-logo{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:900;color:var(--ink);margin-bottom:20px}
+.am-logo em{font-style:normal;color:var(--lime)}
+.am-title{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.1}
+.am-sub{font-size:13px;color:var(--ink3);margin-bottom:24px;line-height:1.6}
+.am-btns{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.am-yes{flex:1;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--g);color:#fff;padding:14px;border-radius:11px;border:none;cursor:pointer;transition:all .2s}
+.am-yes:hover{background:#1f5a00}
+.am-no{flex:1;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:14px;border-radius:11px;border:1.5px solid var(--border2);cursor:pointer;transition:all .2s}
+.am-no:hover{background:var(--bg2)}
+.am-note{font-size:11px;color:var(--ink4);line-height:1.55;text-align:center}
+
+/* Tutor form */
+.tutor-form{display:none;border-top:1px solid var(--border);padding-top:20px;margin-top:4px}
+.tutor-form.show{display:block}
+.tutor-input{width:100%;border:1.5px solid var(--border2);border-radius:10px;padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;margin-bottom:10px;outline:none;transition:border-color .2s}
+.tutor-input:focus{border-color:var(--g)}
+.tutor-submit{width:100%;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--ink);color:#fff;padding:14px;border-radius:11px;border:none;cursor:pointer;transition:all .2s}
+.tutor-submit:hover{background:var(--o)}
+.tutor-sent{display:none;background:var(--gl);border:1px solid var(--gb);border-radius:10px;padding:14px;font-size:13px;color:var(--g);text-align:center}
+.tutor-sent.show{display:block}
 
 /* RESPONSIVE */
 @media(max-width:600px){
@@ -361,6 +458,8 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
   .logo-sub{display:none}
 }
 </style>
+<!-- Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -395,13 +494,79 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="hero-field"></div>
+  <!-- SVG campo de fútbol — líneas reales -->
+  <svg class="pitch-lines" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice"
+       xmlns="http://www.w3.org/2000/svg"
+       style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.22">
+    <!-- Línea de medio campo -->
+    <line x1="0" y1="300" x2="400" y2="300" stroke="white" stroke-width="1.5"/>
+    <!-- Círculo central -->
+    <circle cx="200" cy="300" r="60" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Punto central -->
+    <circle cx="200" cy="300" r="3" fill="white"/>
+    <!-- Área grande inferior -->
+    <rect x="80" y="480" width="240" height="100" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Área pequeña inferior -->
+    <rect x="140" y="530" width="120" height="70" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Arco del área inferior -->
+    <path d="M 140 480 Q 200 440 260 480" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Punto penal inferior -->
+    <circle cx="200" cy="510" r="3" fill="white"/>
+    <!-- Área grande superior -->
+    <rect x="80" y="20" width="240" height="100" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Área pequeña superior -->
+    <rect x="140" y="20" width="120" height="60" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Arco área superior -->
+    <path d="M 140 120 Q 200 160 260 120" fill="none" stroke="white" stroke-width="1.5"/>
+    <!-- Punto penal superior -->
+    <circle cx="200" cy="90" r="3" fill="white"/>
+    <!-- Marco/arco inferior (portería) -->
+    <rect x="162" y="590" width="76" height="10" fill="none" stroke="white" stroke-width="2"/>
+    <!-- Marco/arco superior (portería) -->
+    <rect x="162" y="0" width="76" height="10" fill="none" stroke="white" stroke-width="2"/>
+    <!-- Esquinas -->
+    <path d="M 0 280 Q 0 300 20 300" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 400 280 Q 400 300 380 300" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 0 320 Q 0 300 20 300" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 400 320 Q 400 300 380 300" fill="none" stroke="white" stroke-width="1.2"/>
+    <!-- Corner arcs -->
+    <path d="M 0 570 Q 20 570 20 590" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 400 570 Q 380 570 380 590" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 0 30 Q 20 30 20 10" fill="none" stroke="white" stroke-width="1.2"/>
+    <path d="M 400 30 Q 380 30 380 10" fill="none" stroke="white" stroke-width="1.2"/>
+    <!-- Borde del campo -->
+    <rect x="2" y="2" width="396" height="596" fill="none" stroke="white" stroke-width="1.5"/>
+  </svg>
+  <!-- Hero visual accents -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;position:relative;z-index:1">
+    <div style="background:rgba(0,51,160,.4);border:1px solid rgba(0,51,160,.6);border-radius:100px;padding:5px 14px;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.8);text-transform:uppercase">🏆 FIFA World Cup 2026</div>
+    <div style="background:rgba(200,16,46,.3);border:1px solid rgba(200,16,46,.5);border-radius:100px;padding:5px 14px;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.8);text-transform:uppercase">⚽ Jun 11 – Jul 19</div>
+    <div style="background:rgba(240,165,0,.2);border:1px solid rgba(240,165,0,.4);border-radius:100px;padding:5px 14px;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase">🇺🇸 🇨🇦 🇲🇽 3 Nations</div>
+  </div>
   <div class="eyebrow"><div class="pulse"></div><span id="eyebrowText">World Cup 2026 · 980 stickers · Launching soon</span></div>
   <h1 class="hero-h1">
     <span class="h1-ghost" id="h1Line1">The sticker</span>
-    <span class="h1-accent" id="h1Line2">marketplace</span>
-    <span id="h1Line3">you needed</span>
+    <span class="h1-accent" id="h1Line2" style="background:linear-gradient(135deg,#f0a500,#fff 60%,#c8102e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">marketplace</span>
+    <span id="h1Line3" style="color:rgba(255,255,255,.9)">you needed</span>
   </h1>
   <p class="hero-sub" id="heroSub">You know what you have. You know what's missing.<br><strong>Trade and sell directly</strong> with other collectors. With <strong>protected payments</strong> until you confirm receipt.</p>
+
+  <!-- Team flags strip -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;position:relative;z-index:1;max-width:560px">
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇪🇸</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">ESP</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇦🇷</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">ARG</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇫🇷</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">FRA</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇧🇷</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">BRA</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">ENG</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇩🇪</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">GER</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇺🇸</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">USA</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇵🇹</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">POR</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇲🇽</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">MEX</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇳🇱</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">NED</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇨🇴</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">COL</span></div>
+    <div style="display:flex;align-items:center;gap:5px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 12px"><span style="font-size:20px;line-height:1">🇨🇦</span><span style="font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px">CAN</span></div>
+  </div>
 
   <!-- Pay badges -->
   <div class="pay-row">
@@ -458,8 +623,8 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 
 <!-- HOW IT WORKS -->
 <div class="section reveal">
-  <span class="sec-eye" id="howEye">How it works</span>
-  <h2 class="sec-title" id="howTitle">Simple as<br>peeling a sticker</h2>
+  <span class="sec-eye" id="howEye" style="color:#c8102e">How it works</span>
+  <h2 class="sec-title" id="howTitle" style="color:#0a0f1e">Simple as<br>peeling a sticker</h2>
   <div class="steps">
     <div class="step"><div class="step-ico si1">📋</div><div class="step-title" id="st1">Register your album</div><div class="step-desc" id="sd1">Mark which stickers you have, which are missing and which are duplicates. In seconds, from your phone.</div><div class="step-n">01</div></div>
     <div class="step"><div class="step-ico si2">🔍</div><div class="step-title" id="st2">Find a match</div><div class="step-desc" id="sd2">The system cross-references your list with duplicates from thousands of users and shows you who has what you need.</div><div class="step-n">02</div></div>
@@ -526,9 +691,9 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 </div>
 
 <!-- PRICING -->
-<div class="section reveal vis" id="pricing">
+<div class="section reveal vis" id="pricing" style="background:var(--wc-dark);padding:64px 28px">
   <span class="sec-eye" id="pricingEye">Plans & pricing</span>
-  <h2 class="sec-title" id="pricingTitle">Start free.<br>Trade with Premium.</h2>
+  <h2 class="sec-title" id="pricingTitle" style="color:#fff" style="color:#fff">Start free.<br>Trade with Premium.</h2>
   <div class="pricing-inner">
 
     <!-- Early Bird banner -->
@@ -541,12 +706,12 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
         </div>
       </div>
       <div class="eb-pills">
-        <div class="eb-pill" onclick="openModal('early_monthly')">
+        <div class="eb-pill" onclick="requireAgeForPurchase('early_monthly')">
           <div class="eb-amt">$2.03</div>
           <div class="eb-desc" id="ebDesc1">Monthly · 55% OFF</div>
           <div class="eb-note" id="ebNote1">1st month · then $4.50/mo</div>
         </div>
-        <div class="eb-pill" onclick="openModal('early_mundial')">
+        <div class="eb-pill" onclick="requireAgeForPurchase('early_mundial')">
           <div class="eb-amt">$14.18</div>
           <div class="eb-desc" id="ebDesc2">World Cup Pass · 55% OFF</div>
           <div class="eb-note" id="ebNote2">one-time · save $17.32</div>
@@ -555,7 +720,8 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
     </div>
 
     <!-- Guide -->
-    <div class="plan-guide"><span style="font-size:16px;flex-shrink:0">💡</span><div id="planGuide"><strong>How to choose?</strong> — <strong>Free</strong> to track your album at no cost. <strong>Monthly</strong> to try the market. <strong>World Cup Pass</strong> for the full tournament (best value). <strong>Early Bird</strong> if you pre-order today: 55% OFF on monthly OR on the Pass.</div></div>
+    <div class="plan-guide"><span style="font-size:16px;flex-shrink:0">💡</span><div id="planGuide"><strong>How to choose?</strong> — <strong>Free</strong> to track your album at no cost. <strong>Monthly</strong> to try the market. <strong>World Cup Pass</strong> for the full tournament (best value). <strong>Early Bird</strong> if you pre-order today: 55% OFF on monthly OR on the Pass.</div>
+</div>
 
     <div class="tiers">
       <!-- FREE -->
@@ -593,7 +759,7 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
           <li><span class="tfi" style="color:var(--g)">✓</span> <span id="mf6">Real-time prices</span></li>
           <li><span class="tfi" style="color:var(--g)">✓</span> <span id="mf7">No ads</span></li>
         </ul>
-        <button class="tbtn tbtn-prem" onclick="openModal('monthly')" id="btnMonthly">3 days free → Start</button>
+        <button class="tbtn tbtn-prem" onclick="requireAgeForPurchase('monthly')" id="btnMonthly">3 days free → Start</button>
       </div>
 
       <!-- WORLD CUP PASS -->
@@ -612,7 +778,7 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
           <li><span class="tfi" style="color:var(--g)">✓</span> <span id="wf5">Save $12.60 vs monthly</span></li>
           <li><span class="tfi" style="color:var(--g)">✓</span> <span id="wf6">"World Cup Fan" badge</span></li>
         </ul>
-        <button class="tbtn tbtn-prem" onclick="openModal('mundial')" id="btnWorld">Buy World Cup Pass — $18.90</button>
+        <button class="tbtn tbtn-prem" onclick="requireAgeForPurchase('mundial')" id="btnWorld">Buy World Cup Pass — $18.90</button>
       </div>
 
       <!-- EARLY BIRD -->
@@ -641,7 +807,7 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
           <li><span class="tfi" style="color:var(--o)">✓</span> <span id="ef4">"Founder" badge on profile</span></li>
           <li><span class="tfi" style="color:var(--o)">✓</span> <span id="ef5">Vote on new features</span></li>
         </ul>
-        <button class="tbtn tbtn-early" id="ebMainBtn" onclick="openModal('early_monthly')">Pre-order monthly — $2.03 first month</button>
+        <button class="tbtn tbtn-early" id="ebMainBtn" onclick="requireAgeForPurchase('early_monthly')">Pre-order monthly — $2.03 first month</button>
       </div>
     </div>
 
@@ -653,8 +819,8 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 
 <!-- POLICIES -->
 <div class="section reveal">
-  <span class="sec-eye" id="polEye">Policies</span>
-  <h2 class="sec-title" id="polTitle">How we<br>operate</h2>
+  <span class="sec-eye" id="polEye" style="color:#c8102e">Policies</span>
+  <h2 class="sec-title" id="polTitle" style="color:#0a0f1e">How we<br>operate</h2>
   <div class="pol-wrap">
     <div class="pol-tabs">
       <button class="ptab on" id="ptab1" onclick="showPol(this,'pt1')">Transactions</button>
@@ -666,7 +832,7 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
     <div class="pol-body" id="polBody">
       <div class="pp on" id="pt1">
         <div class="pol-h">Collexo commission</div>
-        <p class="pol-p">Collexo charges <strong>8% of the sale price</strong> on each successful transaction. Buyers pay no extra commission. Minimum fee: <strong>$0.50 USD</strong> for low-value transactions.</p>
+        <p class="pol-p"><strong>Free users: 20% commission</strong> on each transaction, min $0.50. <strong>Premium users:</strong> payment processor cost + 0.5% Collexo fee, min $0.50.</p>
         <div class="pol-h">What the commission covers</div>
         <ul class="pol-ul">
           <li>Escrow (money custody) system</li>
@@ -731,6 +897,36 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
 
 
 <!-- NEWS & RESULTS SECTION -->
+<!-- MUNDIAL COUNTDOWN BANNER -->
+<div style="background:linear-gradient(135deg,#0a0f1e 0%,#0033a0 50%,#0a0f1e 100%);padding:28px 24px;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 1px,transparent 1px,transparent 80px);pointer-events:none"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 1px,transparent 1px,transparent 80px);pointer-events:none"></div>
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1">
+    <div style="font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(240,165,0,.7);margin-bottom:10px" id="wcBannerEye">⚽ FIFA WORLD CUP 2026 · OFFICIAL SCHEDULE</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap">
+      <div style="text-align:center">
+        <div style="font-family:'Unbounded',sans-serif;font-size:36px;font-weight:900;color:#fff;line-height:1" id="wc-days">38</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:3px" id="wc-days-label">days to go</div>
+      </div>
+      <div style="width:1px;height:48px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:center">
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff">🏟️ <span style="color:var(--gold)">Azteca</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:3px" id="wcBannerOpen">Opening match · Jun 11</div>
+      </div>
+      <div style="width:1px;height:48px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:center">
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff">🏆 <span style="color:var(--gold)">MetLife</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:3px" id="wcBannerFinal">Final · Jul 19 · New York</div>
+      </div>
+      <div style="width:1px;height:48px;background:rgba(255,255,255,.1)"></div>
+      <div style="text-align:center">
+        <div style="font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700">🇺🇸 🇨🇦 🇲🇽</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:3px" id="wcBannerHosts">3 host nations · 16 venues</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section reveal" id="news">
   <span class="sec-eye" id="newsEye">World Cup 2026 News</span>
   <h2 class="sec-title" id="newsTitle">Stay updated.<br>Trade smarter.</h2>
@@ -746,6 +942,30 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
       </div>
     </div>
     <a href="mundial.html" class="nhb-btn" id="nhbBtn">Ver todo →</a>
+  </div>
+
+  <!-- Sticker market contextual banner — shows when stickers available -->
+  <div class="stickermarket-banner" id="stickerBanner" style="display:none" onclick="openMarketplace()">
+    <div class="smb-left">
+      <div class="smb-icon">🎯</div>
+      <div>
+        <div class="smb-title" id="smbTitle">Láminas disponibles en el mercado</div>
+        <div class="smb-sub" id="smbSub">Hay 3 láminas que te faltan disponibles ahora</div>
+      </div>
+    </div>
+    <div class="smb-price" id="smbPrice">desde $2.30</div>
+    <button class="smb-btn" id="smbBtn">Ver ahora</button>
+  </div>
+
+  <!-- AdSense banner — only shows for free users -->
+  <div class="ad-slot ad-slot-banner" id="adSlotNews">
+    <span class="ad-slot-label" id="adLabel">Publicidad</span>
+    <ins class="adsbygoogle ad-slot-banner"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
   </div>
 
   <!-- Results table -->
@@ -843,7 +1063,7 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
   <div class="final-sub" id="finalSub">When we launch, you're first.</div>
   <div class="final-btns">
     <a href="#waitlist" class="fbtn-free" id="finalFree">Free waitlist →</a>
-    <button class="fbtn-early" onclick="openModal('early_monthly')" id="finalEarly">⚡ Pre-order Early Bird — 55% OFF</button>
+    <button class="fbtn-early" onclick="requireAgeForPurchase('early_monthly')" id="finalEarly">⚡ Pre-order Early Bird — 55% OFF</button>
   </div>
   <div style="margin-top:12px;font-size:11px;color:var(--ink4)">No spam · No charge until launch · No tricks</div>
 </div>
@@ -926,7 +1146,7 @@ var T = {
     pricingEye:'Plans & pricing', pricingTitle:'Start free.<br>Trade with Premium.',
     ebBannerTitle:'55% OFF on monthly<br>or World Cup Pass',
     ebBannerSub:'We save your card today. No charge until launch. Cancel before with no cost.',
-    planGuide:'<strong>How to choose?</strong> — <strong>Free</strong> to track. <strong>Monthly $4.50</strong> to try the market. <strong>World Cup Pass $18.90</strong> for the full tournament (40% OFF). <strong>Early Bird</strong> if you pre-order today: 55% OFF monthly or Pass.',
+    planGuide:'<strong>How to choose?</strong> — <strong>Free</strong> to track (20% commission on sales). <strong>Premium $4.50/mo</strong> for processor cost + 0.5% only. <strong>World Cup Pass $18.90</strong> for the full tournament (40% OFF).',
     urgTitle:'⚽ World Cup starts<br>June 11.', urgSub:'First 1,000 users: <strong>30 days Premium free.</strong>',
     finalTitle:'Join.<br><em>It\'s free.</em>', finalSub:"When we launch, you're first.",
     finalFree:'Free waitlist →', finalEarly:'⚡ Pre-order Early Bird — 55% OFF',
@@ -941,6 +1161,11 @@ var T = {
       ['<strong>980 stickers</strong>','biggest Panini album in World Cup history'],
       ['Metallic shields','most searched this week'],
     ],
+    wcBannerEye:'⚽ FIFA WORLD CUP 2026 · OFFICIAL SCHEDULE',
+    wcDaysLabel:'days to go',
+    wcBannerOpen:'Opening match · Jun 11',
+    wcBannerFinal:'Final · Jul 19 · New York',
+    wcBannerHosts:'3 host nations · 16 venues'
   },
   es:{
     navCta:'Ver precios', navCdPfx:'⚽ Mundial en', navCdSfx:'días',
@@ -963,7 +1188,7 @@ var T = {
     pricingEye:'Planes y precios', pricingTitle:'Empieza gratis.<br>Negocia con Premium.',
     ebBannerTitle:'55% OFF en mensual<br>o en Pase Mundial',
     ebBannerSub:'Guardamos tu tarjeta hoy. Sin cobro hasta el lanzamiento. Cancela antes sin cargo.',
-    planGuide:'<strong>¿Cómo elegir?</strong> — <strong>Free</strong> para trackear. <strong>Mensual $4.50</strong> si quieres probar. <strong>Pase Mundial $18.90</strong> para todo el torneo (40% OFF). <strong>Early Bird</strong> si reservas hoy: 55% OFF en mensual o en el Pase.',
+    planGuide:'<strong>¿Cómo elegir?</strong> — <strong>Free</strong> para trackear (20% comisión en ventas). <strong>Premium $4.50/mes</strong> para pagar solo costo procesador + 0.5%. <strong>Pase Mundial $18.90</strong> para todo el torneo (40% OFF).',
     urgTitle:'⚽ El Mundial empieza<br>el 11 de junio.', urgSub:'Primeros 1.000 usuarios: <strong>Premium gratis 30 días.</strong>',
     finalTitle:'Únete.<br><em>Es gratis.</em>', finalSub:'Cuando abramos, serás de los primeros.',
     finalFree:'Lista gratuita →', finalEarly:'⚡ Precomprar Early Bird — 55% OFF',
@@ -978,6 +1203,11 @@ var T = {
       ['<strong>980 láminas</strong>','el álbum más grande en la historia de Panini'],
       ['Escudos metalizados','los más buscados esta semana'],
     ],
+    wcBannerEye:'⚽ FIFA MUNDIAL 2026 · CALENDARIO OFICIAL',
+    wcDaysLabel:'días para el inicio',
+    wcBannerOpen:'Partido inaugural · 11 Jun',
+    wcBannerFinal:'Final · 19 Jul · Nueva York',
+    wcBannerHosts:'3 países anfitriones · 16 estadios'
   },
   pt:{
     navCta:'Ver preços', navCdPfx:'⚽ Copa em', navCdSfx:'dias',
@@ -1000,7 +1230,7 @@ var T = {
     pricingEye:'Planos e preços', pricingTitle:'Comece grátis.<br>Negocie com Premium.',
     ebBannerTitle:'55% OFF no mensal<br>ou no Passe Copa',
     ebBannerSub:'Salvamos seu cartão hoje. Sem cobrança até o lançamento.',
-    planGuide:'<strong>Como escolher?</strong> — <strong>Gratuito</strong> para rastrear. <strong>Mensal $4.50</strong> para experimentar. <strong>Passe Copa $18.90</strong> para o torneio completo (40% OFF). <strong>Early Bird</strong> se reservar hoje: 55% OFF.',
+    planGuide:'<strong>Como escolher?</strong> — <strong>Free</strong> para rastrear (comissão 20% nas vendas). <strong>Premium $4.50/mês</strong> para pagar só custo processador + 0,5%. <strong>Passe Copa $18.90</strong> para todo o torneio (40% OFF).',
     urgTitle:'⚽ A Copa começa<br>em 11 de junho.', urgSub:'Primeiros 1.000: <strong>30 dias Premium grátis.</strong>',
     finalTitle:'Entre.<br><em>É grátis.</em>', finalSub:'No lançamento, você é um dos primeiros.',
     finalFree:'Lista gratuita →', finalEarly:'⚡ Pré-compra Early Bird — 55% OFF',
@@ -1015,6 +1245,11 @@ var T = {
       ['<strong>980 figurinhas</strong>','maior álbum da história da Copa Panini'],
       ['Escudos metálicos','mais buscados esta semana'],
     ],
+    wcBannerEye:'⚽ FIFA COPA DO MUNDO 2026 · CALENDÁRIO OFICIAL',
+    wcDaysLabel:'dias para o início',
+    wcBannerOpen:'Jogo inaugural · 11 Jun',
+    wcBannerFinal:'Final · 19 Jul · Nova York',
+    wcBannerHosts:'3 países-sede · 16 estádios'
   },
   fr:{
     navCta:'Voir les prix', navCdPfx:'⚽ Mondial dans', navCdSfx:'jours',
@@ -1037,7 +1272,7 @@ var T = {
     pricingEye:'Plans et tarifs', pricingTitle:'Commencez gratuit.<br>Tradez avec Premium.',
     ebBannerTitle:'55% OFF sur le mensuel<br>ou le Pass Mondial',
     ebBannerSub:'On sauvegarde ta carte aujourd\'hui. Aucun débit jusqu\'au lancement.',
-    planGuide:'<strong>Comment choisir ?</strong> — <strong>Gratuit</strong> pour suivre. <strong>Mensuel $4.50</strong> pour essayer. <strong>Pass Mondial $18.90</strong> pour tout le tournoi (40% OFF). <strong>Early Bird</strong> si vous réservez aujourd\'hui : 55% OFF.',
+    planGuide:'<strong>Comment choisir ?</strong> — <strong>Gratuit</strong> pour suivre (commission 20% sur les ventes). <strong>Premium $4.50/mois</strong> pour payer seulement le coût processeur + 0,5%. <strong>Pass Mondial $18.90</strong> pour tout le tournoi (40% OFF).',
     urgTitle:'⚽ La Coupe commence<br>le 11 juin.', urgSub:'1 000 premiers : <strong>30 jours Premium gratuits.</strong>',
     finalTitle:'Rejoins-nous.<br><em>C\'est gratuit.</em>', finalSub:'Au lancement, vous serez parmi les premiers.',
     finalFree:'Liste gratuite →', finalEarly:'⚡ Précommande Early Bird — 55% OFF',
@@ -1061,6 +1296,11 @@ var T = {
       ['<strong>980 vignettes</strong>','le plus grand album Panini de l\'histoire'],
       ['Les écussons métalliques','les plus recherchés cette semaine'],
     ],
+    wcBannerEye:'⚽ FIFA COUPE DU MONDE 2026 · CALENDRIER OFFICIEL',
+    wcDaysLabel:'jours restants',
+    wcBannerOpen:'Match inaugural · 11 juin',
+    wcBannerFinal:'Finale · 19 juil. · New York',
+    wcBannerHosts:'3 nations hôtes · 16 stades'
   }
 };
 
@@ -1123,7 +1363,7 @@ function applyLang(lang){
 
   setText('navCta',t.navCta);
   setText('eyebrowText',t.eyebrow);
-  setText('h1Line1',t.h1L1); setText('h1Line2',t.h1L2); setText('h1Line3',t.h1L3);
+  setText('h1Line1',t.h1L1); setHtml('h1Line2',t.h1L2); setText('h1Line3',t.h1L3);
   setHtml('heroSub',t.heroSub);
   setText('wlLabel',t.wlLabel);
   setAttr('wlEmail','placeholder',t.wlPh);
@@ -1321,7 +1561,7 @@ function applyLang(lang){
   var polData = {
     en: {
       tabs:['Transactions','Escrow','Disputes','Payments & plans','Sticker photos'],
-      pt1:`<div class="pol-h">Collexo commission</div><p class="pol-p">Collexo charges <strong>8% of the sale price</strong> on each successful transaction. Buyers pay no extra. Minimum: <strong>$0.50 USD</strong>.</p><div class="pol-h">What it covers</div><ul class="pol-ul"><li>Escrow system</li><li>Dispute resolution</li><li>Payment processing</li><li>Reputation & verification</li></ul><div class="pol-h">Free trades</div><p class="pol-p">Sticker-for-sticker exchanges between Premium users are commission-free.</p>`,
+      pt1:`<div class="pol-h">Collexo commission</div><p class="pol-p"><strong>Free users: 20% of the sale price</strong> on each successful transaction, minimum <strong>$0.50 USD</strong>. Buyers pay no extra commission.</p><p class="pol-p"><strong>Premium users:</strong> only the payment processor cost (Stripe/Mercado Pago variable rate) + <strong>0.5% for Collexo</strong>. Minimum <strong>$0.50 USD</strong>.</p><div class="pol-h">What the commission covers</div><ul class="pol-ul"><li>Escrow system</li><li>Dispute resolution</li><li>Payment processing</li><li>Reputation & verification</li></ul><div class="pol-h">Free trades</div><p class="pol-p">Sticker-for-sticker exchanges between users are commission-free.</p>`,
       pt2:`<div class="pol-h">How escrow works</div><p class="pol-p">When a buyer pays, money is held by Collexo. Seller has <strong>5 business days</strong> to ship and upload proof.</p><div class="pol-h">When money is released</div><ul class="pol-ul"><li>Buyer confirms receipt → immediate release</li><li>Buyer doesn't confirm within 72h → automatic release</li><li>Seller doesn't ship in 5 days → automatic refund</li></ul>`,
       pt3:`<div class="pol-h">How to open a dispute</div><p class="pol-p">Buyer can open a dispute within <strong>72 hours</strong> of receiving. Must upload evidence.</p><div class="pol-h">Valid reasons</div><ul class="pol-ul"><li>Sticker doesn't match the listing</li><li>Sticker arrived damaged</li><li>Nothing received in agreed timeframe</li><li>Seller didn't respond</li></ul><div class="pol-h">Sanctions</div><p class="pol-p">Fraud results in <strong>permanent ban</strong>. 2+ disputes in 30 days = preventive suspension.</p>`,
       pt4:`<div class="pol-h">Monthly Premium</div><p class="pol-p">First <strong>3 days free</strong>. Cancel before = no charge.</p><div class="pol-h">World Cup Pass</div><p class="pol-p">One-time payment Jun–Dec 2026. 40% OFF ($18.90 vs $31.50).</p><div class="pol-h">Early Bird</div><p class="pol-p">Card saved securely. <strong>No charge until launch.</strong> 55% OFF: first month ($2.03) or full pass ($14.18).</p><div class="pol-note">⚠️ If you cancel and return, you pay the current price.</div><div class="pol-h">Cancellation</div><p class="pol-p">Cancel anytime, no penalties.</p>`,
@@ -1329,7 +1569,7 @@ function applyLang(lang){
     },
     es: {
       tabs:['Transacciones','Escrow','Disputas','Pagos y planes','Fotos de láminas'],
-      pt1:`<div class="pol-h">Comisión de Collexo</div><p class="pol-p">Collexo cobra un <strong>8% sobre el precio de venta</strong> en cada transacción exitosa. El comprador no paga comisión. Mínimo: <strong>$0.50 USD</strong>.</p><div class="pol-h">Qué cubre</div><ul class="pol-ul"><li>Sistema de custodia (escrow)</li><li>Resolución de disputas</li><li>Costos de procesamiento de pago</li><li>Sistema de reputación y verificación</li></ul><div class="pol-h">Intercambios sin dinero</div><p class="pol-p">Los intercambios puros entre usuarios Premium no cobran comisión.</p>`,
+      pt1:`<div class="pol-h">Comisión de Collexo</div><p class="pol-p"><strong>Usuarios Free: 20% sobre el precio de venta</strong> en cada transacción exitosa, mínimo <strong>$0.50 USD</strong>. El comprador no paga comisión extra.</p><p class="pol-p"><strong>Usuarios Premium:</strong> solo el costo del procesador de pago (tarifa variable de Stripe/Mercado Pago) + <strong>0.5% para Collexo</strong>. Mínimo <strong>$0.50 USD</strong>.</p><div class="pol-h">Qué cubre la comisión</div><ul class="pol-ul"><li>Sistema de custodia (escrow)</li><li>Resolución de disputas</li><li>Costos de procesamiento de pago</li><li>Sistema de reputación y verificación</li></ul><div class="pol-h">Intercambios sin dinero</div><p class="pol-p">Los intercambios puros de láminas por láminas no cobran comisión.</p>`,
       pt2:`<div class="pol-h">Cómo funciona la custodia</div><p class="pol-p">Al pagar, el dinero queda retenido en Collexo. El vendedor tiene <strong>5 días hábiles</strong> para enviar y subir comprobante.</p><div class="pol-h">Cuándo se libera el dinero</div><ul class="pol-ul"><li>Comprador confirma recepción → liberación inmediata</li><li>Comprador no confirma en 72 hs → liberación automática</li><li>Vendedor no envía en 5 días → devolución automática</li></ul>`,
       pt3:`<div class="pol-h">Cómo abrir una disputa</div><p class="pol-p">El comprador puede abrir una disputa dentro de las <strong>72 horas</strong>. Debe subir evidencia.</p><div class="pol-h">Causas válidas</div><ul class="pol-ul"><li>La lámina no coincide con la publicada</li><li>La lámina llegó dañada</li><li>No se recibió nada en el plazo acordado</li><li>El vendedor no respondió</li></ul><div class="pol-h">Sanciones</div><p class="pol-p">Fraude comprobado = <strong>expulsión permanente</strong>. Más de 2 disputas en 30 días = suspensión preventiva.</p>`,
       pt4:`<div class="pol-h">Premium Mensual</div><p class="pol-p">Primeros <strong>3 días gratis</strong>. Cancela antes sin cargo.</p><div class="pol-h">Pase Mundial</div><p class="pol-p">Pago único jun–dic 2026. 40% OFF ($18.90 vs $31.50).</p><div class="pol-h">Early Bird</div><p class="pol-p">Tarjeta guardada con seguridad. <strong>Sin cobro hasta el lanzamiento.</strong> 55% OFF: primer mes ($2.03) o pase completo ($14.18).</p><div class="pol-note">⚠️ Si cancelas y vuelves, pagas el precio vigente en ese momento.</div><div class="pol-h">Cancelación</div><p class="pol-p">Cancela cuando quieras, sin penalizaciones.</p>`,
@@ -1337,7 +1577,7 @@ function applyLang(lang){
     },
     pt: {
       tabs:['Transações','Escrow','Disputas','Pagamentos e planos','Fotos de figurinhas'],
-      pt1:`<div class="pol-h">Comissão da Collexo</div><p class="pol-p">A Collexo cobra <strong>8% do preço de venda</strong> em cada transação bem-sucedida. O comprador não paga comissão extra. Mínimo: <strong>$0,50 USD</strong>.</p><div class="pol-h">O que cobre</div><ul class="pol-ul"><li>Sistema de custódia (escrow)</li><li>Resolução de disputas</li><li>Custos de processamento de pagamento</li><li>Sistema de reputação e verificação</li></ul><div class="pol-h">Trocas sem dinheiro</div><p class="pol-p">Trocas puras entre usuários Premium são isentas de comissão.</p>`,
+      pt1:`<div class="pol-h">Comissão da Collexo</div><p class="pol-p"><strong>Usuários Free: 20% do preço de venda</strong> em cada transação bem-sucedida, mínimo <strong>$0,50 USD</strong>. O comprador não paga comissão extra.</p><p class="pol-p"><strong>Usuários Premium:</strong> apenas o custo do processador de pagamento (taxa variável Stripe/Mercado Pago) + <strong>0,5% para a Collexo</strong>. Mínimo <strong>$0,50 USD</strong>.</p><div class="pol-h">O que cobre a comissão</div><ul class="pol-ul"><li>Sistema de custódia (escrow)</li><li>Resolução de disputas</li><li>Custos de processamento de pagamento</li><li>Sistema de reputação e verificação</li></ul><div class="pol-h">Trocas sem dinheiro</div><p class="pol-p">Trocas puras de figurinhas por figurinhas são isentas de comissão.</p>`,
       pt2:`<div class="pol-h">Como funciona o escrow</div><p class="pol-p">Ao pagar, o dinheiro fica retido na Collexo. O vendedor tem <strong>5 dias úteis</strong> para enviar e subir comprovante.</p><div class="pol-h">Quando o dinheiro é liberado</div><ul class="pol-ul"><li>Comprador confirma recebimento → liberação imediata</li><li>Comprador não confirma em 72h → liberação automática</li><li>Vendedor não envia em 5 dias → devolução automática</li></ul>`,
       pt3:`<div class="pol-h">Como abrir uma disputa</div><p class="pol-p">O comprador pode abrir uma disputa em até <strong>72 horas</strong>. Deve subir evidências.</p><div class="pol-h">Motivos válidos</div><ul class="pol-ul"><li>A figurinha não corresponde ao anúncio</li><li>A figurinha chegou danificada</li><li>Nada recebido no prazo acordado</li><li>O vendedor não respondeu</li></ul><div class="pol-h">Sanções</div><p class="pol-p">Fraude comprovada = <strong>banimento permanente</strong>. Mais de 2 disputas em 30 dias = suspensão preventiva.</p>`,
       pt4:`<div class="pol-h">Premium Mensal</div><p class="pol-p">Primeiros <strong>3 dias grátis</strong>. Cancele antes = sem cobrança.</p><div class="pol-h">Passe Copa</div><p class="pol-p">Pagamento único jun–dez 2026. 40% OFF ($18,90 vs $31,50).</p><div class="pol-h">Early Bird</div><p class="pol-p">Cartão salvo com segurança. <strong>Sem cobrança até o lançamento.</strong> 55% OFF: 1º mês ($2,03) ou passe completo ($14,18).</p><div class="pol-note">⚠️ Se cancelar e voltar, paga o preço vigente naquele momento.</div><div class="pol-h">Cancelamento</div><p class="pol-p">Cancele quando quiser, sem penalidades.</p>`,
@@ -1345,7 +1585,7 @@ function applyLang(lang){
     },
     fr: {
       tabs:['Transactions','Séquestre','Litiges','Paiements et plans','Photos de vignettes'],
-      pt1:`<div class="pol-h">Commission Collexo</div><p class="pol-p">Collexo prélève <strong>8% du prix de vente</strong> sur chaque transaction réussie. L'acheteur ne paie pas de commission. Minimum : <strong>0,50 USD</strong>.</p><div class="pol-h">Ce que ça couvre</div><ul class="pol-ul"><li>Système de séquestre</li><li>Résolution des litiges</li><li>Frais de traitement des paiements</li><li>Système de réputation et vérification</li></ul><div class="pol-h">Échanges sans argent</div><p class="pol-p">Les échanges purs entre utilisateurs Premium sont sans commission.</p>`,
+      pt1:`<div class="pol-h">Commission Collexo</div><p class="pol-p"><strong>Utilisateurs Free : 20% du prix de vente</strong> sur chaque transaction réussie, minimum <strong>0,50 USD</strong>. L'acheteur ne paie pas de commission supplémentaire.</p><p class="pol-p"><strong>Utilisateurs Premium :</strong> uniquement le coût du processeur de paiement (taux variable Stripe/Mercado Pago) + <strong>0,5% pour Collexo</strong>. Minimum <strong>0,50 USD</strong>.</p><div class="pol-h">Ce que couvre la commission</div><ul class="pol-ul"><li>Système de séquestre</li><li>Résolution des litiges</li><li>Frais de traitement des paiements</li><li>Système de réputation et vérification</li></ul><div class="pol-h">Échanges sans argent</div><p class="pol-p">Les échanges purs de vignettes contre vignettes sont sans commission.</p>`,
       pt2:`<div class="pol-h">Comment fonctionne le séquestre</div><p class="pol-p">Lors du paiement, l'argent est retenu par Collexo. Le vendeur a <strong>5 jours ouvrables</strong> pour envoyer et télécharger la preuve.</p><div class="pol-h">Quand l'argent est libéré</div><ul class="pol-ul"><li>L'acheteur confirme la réception → libération immédiate</li><li>L'acheteur ne confirme pas dans les 72h → libération automatique</li><li>Le vendeur n'envoie pas dans les 5 jours → remboursement automatique</li></ul>`,
       pt3:`<div class="pol-h">Comment ouvrir un litige</div><p class="pol-p">L'acheteur peut ouvrir un litige dans les <strong>72 heures</strong>. Doit télécharger une preuve.</p><div class="pol-h">Motifs valables</div><ul class="pol-ul"><li>La vignette ne correspond pas à l'annonce</li><li>La vignette est arrivée endommagée</li><li>Rien reçu dans le délai convenu</li><li>Le vendeur n'a pas répondu</li></ul><div class="pol-h">Sanctions</div><p class="pol-p">Fraude confirmée = <strong>bannissement permanent</strong>. 2+ litiges en 30 jours = suspension préventive.</p>`,
       pt4:`<div class="pol-h">Premium Mensuel</div><p class="pol-p">Premiers <strong>3 jours gratuits</strong>. Annulation avant = sans frais.</p><div class="pol-h">Pass Mondial</div><p class="pol-p">Paiement unique juin–déc. 2026. 40% OFF (18,90 $ vs 31,50 $).</p><div class="pol-h">Early Bird</div><p class="pol-p">Carte sauvegardée en toute sécurité. <strong>Aucun débit jusqu'au lancement.</strong> 55% OFF : 1er mois (2,03 $) ou pass complet (14,18 $).</p><div class="pol-note">⚠️ Si vous annulez et revenez, vous payez le tarif en vigueur.</div><div class="pol-h">Annulation</div><p class="pol-p">Annulez quand vous voulez, sans frais.</p>`,
@@ -1462,6 +1702,175 @@ function selChip(el){
 }
 
 // ── Waitlist ──
+// ── AGE VERIFICATION ──
+var userAge = null; // null=unknown, true=18+, false=minor
+var minorTutorApproved = false;
+
+function checkAgeForMarketplace() {
+  // Check localStorage first
+  try {
+    var stored = localStorage.getItem('collexo_age');
+    if (stored === 'adult') { userAge = true; return true; }
+    if (stored === 'minor_approved') { userAge = false; minorTutorApproved = true; return true; }
+    if (stored === 'minor_pending') { userAge = false; return false; }
+  } catch(e) {}
+  // Ask
+  showAgeModal();
+  return false;
+}
+
+function showAgeModal() {
+  document.getElementById('ageModal').classList.add('show');
+  applyLangAgeModal(activeLang || 'en');
+}
+
+function applyLangAgeModal(lang) {
+  var titles = {
+    es: '¿Cuántos años tenés?',
+    en: 'How old are you?',
+    pt: 'Qual é a sua idade?',
+    fr: 'Quel âge avez-vous ?'
+  };
+  var subs = {
+    es: 'El marketplace y las compras están disponibles solo para mayores de 18. Podés usar el tracking del álbum libremente.',
+    en: 'The marketplace and purchases are available for users 18 and older. You can use album tracking freely.',
+    pt: 'O marketplace e as compras estão disponíveis apenas para maiores de 18 anos. Você pode usar o rastreamento do álbum livremente.',
+    fr: "Le marketplace et les achats sont disponibles pour les utilisateurs de 18 ans et plus. Vous pouvez utiliser le suivi de l'album librement."
+  };
+  var yesLabels = {es:"Tengo 18 o más ✓", en:"I am 18 or older ✓", pt:"Tenho 18 anos ou mais ✓", fr:"J'ai 18 ans ou plus ✓"};
+  var noLabels  = {es:"Tengo menos de 18", en:"I am under 18", pt:"Tenho menos de 18 anos", fr:"J'ai moins de 18 ans"};
+  var notes = {
+    es: 'Tu edad no afecta el uso gratuito del álbum ni las noticias. Solo aplica al marketplace y compras.',
+    en: 'Your age does not affect free album tracking or news. Only applies to the marketplace and purchases.',
+    pt: 'Sua idade não afeta o rastreamento gratuito do álbum. Aplica-se apenas ao marketplace e compras.',
+    fr: "Votre âge n'affecte pas le suivi gratuit de l'album. S'applique uniquement au marketplace et aux achats."
+  };
+  var el = function(id) { return document.getElementById(id); };
+  if(el('amTitle')) el('amTitle').textContent = titles[lang] || titles.en;
+  if(el('amSub'))   el('amSub').textContent   = subs[lang]   || subs.en;
+  if(el('amYes'))   el('amYes').textContent   = yesLabels[lang] || yesLabels.en;
+  if(el('amNo'))    el('amNo').textContent    = noLabels[lang]  || noLabels.en;
+  if(el('amNote'))  el('amNote').textContent  = notes[lang]     || notes.en;
+  // Tutor form labels
+  var tfTitles = {es:'APROBACIÓN DE TUTOR', en:'GUARDIAN APPROVAL', pt:'APROVAÇÃO DO RESPONSÁVEL', fr:'APPROBATION DU TUTEUR'};
+  var tfDescs  = {
+    es: 'Para usar el marketplace, necesitamos la aprobación de un padre o tutor. Ingresá su email y le enviaremos un link de aprobación.',
+    en: 'To use the marketplace, we need a parent or guardian approval. Enter their email and we will send an approval link.',
+    pt: 'Para usar o marketplace, precisamos da aprovação de um responsável. Insira o e-mail e enviaremos um link de aprovação.',
+    fr: "Pour utiliser le marketplace, nous avons besoin de l'approbation d'un parent ou tuteur. Entrez leur e-mail et nous enverrons un lien d'approbation."
+  };
+  if(el('tfTitle')) el('tfTitle').textContent = tfTitles[lang] || tfTitles.en;
+  if(el('tfDesc'))  el('tfDesc').textContent  = tfDescs[lang]  || tfDescs.en;
+  if(el('tutorEmail')) el('tutorEmail').placeholder = lang==='es'?'Email del padre/tutor':lang==='pt'?'E-mail do responsável':lang==='fr'?'E-mail du parent/tuteur':'Parent/guardian email';
+  if(el('minorName'))  el('minorName').placeholder  = lang==='es'?'Tu nombre':lang==='pt'?'Seu nome':lang==='fr'?'Votre prénom':'Your name';
+  if(el('tfBtn'))   el('tfBtn').textContent   = lang==='es'?'Enviar solicitud al tutor →':lang==='pt'?'Enviar solicitação ao responsável →':lang==='fr'?'Envoyer la demande au tuteur →':'Send guardian request →';
+}
+
+function confirmAge(isAdult) {
+  userAge = isAdult;
+  if (isAdult) {
+    try { localStorage.setItem('collexo_age', 'adult'); } catch(e) {}
+    document.getElementById('ageModal').classList.remove('show');
+    // Proceed to marketplace/purchase
+    openMarketplace();
+  } else {
+    // Show tutor form
+    document.getElementById('tutorForm').classList.add('show');
+    document.getElementById('amYes').style.display = 'none';
+    document.getElementById('amNo').style.display  = 'none';
+  }
+}
+
+function sendTutorRequest() {
+  var tutorEmail = document.getElementById('tutorEmail').value.trim();
+  var minorName  = document.getElementById('minorName').value.trim();
+  var btn = document.getElementById('tfBtn');
+  if (!tutorEmail || tutorEmail.indexOf('@') < 0) {
+    document.getElementById('tutorEmail').style.borderColor = 'var(--red, #c00030)';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = '...';
+  // Send via EmailJS — uses existing service
+  emailjs.send('service_9cp64kk', 'template_ha3od1v', {
+    user_email: tutorEmail,
+    country: 'Tutor approval request',
+    date: new Date().toLocaleDateString() + ' — Minor: ' + (minorName || 'N/A') + ' — Approval needed for Collexo marketplace'
+  }).then(function() {
+    document.getElementById('tutorSent').classList.add('show');
+    btn.style.display = 'none';
+    try { localStorage.setItem('collexo_age', 'minor_pending'); } catch(e) {}
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = (activeLang === 'es') ? 'Enviar solicitud al tutor →' : 'Send guardian request →';
+  });
+}
+
+// ── MARKETPLACE ──
+function openMarketplace() {
+  // Future: open marketplace modal/page
+  // For now scroll to pricing as CTA
+  if (!checkAgeForMarketplace()) return;
+  document.getElementById('pricing').scrollIntoView({behavior:'smooth'});
+}
+
+// ── STICKER MARKET BANNER ──
+function updateStickerBanner(missingCount, lowestPrice, lang) {
+  var banner = document.getElementById('stickerBanner');
+  if (!banner) return;
+  if (missingCount > 0) {
+    banner.style.display = 'flex';
+    var titles = {
+      es: missingCount + ' lámina' + (missingCount > 1 ? 's' : '') + ' que te falt' + (missingCount > 1 ? 'an' : 'a') + ' disponible' + (missingCount > 1 ? 's' : '') + ' en el mercado',
+      en: missingCount + ' sticker' + (missingCount > 1 ? 's' : '') + ' you need ' + (missingCount > 1 ? 'are' : 'is') + ' available in the market',
+      pt: missingCount + ' figurinha' + (missingCount > 1 ? 's' : '') + ' que falt' + (missingCount > 1 ? 'am' : 'a') + ' disponív' + (missingCount > 1 ? 'eis' : 'el') + ' no mercado',
+      fr: missingCount + ' vignette' + (missingCount > 1 ? 's' : '') + " qu'il vous manque disponible" + (missingCount > 1 ? 's' : '') + ' sur le marché'
+    };
+    var btnLabels = {es:'Ver ahora', en:'View now', pt:'Ver agora', fr:'Voir maintenant'};
+    var fromLabels = {es:'desde $', en:'from $', pt:'a partir de $', fr:'à partir de $'};
+    var el = document.getElementById;
+    var title = document.getElementById('smbTitle');
+    var sub   = document.getElementById('smbSub');
+    var price = document.getElementById('smbPrice');
+    var btn   = document.getElementById('smbBtn');
+    if (title) title.textContent = titles[lang] || titles.en;
+    if (price) price.textContent = (fromLabels[lang] || 'from $') + lowestPrice.toFixed(2);
+    if (btn)   btn.textContent   = btnLabels[lang]   || btnLabels.en;
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
+// ── ADS: show/hide based on plan ──
+function updateAds(isPremium) {
+  var adSlots = document.querySelectorAll('.ad-slot');
+  adSlots.forEach(function(slot) {
+    slot.style.display = isPremium ? 'none' : '';
+  });
+  if (!isPremium) {
+    // Initialize AdSense
+    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+  }
+}
+
+// Demo: show sticker banner for logged-in users with missing stickers
+// Replace with real API call when app is live
+function demoStickerBanner() {
+  // Simulate: 3 stickers available at $2.30 minimum
+  setTimeout(function() {
+    updateStickerBanner(3, 2.30, activeLang || 'en');
+  }, 2000);
+}
+
+// ── MARKETPLACE LINK in nav and pricing ──
+function requireAgeForPurchase(planType) {
+  if (checkAgeForMarketplace() || userAge === true) {
+    openModal(planType);
+  }
+  // If age check fails, modal is shown automatically
+}
+
+
 function submitWaitlist(){
   var email=document.getElementById('wlEmail').value.trim();
   var status=document.getElementById('wlStatus');
@@ -1662,6 +2071,21 @@ function copyLink(){ try{ navigator.clipboard.writeText(SITEURL).then(function()
 // ── INIT — detect and apply language ──
 activeLang=detectLang();
 applyLang(activeLang);
+
+// ── World Cup countdown banner ──
+function updateWCBanner(lang) {
+  var t = T[lang] || T.en;
+  var kickoff = new Date('2026-06-11T20:00:00Z');
+  var days = Math.max(0, Math.ceil((kickoff - new Date()) / (1000*60*60*24)));
+  function st(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  st('wc-days', days);
+  st('wc-days-label',  t.wcDaysLabel   || 'days to go');
+  st('wcBannerEye',    t.wcBannerEye   || '⚽ FIFA WORLD CUP 2026');
+  st('wcBannerOpen',   t.wcBannerOpen  || 'Opening match · Jun 11');
+  st('wcBannerFinal',  t.wcBannerFinal || 'Final · Jul 19 · New York');
+  st('wcBannerHosts',  t.wcBannerHosts || '3 host nations · 16 venues');
+}
+updateWCBanner(activeLang);
 </script>
 </body>
 </html>

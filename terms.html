@@ -2,98 +2,89 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collexo — Terms & Conditions · The Sticker Exchange Community</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collexo — Términos y Condiciones</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --g:#2d7a00;--gl:#e8f5d8;--o:#c94000;--ol:#fff0e8;
-  --ink:#111;--ink2:#333;--ink3:#555;--ink4:#888;
-  --w:#fff;--bg:#f9f9f7;--border:#e2e2dd;--border2:#ccc;
+  /* Mundial 2026 */
+  --wc-blue:#0033a0;--wc-red:#c8102e;--wc-gold:#f0a500;--wc-dark:#0a0f1e;--wc-grass:#1a6b1a;
+  /* Brand */
+  --g:#2d7a00;--gl:#e8f5d8;--o:#c8102e;--ol:#fff0f0;--r:#c8102e;--b:#0033a0;
+  --lime:#7ec800;--gold:#f0a500;
+  --ink:#0a0f1e;--ink2:#1a2240;--ink3:#556;--ink4:#889;
+  --w:#fff;--bg:#f5f6fa;--bg2:#eceef5;--border:#d8dae8;--border2:#b0b4cc;
+  --dk:#0a0f1e;--dkt:#eee;--dkm:#aaa;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.7}
-h1,h2,h3{font-family:'Unbounded',sans-serif;letter-spacing:-.02em;color:var(--ink)}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink);text-decoration:none}
-.logo em{font-style:normal;color:var(--g)}
-.back{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
-.back:hover{color:var(--o)}
-
-/* LANG SELECTOR */
+body{background:var(--wc-dark);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(10,15,30,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:#fff;text-decoration:none;display:flex;flex-direction:column;line-height:1;gap:2px}
+.logo em{font-style:normal;color:#7ec800}
+.logo-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;text-transform:uppercase;line-height:1}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-back{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 14px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-back:hover{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
 .lang-sel{position:relative}
-.lang-trigger{display:flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:6px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--ink2);cursor:pointer;user-select:none;transition:all .2s}
-.lang-trigger:hover{border-color:var(--ink)}
-.lang-caret{font-size:8px;color:var(--ink4);transition:transform .2s}
-.lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transform:translateY(-6px);transition:all .15s;pointer-events:none}
-.lang-menu.show{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+.lang-trigger{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;user-select:none}
+.lang-trigger:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
+.lang-caret{font-size:8px;color:rgba(255,255,255,.5);display:inline-block;transition:transform .2s}
+.lang-menu{position:fixed;top:52px;right:auto;left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.3);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transition:all .15s;pointer-events:none}
+.lang-menu.show{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
 .lang-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .1s}
-.lang-item:hover{background:var(--bg)}
-.lang-item.cur{background:var(--gl);color:var(--g)}
-
-/* HERO */
-.hero{background:var(--w);border-bottom:1px solid var(--border);padding:48px 32px 40px;text-align:center}
-.hero-eye{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-bottom:12px}
-.hero h1{font-size:clamp(28px,5vw,52px);font-weight:900;line-height:1;margin-bottom:12px}
-.hero-sub{font-size:14px;color:var(--ink3);max-width:540px;margin:0 auto}
-.hero-date{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:2px;color:var(--ink4);margin-top:16px}
-
-/* LANG TABS */
-.lang-tabs{display:flex;justify-content:center;gap:8px;padding:20px 32px;background:var(--w);border-bottom:1px solid var(--border);flex-wrap:wrap}
-.ltab{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;padding:8px 18px;border-radius:100px;border:1.5px solid var(--border2);color:var(--ink3);cursor:pointer;background:transparent;transition:all .2s}
-.ltab:hover{border-color:var(--ink);color:var(--ink)}
-.ltab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-
-/* CONTENT */
-.content{max-width:780px;margin:0 auto;padding:52px 32px 80px}
-.terms-panel{display:none}
-.terms-panel.on{display:block}
-.section{margin-bottom:40px}
-.sec-num{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:2px;color:var(--o);margin-bottom:6px;display:block}
-h2{font-size:clamp(18px,2.5vw,24px);font-weight:700;margin-bottom:14px;line-height:1.2}
-h3{font-size:16px;font-weight:700;margin:20px 0 8px;color:var(--ink2)}
-p{font-size:14px;color:var(--ink3);line-height:1.8;margin-bottom:12px}
-ul,ol{padding-left:22px;margin-bottom:12px}
-li{font-size:14px;color:var(--ink3);line-height:1.8;margin-bottom:4px}
-strong{color:var(--ink2)}
-.highlight{background:var(--ol);border-left:3px solid var(--o);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0}
-.highlight p{color:var(--ink2);margin:0;font-size:13px}
-.divider{height:1px;background:var(--border);margin:40px 0}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
-th{background:var(--bg);font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:1px;font-weight:700;color:var(--ink3);padding:10px 14px;text-align:left;border:1px solid var(--border)}
-td{padding:10px 14px;border:1px solid var(--border);color:var(--ink3);vertical-align:top}
-
-/* FOOTER */
-footer{background:var(--ink);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.f-logo{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:900;color:#fff}
-.f-logo em{font-style:normal;color:#6dcc00}
-.f-note{font-size:11px;color:#555}
-.f-links{display:flex;gap:16px}
-.f-links a{font-size:11px;color:#666;text-decoration:none}
-.f-links a:hover{color:#aaa}
-
-@media(max-width:600px){
-  nav{padding:0 16px}
-  .hero{padding:36px 20px 28px}
-  .content{padding:36px 20px 60px}
-  footer{padding:20px 16px;flex-direction:column;gap:10px}
-}
+.lang-item:hover{background:var(--bg)}.lang-item.cur{background:var(--gl);color:var(--g)}
+.page-hero{padding:100px 28px 56px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08);background:#0d2010}
+.page-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 160% 80% at 50% 140%,rgba(18,110,18,.7),transparent 52%),radial-gradient(ellipse 50% 50% at 0% 60%,rgba(0,51,160,.15),transparent 55%),radial-gradient(ellipse 45% 45% at 100% 20%,rgba(200,16,46,.12),transparent 55%)}
+.hero-lines{position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0px,rgba(255,255,255,.0) 60px,rgba(255,255,255,.03) 60px,rgba(255,255,255,.03) 61px)}
+.page-hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.page-eyebrow{display:inline-block;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.3);border-radius:100px;padding:6px 16px;margin-bottom:18px}
+.page-title{font-family:'Unbounded',sans-serif;font-size:clamp(26px,5vw,50px);font-weight:900;color:#fff;line-height:1;margin-bottom:12px;letter-spacing:-.02em}
+.page-title em{font-style:normal;background:linear-gradient(135deg,#f0a500,#fff 60%,#c8102e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-sub{font-size:14px;color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 12px;line-height:1.7}
+.page-updated{font-family:'Unbounded',sans-serif;font-size:8px;color:rgba(255,255,255,.22);letter-spacing:1.5px;text-transform:uppercase;margin-top:12px}
+.page-body{max-width:800px;margin:0 auto;padding:52px 28px 80px}
+.toc-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 24px;margin-bottom:36px}
+.toc-title{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.toc-list{list-style:none}
+.toc-list li{border-bottom:1px solid rgba(255,255,255,.05)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li a{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .15s}
+.toc-list li a:hover{color:#fff}
+.toc-num{color:var(--gold);font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;width:18px;flex-shrink:0}
+.doc-section{margin-bottom:44px;scroll-margin-top:80px}
+.doc-section h2{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:8px}
+.snum{color:var(--gold)}
+.doc-section p{font-size:13px;color:rgba(255,255,255,.68);margin-bottom:10px;line-height:1.75}
+.doc-section ul{list-style:none;margin-bottom:12px}
+.doc-section ul li{font-size:13px;color:rgba(255,255,255,.68);padding:5px 0 5px 18px;position:relative;line-height:1.65;border-bottom:1px solid rgba(255,255,255,.04)}
+.doc-section ul li::before{content:'·';position:absolute;left:0;color:var(--gold);font-weight:900;font-size:18px;line-height:1}
+.doc-section a{color:var(--gold);text-decoration:none}.doc-section a:hover{text-decoration:underline}
+.doc-section strong{color:#fff;font-weight:700}
+.ib{border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:13px;line-height:1.65}
+.ib-g{background:rgba(126,200,0,.1);border:1px solid rgba(126,200,0,.25);color:#9fda50}.ib-g strong{color:#b0f060}
+.ib-o{background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.25);color:#ff8898}.ib-o strong{color:#ff6677}
+.ib-b{background:rgba(0,51,160,.15);border:1px solid rgba(0,51,160,.3);color:#88aaff}.ib-b strong{color:#aabbff}
+.doc-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:12px}
+.doc-table th{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);padding:10px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.doc-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.68);vertical-align:top}
+.doc-table td:first-child{font-weight:700;color:#fff}
+footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.08);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.f-logo{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff}
+.f-logo em{font-style:normal;color:#7ec800}
+.f-links{display:flex;gap:18px;flex-wrap:wrap}
+.f-links a{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:rgba(255,255,255,.8)}
+.f-note{font-size:11px;color:rgba(255,255,255,.2);width:100%}
+@media(max-width:600px){nav{padding:0 14px}.page-body{padding:36px 16px 60px}.doc-table{font-size:11px}.page-hero{padding:86px 18px 44px}}
 </style>
 </head>
 <body>
-
 <nav>
-  <a class="logo" href="index.html" style="display:flex;flex-direction:column;line-height:1;gap:2px;text-decoration:none"><span style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#111">Collexo</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:600;color:#aaa;letter-spacing:.5px;text-transform:uppercase">The Sticker Exchange Community</span></a>
-  <div style="display:flex;align-items:center;gap:10px">
+  <a class="logo" href="index.html">Colle<em>xo</em><span class="logo-sub">The Sticker Exchange</span></a>
+  <div class="nav-right">
     <div class="lang-sel" id="langSel">
-      <div class="lang-trigger" id="langTrigger">
-        <span id="langFlag">🇪🇸</span>
-        <span id="langCode">ES</span>
-        <span class="lang-caret" id="langCaret">▾</span>
-      </div>
+      <div class="lang-trigger" id="langTrigger"><span id="langFlag">🇪🇸</span><span id="langCode">ES</span><span class="lang-caret" id="langCaret">▾</span></div>
       <div class="lang-menu" id="langMenu">
         <button class="lang-item cur" data-lang="es" onclick="setLang('es')"><span>🇪🇸</span> Español</button>
         <button class="lang-item" data-lang="en" onclick="setLang('en')"><span>🇺🇸</span> English</button>
@@ -101,627 +92,182 @@ footer{background:var(--ink);padding:24px 32px;display:flex;align-items:center;j
         <button class="lang-item" data-lang="fr" onclick="setLang('fr')"><span>🇫🇷</span> Français</button>
       </div>
     </div>
-    <a href="index.html" class="back">← <span id="backLabel">Volver</span></a>
+    <a class="nav-back" href="privacy.html" id="navPrivacy">Privacidad</a>
+    <a class="nav-back" href="index.html" id="navHome">← Inicio</a>
   </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-eye" id="heroEye">Términos y Condiciones</div>
-  <h1 id="heroTitle">Cómo funciona Collexo</h1>
-  <p class="hero-sub" id="heroSub">Por favor leé estos términos antes de usar la plataforma. Son claros y directos.</p>
-  <div class="hero-date" id="heroDate">Última actualización: Mayo 2026</div>
+<div class="page-hero">
+  <div class="hero-lines"></div>
+  <div class="page-hero-inner">
+    <div class="page-eyebrow" id="heroEye">Collexo · Términos y Condiciones</div>
+    <h1 class="page-title" id="heroTitle">Reglas del <em>juego</em> limpio.</h1>
+    <p class="page-sub" id="heroSub">Estas condiciones rigen el uso de Collexo. Las escribimos en lenguaje claro — sin letra chica.</p>
+    <div class="page-updated" id="heroUpdated">Última actualización: Mayo 2026</div>
+  </div>
 </div>
 
-<!-- ═══════════════════════════════════ -->
-<!-- ESPAÑOL -->
-<!-- ═══════════════════════════════════ -->
-<div class="terms-panel on" id="panel-es">
-<div class="content">
-
-  <div class="section">
-    <span class="sec-num">01</span>
-    <h2>Qué es Collexo</h2>
-    <p>Collexo es una plataforma digital que permite a los coleccionistas del álbum oficial del Mundial 2026 de la FIFA registrar su colección, publicar láminas disponibles para intercambio o venta, y realizar transacciones con otros usuarios a través de un sistema de pago protegido (escrow).</p>
-    <p>Collexo <strong>no es una tienda</strong>. Somos un mercado entre particulares (P2P). No vendemos láminas propias ni garantizamos disponibilidad de ninguna lámina específica.</p>
-    <div class="highlight"><p>⚠️ Collexo no tiene ningún vínculo comercial ni afiliación con Panini S.p.A. ni con la FIFA. El álbum del Mundial 2026 y todas las láminas son propiedad intelectual de sus respectivos titulares.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">02</span>
-    <h2>Registro y cuenta</h2>
-    <p>Para usar la plataforma debés tener al menos <strong>18 años</strong> o la mayoría de edad en tu país. Al registrarte declarás que la información que proporcionás es verdadera y actualizada.</p>
-    <p>Sos responsable de mantener la confidencialidad de tu contraseña y de todas las actividades que ocurran bajo tu cuenta. Collexo no se hace responsable por accesos no autorizados derivados de tu negligencia.</p>
-    <p>Podemos suspender o cerrar cuentas que violen estos términos, sin previo aviso en casos de fraude o comportamiento dañino.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">03</span>
-    <h2>Planes y precios</h2>
-    <table>
-      <tr><th>Plan</th><th>Precio</th><th>Condiciones</th></tr>
-      <tr><td><strong>Free</strong></td><td>$0</td><td>Tracking de láminas, sin acceso al marketplace</td></tr>
-      <tr><td><strong>Mensual</strong></td><td>$4.50 USD/mes</td><td>3 días de prueba gratis. Cobro automático mensual.</td></tr>
-      <tr><td><strong>Pase Mundial</strong></td><td>$18.90 USD único</td><td>Cubre junio–diciembre 2026. No renovable.</td></tr>
-      <tr><td><strong>Early Bird mensual</strong></td><td>$2.03 primer mes</td><td>55% OFF solo el primer mes. Luego $4.50/mes.</td></tr>
-      <tr><td><strong>Early Bird Pase</strong></td><td>$14.18 USD único</td><td>55% OFF. Sin cobro hasta el lanzamiento.</td></tr>
-    </table>
-    <h3>Precompra (Early Bird)</h3>
-    <p>Al registrar una precompra, guardamos los datos de tu tarjeta de forma segura a través de nuestros procesadores de pago (Mercado Pago / Stripe). <strong>No realizamos ningún cargo hasta la fecha oficial de lanzamiento</strong>. Recibirás un email 48 horas antes del cobro.</p>
-    <p>Podés cancelar tu precompra en cualquier momento antes del lanzamiento sin ningún costo. Después del cobro inicial, podés cancelar siguiendo los procedimientos de tu plan (ver Cancelación).</p>
-    <h3>Cancelación</h3>
-    <p>Podés cancelar tu suscripción Premium en cualquier momento desde la app o contactando a soporte. No hay cargos por cancelación. El acceso Premium continúa hasta el fin del período ya pagado.</p>
-    <p>Los pagos del <strong>Pase Mundial</strong> y <strong>Early Bird Pase</strong> no son reembolsables una vez procesados, salvo en casos de falla técnica de nuestra parte o disputa no resuelta.</p>
-    <div class="highlight"><p>⚠️ El precio Early Bird de $2.03 aplica <strong>solo al primer mes</strong>. A partir del segundo mes, el cobro es $4.50/mes (precio normal). El precio Early Bird del Pase Mundial ($14.18) aplica al pago único sin renovación adicional.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">04</span>
-    <h2>Sistema de pago protegido (Escrow)</h2>
-    <p>Cuando un comprador realiza un pago por una lámina, el dinero queda retenido en custodia por Collexo a través de nuestro procesador de pagos. <strong>El vendedor no recibe el dinero hasta que el comprador confirme la recepción correcta de la lámina.</strong></p>
-
-    <h3>Plazos</h3>
-    <ul>
-      <li>El vendedor tiene <strong>5 días hábiles</strong> para enviar la lámina y cargar comprobante de envío.</li>
-      <li>El comprador tiene <strong>72 horas</strong> desde la recepción estimada para confirmar o abrir una disputa.</li>
-      <li>Si el comprador no responde en 72 horas, el pago se libera automáticamente al vendedor.</li>
-      <li>Si el vendedor no envía en 5 días, el dinero se devuelve automáticamente al comprador.</li>
-    </ul>
-
-    <h3>Comisión</h3>
-    <p>Collexo cobra una comisión del <strong>8% sobre el precio de venta</strong>, descontada automáticamente del monto que recibe el vendedor. Comisión mínima: $0.50 USD. Los intercambios sin dinero entre usuarios Premium no tienen comisión.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">05</span>
-    <h2>Disputas y resolución de conflictos</h2>
-    <p>El comprador puede abrir una disputa dentro de las 72 horas de recibida la lámina (o antes de confirmar). Debe proporcionar evidencia fotográfica o documental del problema.</p>
-    <h3>Causas válidas de disputa</h3>
-    <ul>
-      <li>La lámina recibida no corresponde a la publicada</li>
-      <li>La lámina llegó dañada</li>
-      <li>No se recibió ningún envío dentro del plazo</li>
-      <li>El vendedor no respondió a las comunicaciones</li>
-    </ul>
-    <p>Nuestro equipo analiza la evidencia de ambas partes y emite un fallo en un plazo máximo de <strong>7 días hábiles</strong>. El fallo de Collexo es definitivo para la plataforma, sin perjuicio de los derechos legales de las partes fuera de ella.</p>
-    <p>El fraude comprobado puede resultar en suspensión temporal o <strong>expulsión permanente</strong> de la plataforma. Más de 2 disputas fundadas en 30 días genera suspensión preventiva automática.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">06</span>
-    <h2>Conducta del usuario</h2>
-    <p>Al usar Collexo te comprometés a:</p>
-    <ul>
-      <li>Publicar únicamente láminas que realmente posees</li>
-      <li>Describir el estado de la lámina con honestidad</li>
-      <li>Enviar dentro del plazo acordado</li>
-      <li>No realizar transacciones fuera de la plataforma para evadir comisiones</li>
-      <li>No abusar del sistema de disputas</li>
-      <li>No crear múltiples cuentas para evadir suspensiones</li>
-    </ul>
-    <p>Collexo se reserva el derecho de moderar, suspender o eliminar cualquier publicación o cuenta que viole estas normas.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">07</span>
-    <h2>Propiedad intelectual y fotos de láminas</h2>
-    <p>Las imágenes oficiales de las láminas del álbum son propiedad intelectual de Panini S.p.A. y/o la FIFA. Collexo no tiene licencia para reproducir dichas imágenes de forma masiva.</p>
-    <p>El sistema de fotos de láminas enviadas por usuarios (crowdsourced) está <strong>pendiente de aprobación legal</strong>. Cuando esté activo, al subir una foto el usuario:</p>
-    <ul>
-      <li>Declara ser propietario de la lámina física fotografiada</li>
-      <li>Cede a Collexo una licencia limitada, no exclusiva y revocable para mostrar la imagen dentro de la plataforma con fines de facilitar la transacción</li>
-      <li>Puede solicitar la eliminación de su foto en cualquier momento contactando a soporte</li>
+<div class="page-body">
+  <div class="toc-wrap">
+    <div class="toc-title" id="tocTitle">Contenido</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1</span><span id="toc1">Descripción del servicio</span></a></li>
+      <li><a href="#s2"><span class="toc-num">2</span><span id="toc2">Registro y cuenta</span></a></li>
+      <li><a href="#s3"><span class="toc-num">3</span><span id="toc3">Compraventa e intercambio</span></a></li>
+      <li><a href="#s4"><span class="toc-num">4</span><span id="toc4">Comisiones y pagos</span></a></li>
+      <li><a href="#s5"><span class="toc-num">5</span><span id="toc5">Sistema de escrow</span></a></li>
+      <li><a href="#s6"><span class="toc-num">6</span><span id="toc6">Disputas</span></a></li>
+      <li><a href="#s7"><span class="toc-num">7</span><span id="toc7">Conducta prohibida</span></a></li>
+      <li><a href="#s8"><span class="toc-num">8</span><span id="toc8">Propiedad intelectual</span></a></li>
+      <li><a href="#s9"><span class="toc-num">9</span><span id="toc9">Limitación de responsabilidad</span></a></li>
+      <li><a href="#s10"><span class="toc-num">10</span><span id="toc10">Modificaciones</span></a></li>
+      <li><a href="#s11"><span class="toc-num">11</span><span id="toc11">Contacto</span></a></li>
     </ul>
   </div>
 
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">08</span>
-    <h2>Privacidad y datos</h2>
-    <p>Recopilamos los datos mínimos necesarios para operar la plataforma: email, país, historial de transacciones y datos de pago (procesados y almacenados exclusivamente por Mercado Pago y/o Stripe, nunca en nuestros servidores directamente).</p>
-    <p>No vendemos ni compartimos tus datos personales con terceros para fines publicitarios. Para más información, consultá nuestra <a href="privacy.html" style="color:var(--o)">Política de Privacidad</a>.</p>
-    <p>Podés solicitar la eliminación de tu cuenta y datos enviando un email a <strong>privacy@collexo.app</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">09</span>
-    <h2>Limitación de responsabilidad</h2>
-    <p>Collexo actúa como intermediario técnico. No somos responsables por:</p>
-    <ul>
-      <li>La calidad, autenticidad o estado de las láminas vendidas por usuarios</li>
-      <li>Pérdidas o daños durante el envío postal</li>
-      <li>Incumplimientos de usuarios individuales</li>
-      <li>Interrupciones del servicio por causas técnicas o de fuerza mayor</li>
-    </ul>
-    <p>Nuestra responsabilidad máxima ante cualquier reclamo se limita al monto de la transacción en disputa o al total de fees pagados en los últimos 3 meses, lo que sea menor.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">10</span>
-    <h2>Cambios a estos términos</h2>
-    <p>Podemos actualizar estos términos con un preaviso de <strong>15 días</strong> enviado al email registrado. Si continuás usando la plataforma después de esa fecha, se considera que aceptás los nuevos términos.</p>
-    <h3>Contacto</h3>
-    <p>Para consultas sobre estos términos: <strong>legal@collexo.app</strong></p>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- ENGLISH -->
-<!-- ═══════════════════════════════════ -->
-<div class="terms-panel" id="panel-en">
-<div class="content">
-
-  <div class="section">
-    <span class="sec-num">01</span>
-    <h2>What is Collexo</h2>
-    <p>Collexo is a digital platform that allows collectors of the official FIFA World Cup 2026 sticker album to register their collection, list stickers for trade or sale, and transact with other users through a protected payment system (escrow).</p>
-    <p>Collexo is <strong>not a store</strong>. We are a peer-to-peer (P2P) marketplace. We do not sell our own stickers or guarantee the availability of any specific sticker.</p>
-    <div class="highlight"><p>⚠️ Collexo has no commercial relationship or affiliation with Panini S.p.A. or FIFA. The World Cup 2026 album and all stickers are intellectual property of their respective owners.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">02</span>
-    <h2>Account registration</h2>
-    <p>To use the platform you must be at least <strong>18 years old</strong> or the age of majority in your country. By registering, you declare that the information you provide is truthful and up to date.</p>
-    <p>You are responsible for maintaining the confidentiality of your password and all activities that occur under your account. Collexo is not liable for unauthorized access resulting from your negligence.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">03</span>
-    <h2>Plans and pricing</h2>
-    <table>
-      <tr><th>Plan</th><th>Price</th><th>Conditions</th></tr>
-      <tr><td><strong>Free</strong></td><td>$0</td><td>Sticker tracking, no marketplace access</td></tr>
-      <tr><td><strong>Monthly</strong></td><td>$4.50 USD/mo</td><td>3-day free trial. Monthly auto-billing.</td></tr>
-      <tr><td><strong>World Cup Pass</strong></td><td>$18.90 USD one-time</td><td>Covers June–December 2026. Non-renewable.</td></tr>
-      <tr><td><strong>Early Bird Monthly</strong></td><td>$2.03 first month</td><td>55% OFF first month only. Then $4.50/mo.</td></tr>
-      <tr><td><strong>Early Bird Pass</strong></td><td>$14.18 USD one-time</td><td>55% OFF. No charge until launch.</td></tr>
-    </table>
-    <h3>Pre-order (Early Bird)</h3>
-    <p>When registering a pre-order, we securely save your card details through our payment processors (Mercado Pago / Stripe). <strong>No charge is made until the official launch date.</strong> You will receive an email 48 hours before the charge.</p>
-    <p>You may cancel your pre-order at any time before launch at no cost.</p>
-    <h3>Cancellation</h3>
-    <p>You may cancel your Premium subscription at any time. No cancellation fees. Premium access continues until the end of the paid period.</p>
-    <p><strong>World Cup Pass</strong> and <strong>Early Bird Pass</strong> payments are non-refundable once processed, except in cases of technical failure on our part or unresolved dispute.</p>
-    <div class="highlight"><p>⚠️ The Early Bird price of $2.03 applies to the <strong>first month only</strong>. From the second month, billing is $4.50/mo (normal price).</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">04</span>
-    <h2>Protected payment system (Escrow)</h2>
-    <p>When a buyer makes a payment for a sticker, the money is held in custody by Collexo through our payment processor. <strong>The seller does not receive the money until the buyer confirms correct receipt of the sticker.</strong></p>
-    <h3>Timelines</h3>
-    <ul>
-      <li>Seller has <strong>5 business days</strong> to ship and upload proof of shipping.</li>
-      <li>Buyer has <strong>72 hours</strong> from estimated delivery to confirm or open a dispute.</li>
-      <li>If buyer does not respond within 72 hours, payment is automatically released to the seller.</li>
-      <li>If seller does not ship within 5 days, money is automatically refunded to the buyer.</li>
-    </ul>
-    <h3>Commission</h3>
-    <p>Collexo charges a commission of <strong>8% of the sale price</strong>, automatically deducted from the seller's payout. Minimum commission: $0.50 USD. Sticker-for-sticker trades between Premium users are commission-free.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">05</span>
-    <h2>Disputes and conflict resolution</h2>
-    <p>The buyer may open a dispute within 72 hours of receiving the sticker (or before confirming). They must provide photographic or documentary evidence.</p>
-    <h3>Valid dispute reasons</h3>
-    <ul>
-      <li>Received sticker does not match the listing</li>
-      <li>Sticker arrived damaged</li>
-      <li>No shipment received within the agreed timeframe</li>
-      <li>Seller did not respond to communications</li>
-    </ul>
-    <p>Our team reviews evidence from both parties and issues a ruling within <strong>7 business days</strong>. Collexo's ruling is final for the platform. Confirmed fraud may result in <strong>permanent ban</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">06</span>
-    <h2>User conduct</h2>
-    <p>By using Collexo you agree to:</p>
-    <ul>
-      <li>Only list stickers you actually own</li>
-      <li>Honestly describe the condition of your sticker</li>
-      <li>Ship within the agreed timeframe</li>
-      <li>Not conduct transactions outside the platform to avoid commissions</li>
-      <li>Not abuse the dispute system</li>
-      <li>Not create multiple accounts to evade suspensions</li>
-    </ul>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">07</span>
-    <h2>Intellectual property and sticker photos</h2>
-    <p>Official sticker album images are intellectual property of Panini S.p.A. and/or FIFA. Collexo does not have a license to reproduce these images at scale.</p>
-    <p>The user-submitted sticker photo system (crowdsourced) is <strong>pending legal approval</strong>. When active, by uploading a photo the user declares ownership of the physical sticker and grants Collexo a limited, non-exclusive, revocable license to display the image within the platform solely to facilitate the transaction.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">08</span>
-    <h2>Privacy and data</h2>
-    <p>We collect the minimum data needed to operate the platform: email, country, transaction history, and payment data (processed and stored exclusively by Mercado Pago and/or Stripe, never directly on our servers).</p>
-    <p>We do not sell or share your personal data with third parties for advertising. See our <a href="privacy.html" style="color:var(--o)">Privacy Policy</a> for details.</p>
-    <p>You may request account and data deletion by emailing <strong>privacy@collexo.app</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">09</span>
-    <h2>Limitation of liability</h2>
-    <p>Collexo acts as a technical intermediary. We are not liable for the quality, authenticity or condition of stickers sold by users; losses or damage during postal shipping; failures of individual users; or service interruptions due to technical issues or force majeure.</p>
-    <p>Our maximum liability for any claim is limited to the transaction amount in dispute or total fees paid in the last 3 months, whichever is lower.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">10</span>
-    <h2>Changes to these terms</h2>
-    <p>We may update these terms with <strong>15 days notice</strong> sent to your registered email. Continued use of the platform after that date constitutes acceptance of the new terms.</p>
-    <h3>Contact</h3>
-    <p>For questions about these terms: <strong>legal@collexo.app</strong></p>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PORTUGUÊS -->
-<!-- ═══════════════════════════════════ -->
-<div class="terms-panel" id="panel-pt">
-<div class="content">
-
-  <div class="section">
-    <span class="sec-num">01</span>
-    <h2>O que é o Collexo</h2>
-    <p>Collexo é uma plataforma digital que permite aos colecionadores do álbum oficial da Copa do Mundo FIFA 2026 registrar sua coleção, publicar figurinhas disponíveis para troca ou venda, e realizar transações com outros usuários por meio de um sistema de pagamento protegido (escrow).</p>
-    <p>Collexo <strong>não é uma loja</strong>. Somos um mercado entre particulares (P2P). Não vendemos figurinhas próprias nem garantimos a disponibilidade de nenhuma figurinha específica.</p>
-    <div class="highlight"><p>⚠️ Collexo não tem nenhuma relação comercial ou afiliação com a Panini S.p.A. ou com a FIFA. O álbum da Copa 2026 e todas as figurinhas são propriedade intelectual de seus respectivos titulares.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">02</span>
-    <h2>Registro e conta</h2>
-    <p>Para usar a plataforma você deve ter pelo menos <strong>18 anos</strong> ou a maioridade no seu país. Ao se registrar, você declara que as informações fornecidas são verdadeiras e atualizadas.</p>
-    <p>Você é responsável por manter a confidencialidade da sua senha e por todas as atividades realizadas na sua conta.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">03</span>
-    <h2>Planos e preços</h2>
-    <table>
-      <tr><th>Plano</th><th>Preço</th><th>Condições</th></tr>
-      <tr><td><strong>Free</strong></td><td>$0</td><td>Rastreio de figurinhas, sem acesso ao marketplace</td></tr>
-      <tr><td><strong>Mensal</strong></td><td>$4,50 USD/mês</td><td>3 dias de teste grátis. Cobrança mensal automática.</td></tr>
-      <tr><td><strong>Passe Copa</strong></td><td>$18,90 USD único</td><td>Cobre junho–dezembro 2026. Não renovável.</td></tr>
-      <tr><td><strong>Early Bird Mensal</strong></td><td>$2,03 1º mês</td><td>55% OFF apenas no 1º mês. Depois $4,50/mês.</td></tr>
-      <tr><td><strong>Early Bird Passe</strong></td><td>$14,18 USD único</td><td>55% OFF. Sem cobrança até o lançamento.</td></tr>
-    </table>
-    <h3>Pré-compra (Early Bird)</h3>
-    <p>Ao registrar uma pré-compra, salvamos os dados do seu cartão com segurança por meio dos nossos processadores de pagamento (Mercado Pago / Stripe). <strong>Nenhuma cobrança é feita até a data oficial de lançamento.</strong></p>
-    <h3>Cancelamento</h3>
-    <p>Você pode cancelar sua assinatura Premium a qualquer momento, sem taxas. O acesso Premium continua até o fim do período já pago.</p>
-    <div class="highlight"><p>⚠️ O preço Early Bird de $2,03 aplica-se <strong>somente ao primeiro mês</strong>. A partir do segundo mês, a cobrança é $4,50/mês (preço normal).</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">04</span>
-    <h2>Sistema de pagamento protegido (Escrow)</h2>
-    <p>Quando um comprador realiza um pagamento por uma figurinha, o dinheiro fica retido em custódia pelo Collexo. <strong>O vendedor não recebe o dinheiro até que o comprador confirme o recebimento correto da figurinha.</strong></p>
-    <h3>Prazos</h3>
-    <ul>
-      <li>O vendedor tem <strong>5 dias úteis</strong> para enviar e carregar comprovante de envio.</li>
-      <li>O comprador tem <strong>72 horas</strong> a partir da entrega estimada para confirmar ou abrir uma disputa.</li>
-      <li>Se o comprador não responder em 72 horas, o pagamento é liberado automaticamente ao vendedor.</li>
-      <li>Se o vendedor não enviar em 5 dias, o dinheiro é devolvido automaticamente ao comprador.</li>
-    </ul>
-    <h3>Comissão</h3>
-    <p>Collexo cobra uma comissão de <strong>8% sobre o preço de venda</strong>, descontada automaticamente do valor recebido pelo vendedor. Comissão mínima: $0,50 USD. Trocas sem dinheiro entre usuários Premium são sem comissão.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">05</span>
-    <h2>Disputas e resolução de conflitos</h2>
-    <p>O comprador pode abrir uma disputa dentro de 72 horas do recebimento da figurinha. Deve fornecer evidências fotográficas ou documentais do problema.</p>
-    <h3>Motivos válidos</h3>
-    <ul>
-      <li>A figurinha recebida não corresponde ao anúncio</li>
-      <li>A figurinha chegou danificada</li>
-      <li>Nenhum envio recebido dentro do prazo</li>
-      <li>O vendedor não respondeu às comunicações</li>
-    </ul>
-    <p>Nossa equipe analisa as evidências de ambas as partes e emite uma decisão em até <strong>7 dias úteis</strong>. Fraude comprovada pode resultar em <strong>banimento permanente</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">06</span>
-    <h2>Conduta do usuário</h2>
-    <p>Ao usar o Collexo você concorda em publicar apenas figurinhas que realmente possui, descrever honestamente o estado da figurinha, enviar dentro do prazo acordado e não realizar transações fora da plataforma para evitar comissões.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">07</span>
-    <h2>Propriedade intelectual e fotos de figurinhas</h2>
-    <p>As imagens oficiais das figurinhas são propriedade intelectual da Panini S.p.A. e/ou da FIFA. Quando o sistema de fotos crowdsourced estiver ativo, ao enviar uma foto o usuário declara ser proprietário da figurinha física fotografiada e cede ao Collexo uma licença limitada para exibir a imagem dentro da plataforma.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">08</span>
-    <h2>Privacidade e dados</h2>
-    <p>Coletamos apenas os dados mínimos necessários para operar a plataforma. Os dados de pagamento são processados e armazenados exclusivamente pela Mercado Pago e/ou Stripe. Não vendemos seus dados pessoais a terceiros.</p>
-    <p>Você pode solicitar a exclusão da sua conta e dados enviando um e-mail para <strong>privacy@collexo.app</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">09</span>
-    <h2>Limitação de responsabilidade</h2>
-    <p>Collexo atua como intermediário técnico e não é responsável pela qualidade ou autenticidade das figurinhas vendidas por usuários, perdas durante o envio postal, ou interrupções do serviço por causas técnicas. Nossa responsabilidade máxima é limitada ao valor da transação em disputa.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">10</span>
-    <h2>Alterações nestes termos</h2>
-    <p>Podemos atualizar estes termos com aviso prévio de <strong>15 dias</strong> enviado ao seu e-mail cadastrado.</p>
-    <h3>Contato</h3>
-    <p>Para dúvidas sobre estes termos: <strong>legal@collexo.app</strong></p>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- FRANÇAIS -->
-<!-- ═══════════════════════════════════ -->
-<div class="terms-panel" id="panel-fr">
-<div class="content">
-
-  <div class="section">
-    <span class="sec-num">01</span>
-    <h2>Qu'est-ce que Collexo</h2>
-    <p>Collexo est une plateforme numérique permettant aux collectionneurs de l'album officiel de la Coupe du Monde FIFA 2026 d'enregistrer leur collection, de publier des vignettes disponibles pour l'échange ou la vente, et de réaliser des transactions avec d'autres utilisateurs via un système de paiement protégé (séquestre).</p>
-    <p>Collexo n'est <strong>pas une boutique</strong>. Nous sommes un marché entre particuliers (P2P). Nous ne vendons pas nos propres vignettes.</p>
-    <div class="highlight"><p>⚠️ Collexo n'a aucun lien commercial ni affiliation avec Panini S.p.A. ou la FIFA. L'album de la Coupe du Monde 2026 et toutes les vignettes sont la propriété intellectuelle de leurs titulaires respectifs.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">02</span>
-    <h2>Inscription et compte</h2>
-    <p>Pour utiliser la plateforme, vous devez avoir au moins <strong>18 ans</strong> ou l'âge de la majorité dans votre pays. En vous inscrivant, vous déclarez que les informations fournies sont exactes et à jour.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">03</span>
-    <h2>Plans et tarifs</h2>
-    <table>
-      <tr><th>Plan</th><th>Prix</th><th>Conditions</th></tr>
-      <tr><td><strong>Gratuit</strong></td><td>0 $</td><td>Suivi des vignettes, sans accès au marché</td></tr>
-      <tr><td><strong>Mensuel</strong></td><td>4,50 $/mois</td><td>3 jours d'essai gratuits. Facturation mensuelle automatique.</td></tr>
-      <tr><td><strong>Pass Mondial</strong></td><td>18,90 $ unique</td><td>Couvre juin–décembre 2026. Non renouvelable.</td></tr>
-      <tr><td><strong>Early Bird Mensuel</strong></td><td>2,03 $ 1er mois</td><td>55% OFF 1er mois seulement. Puis 4,50 $/mois.</td></tr>
-      <tr><td><strong>Early Bird Pass</strong></td><td>14,18 $ unique</td><td>55% OFF. Aucun débit jusqu'au lancement.</td></tr>
-    </table>
-    <h3>Précommande (Early Bird)</h3>
-    <p>Lors de l'enregistrement d'une précommande, nous sauvegardons les données de votre carte en toute sécurité via nos processeurs de paiement (Mercado Pago / Stripe). <strong>Aucun débit n'est effectué avant la date officielle de lancement.</strong></p>
-    <h3>Annulation</h3>
-    <p>Vous pouvez annuler votre abonnement Premium à tout moment, sans frais. L'accès Premium continue jusqu'à la fin de la période déjà payée.</p>
-    <div class="highlight"><p>⚠️ Le prix Early Bird de 2,03 $ s'applique <strong>au premier mois uniquement</strong>. À partir du deuxième mois, la facturation est de 4,50 $/mois (prix normal).</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">04</span>
-    <h2>Système de paiement protégé (Séquestre)</h2>
-    <p>Lorsqu'un acheteur effectue un paiement pour une vignette, l'argent est conservé en séquestre par Collexo. <strong>Le vendeur ne reçoit l'argent qu'après confirmation par l'acheteur de la bonne réception de la vignette.</strong></p>
-    <h3>Délais</h3>
-    <ul>
-      <li>Le vendeur dispose de <strong>5 jours ouvrables</strong> pour expédier et télécharger la preuve d'envoi.</li>
-      <li>L'acheteur dispose de <strong>72 heures</strong> à compter de la livraison estimée pour confirmer ou ouvrir un litige.</li>
-      <li>Sans réponse de l'acheteur sous 72 heures, le paiement est automatiquement libéré au vendeur.</li>
-      <li>Si le vendeur n'expédie pas dans les 5 jours, l'argent est automatiquement remboursé à l'acheteur.</li>
-    </ul>
-    <h3>Commission</h3>
-    <p>Collexo prélève une commission de <strong>8% du prix de vente</strong>, déduite automatiquement du montant reçu par le vendeur. Commission minimum : 0,50 USD. Les échanges sans argent entre utilisateurs Premium sont sans commission.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">05</span>
-    <h2>Litiges et résolution des conflits</h2>
-    <p>L'acheteur peut ouvrir un litige dans les 72 heures suivant la réception de la vignette. Il doit fournir des preuves photographiques ou documentaires.</p>
-    <h3>Motifs valables</h3>
-    <ul>
-      <li>La vignette reçue ne correspond pas à l'annonce</li>
-      <li>La vignette est arrivée endommagée</li>
-      <li>Aucun envoi reçu dans le délai convenu</li>
-      <li>Le vendeur n'a pas répondu aux communications</li>
-    </ul>
-    <p>Notre équipe analyse les preuves des deux parties et rend une décision sous <strong>7 jours ouvrables</strong>. Une fraude confirmée peut entraîner un <strong>bannissement permanent</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">06</span>
-    <h2>Conduite des utilisateurs</h2>
-    <p>En utilisant Collexo, vous vous engagez à publier uniquement des vignettes que vous possédez réellement, à décrire honnêtement leur état, à expédier dans le délai convenu et à ne pas réaliser de transactions en dehors de la plateforme pour éviter les commissions.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">07</span>
-    <h2>Propriété intellectuelle et photos de vignettes</h2>
-    <p>Les images officielles des vignettes sont la propriété intellectuelle de Panini S.p.A. et/ou de la FIFA. Le système de photos participatives est <strong>en attente d'approbation légale</strong>. Lorsqu'il sera actif, en téléchargeant une photo, l'utilisateur déclare être propriétaire de la vignette physique photographiée.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">08</span>
-    <h2>Vie privée et données</h2>
-    <p>Nous collectons uniquement les données minimales nécessaires au fonctionnement de la plateforme. Les données de paiement sont traitées et stockées exclusivement par Mercado Pago et/ou Stripe. Nous ne vendons pas vos données personnelles à des tiers.</p>
-    <p>Vous pouvez demander la suppression de votre compte en envoyant un email à <strong>privacy@collexo.app</strong>.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">09</span>
-    <h2>Limitation de responsabilité</h2>
-    <p>Collexo agit en tant qu'intermédiaire technique et n'est pas responsable de la qualité ou de l'authenticité des vignettes vendues par les utilisateurs, des pertes lors de l'expédition, ni des interruptions de service. Notre responsabilité maximale est limitée au montant de la transaction en litige.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <span class="sec-num">10</span>
-    <h2>Modifications des présentes conditions</h2>
-    <p>Nous pouvons mettre à jour ces conditions avec un préavis de <strong>15 jours</strong> envoyé à votre email enregistré.</p>
-    <h3>Contact</h3>
-    <p>Pour toute question sur ces conditions : <strong>legal@collexo.app</strong></p>
-  </div>
-
-</div>
+  <div class="doc-section" id="s1"><h2><span class="snum">1</span><span id="s1title">Descripción del servicio</span></h2><p id="s1p1">Collexo es una plataforma digital que permite trackear tu álbum Panini del Mundial 2026, intercambiar láminas y comprar/vender con escrow protegido.</p><p id="s1p2">Collexo actúa como intermediario tecnológico — no somos parte de las transacciones, somos la infraestructura.</p></div>
+  <div class="doc-section" id="s2"><h2><span class="snum">2</span><span id="s2title">Registro y cuenta</span></h2><div class="ib ib-o" id="agebox"><strong>Edad mínima:</strong> Debés tener 18 años o más para usar el marketplace. Para tracking del álbum, mínimo 13 años con consentimiento parental.</div><ul id="s2list"><li>Debés proporcionar información veraz y mantenerla actualizada</li><li>Sos responsable de la seguridad de tu contraseña y toda actividad en tu cuenta</li><li>Solo podés tener una cuenta activa por persona</li><li>Podemos suspender cuentas que violen estos términos</li></ul></div>
+  <div class="doc-section" id="s3"><h2><span class="snum">3</span><span id="s3title">Compraventa e intercambio</span></h2><p id="s3p1">Al publicar una lámina garantizás que es tuya, está en condiciones aceptables y la descripción es precisa.</p><p id="s3p2">Los intercambios sin dinero están disponibles para todos sin comisión.</p><p id="s3p3">Las compraventas requieren el sistema de escrow protegido (sección 5).</p></div>
+  <div class="doc-section" id="s4"><h2><span class="snum">4</span><span id="s4title">Comisiones y pagos</span></h2>
+    <table class="doc-table"><thead><tr><th id="th1">Plan</th><th id="th2">Comisión</th><th id="th3">Mínimo</th></tr></thead>
+    <tbody><tr><td id="td1a">Free</td><td id="td1b">20% del precio de venta</td><td id="td1c">$0.50 USD</td></tr><tr><td id="td2a">Premium</td><td id="td2b">Costo procesador + 0.5% Collexo</td><td id="td2c">$0.50 USD</td></tr><tr><td id="td3a">Intercambios</td><td id="td3b">Sin comisión (todos los planes)</td><td id="td3c">—</td></tr></tbody></table>
+    <p id="s4p2">Comisión descontada del vendedor. El comprador no paga extra. Procesadores: Stripe (global) o Mercado Pago (LatAm).</p></div>
+  <div class="doc-section" id="s5"><h2><span class="snum">5</span><span id="s5title">Sistema de escrow</span></h2><div class="ib ib-g" id="escbox"><strong>¿Cómo funciona?</strong> El dinero del comprador se retiene hasta que confirmás la recepción correcta de la lámina.</div><ul id="s5list"><li>Al confirmar una compra, el dinero queda retenido en escrow</li><li>El vendedor envía la lámina según lo acordado</li><li>El comprador confirma recepción → fondos liberados al vendedor</li><li>Sin confirmación en 72hs → liberación automática</li><li>Ante disputa, Collexo media con resolución en 72hs</li></ul></div>
+  <div class="doc-section" id="s6"><h2><span class="snum">6</span><span id="s6title">Disputas</span></h2><p id="s6p1">Podés abrir una disputa dentro de las 72 horas de la entrega. Collexo revisará la evidencia de ambas partes y emitirá una resolución vinculante.</p><p id="s6p2">La decisión de Collexo es final. La responsabilidad máxima se limita al monto de la transacción en disputa.</p></div>
+  <div class="doc-section" id="s7"><h2><span class="snum">7</span><span id="s7title">Conducta prohibida</span></h2><ul id="s7list"><li>Publicar láminas falsificadas, dañadas o que no sean tuyas</li><li>Crear múltiples cuentas para evadir suspensiones</li><li>Manipular el sistema de reputación o calificaciones</li><li>Realizar transacciones fuera de la plataforma para evadir comisiones</li><li>Usar la plataforma para actividades ilegales o fraudulentas</li><li>Acosar, amenazar o discriminar a otros usuarios</li></ul><div class="ib ib-o" id="s7warn">Las violaciones pueden resultar en suspensión temporal o permanente de la cuenta sin derecho a reembolso de suscripciones.</div></div>
+  <div class="doc-section" id="s8"><h2><span class="snum">8</span><span id="s8title">Propiedad intelectual</span></h2><p id="s8p1">Collexo no es propietario de las imágenes Panini ni tiene afiliación con Panini o FIFA. Las láminas son bienes físicos de los usuarios.</p><p id="s8p2">Las fotos subidas por usuarios son de su responsabilidad. Al subirlas otorgás a Collexo una licencia limitada para mostrarlas.</p></div>
+  <div class="doc-section" id="s9"><h2><span class="snum">9</span><span id="s9title">Limitación de responsabilidad</span></h2><p id="s9p1">Collexo no garantiza disponibilidad ininterrumpida ni calidad de las láminas de usuarios. La responsabilidad máxima se limita a las comisiones pagadas en los últimos 3 meses.</p></div>
+  <div class="doc-section" id="s10"><h2><span class="snum">10</span><span id="s10title">Modificaciones</span></h2><p id="s10p1">Podemos modificar estos Términos con 14 días de aviso previo por email. El uso continuado implica aceptación.</p></div>
+  <div class="doc-section" id="s11"><h2><span class="snum">11</span><span id="s11title">Contacto</span></h2><div class="ib ib-b">📧 <strong><a href="mailto:legal@collexo.app">legal@collexo.app</a></strong> — <span id="s11resp">Respondemos en máximo 30 días hábiles.</span></div></div>
 </div>
 
 <footer>
-  <div class="f-logo"><div>Collexo</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:500;color:#444;letter-spacing:.5px;text-transform:uppercase;margin-top:2px">The Sticker Exchange Community</div></div>
-  <div class="f-note" id="footerNote">© 2026 Collexo · Beta · World Cup 2026</div>
+  <div class="f-logo">Colle<em>xo</em></div>
   <div class="f-links">
-    <a href="index.html" id="fHome">Home</a>
-    <a href="privacy.html" id="fPrivacy">Privacy</a>
-    <a href="mailto:hello@collexo.app">Contact</a>
+    <a href="index.html" id="fHome">Inicio</a>
+    <a href="privacy.html" id="fPrivacy">Privacidad</a>
+    <a href="mundial.html" id="fMundial">Mundial 2026</a>
+    <a href="mailto:hello@collexo.app">hello@collexo.app</a>
   </div>
+  <div class="f-note" id="fNote">© 2026 Collexo · The Sticker Exchange Community</div>
 </footer>
 
 <script>
-var FLAGS={es:'🇪🇸',en:'🇺🇸',pt:'🇧🇷',fr:'🇫🇷'};
-var CODES={es:'ES',en:'EN',pt:'PT',fr:'FR'};
-var menuOpen=false;
-var activeLang='es';
-
-var UI={
-  es:{back:'← Volver',heroEye:'Términos y Condiciones',heroTitle:'Cómo funciona Collexo',heroSub:'Por favor leé estos términos antes de usar la plataforma. Son claros y directos.',heroDate:'Última actualización: Mayo 2026',footerNote:'© 2026 Collexo · Beta · Mundial 2026',fHome:'Inicio',fPrivacy:'Privacidad'},
-  en:{back:'← Back',heroEye:'Terms & Conditions',heroTitle:'How Collexo works',heroSub:'Please read these terms before using the platform. They are clear and straightforward.',heroDate:'Last updated: May 2026',footerNote:'© 2026 Collexo · Beta · World Cup 2026',fHome:'Home',fPrivacy:'Privacy'},
-  pt:{back:'← Voltar',heroEye:'Termos e Condições',heroTitle:'Como o Collexo funciona',heroSub:'Por favor leia estes termos antes de usar a plataforma. São claros e diretos.',heroDate:'Última atualização: Maio 2026',footerNote:'© 2026 Collexo · Beta · Copa 2026',fHome:'Início',fPrivacy:'Privacidade'},
-  fr:{back:'← Retour',heroEye:'Conditions d\'utilisation',heroTitle:'Comment fonctionne Collexo',heroSub:'Veuillez lire ces conditions avant d\'utiliser la plateforme. Elles sont claires et directes.',heroDate:'Dernière mise à jour : Mai 2026',footerNote:'© 2026 Collexo · Bêta · Mondial 2026',fHome:'Accueil',fPrivacy:'Confidentialité'}
+var T={
+  es:{pageTitle:'Collexo — Términos y Condiciones',heroEye:'Collexo · Términos y Condiciones',heroTitle:'Reglas del <em>juego</em> limpio.',heroSub:'Las escribimos en lenguaje claro — sin letra chica.',heroUpdated:'Última actualización: Mayo 2026',tocTitle:'Contenido',navPrivacy:'Privacidad',navHome:'← Inicio',fHome:'Inicio',fPrivacy:'Privacidad',fMundial:'Mundial 2026',fNote:'© 2026 Collexo',
+  s1title:'Descripción del servicio',s1p1:'Collexo es una plataforma digital para trackear tu álbum Panini del Mundial 2026, intercambiar láminas y comprar/vender con escrow protegido.',s1p2:'Actuamos como intermediario tecnológico — no somos parte de las transacciones.',
+  s2title:'Registro y cuenta',agebox:'<strong>Edad mínima:</strong> 18+ para el marketplace. Tracking del álbum: 13+ con consentimiento parental.',
+  s2list:['Proporcioná información veraz y mantela actualizada','Sos responsable de tu contraseña y actividad en la cuenta','Una sola cuenta activa por persona','Podemos suspender cuentas que violen estos términos'],
+  s3title:'Compraventa e intercambio',s3p1:'Al publicar una lámina garantizás que es tuya y está en condiciones aceptables.',s3p2:'Los intercambios sin dinero están disponibles para todos sin comisión.',s3p3:'Las compraventas requieren el sistema de escrow (sección 5).',
+  s4title:'Comisiones y pagos',th1:'Plan',th2:'Comisión',th3:'Mínimo',td1a:'Free',td1b:'20% del precio de venta',td1c:'$0.50 USD',td2a:'Premium',td2b:'Costo procesador + 0.5%',td2c:'$0.50 USD',td3a:'Intercambios',td3b:'Sin comisión (todos los planes)',td3c:'—',
+  s4p2:'Comisión descontada del vendedor. El comprador no paga extra. Procesadores: Stripe o Mercado Pago.',
+  s5title:'Sistema de escrow',escbox:'<strong>¿Cómo funciona?</strong> El dinero se retiene hasta que confirmás la recepción correcta.',
+  s5list:['Al confirmar, el dinero queda en escrow','El vendedor envía la lámina','El comprador confirma → fondos liberados','Sin confirmación en 72hs → liberación automática','Ante disputa, Collexo media en 72hs'],
+  s6title:'Disputas',s6p1:'Podés abrir una disputa dentro de las 72 horas de la entrega. Collexo emitirá una resolución vinculante.',s6p2:'La decisión de Collexo es final. Responsabilidad máxima: monto de la transacción.',
+  s7title:'Conducta prohibida',s7warn:'Las violaciones pueden resultar en suspensión sin reembolso de suscripciones.',
+  s7list:['Publicar láminas falsificadas o que no sean tuyas','Crear múltiples cuentas para evadir suspensiones','Manipular el sistema de reputación','Transacciones fuera de la plataforma para evadir comisiones','Uso para actividades ilegales o fraudulentas','Acosar o discriminar a otros usuarios'],
+  s8title:'Propiedad intelectual',s8p1:'Collexo no tiene afiliación con Panini o FIFA. Las láminas son bienes físicos de los usuarios.',s8p2:'Las fotos subidas son responsabilidad del usuario. Al subirlas otorgás una licencia limitada a Collexo.',
+  s9title:'Limitación de responsabilidad',s9p1:'La responsabilidad máxima de Collexo se limita a las comisiones pagadas en los últimos 3 meses.',
+  s10title:'Modificaciones',s10p1:'Podemos modificar estos Términos con 14 días de aviso previo. El uso continuado implica aceptación.',
+  s11title:'Contacto',s11resp:'Respondemos en máximo 30 días hábiles.',
+  toc:['Descripción del servicio','Registro y cuenta','Compraventa e intercambio','Comisiones y pagos','Sistema de escrow','Disputas','Conducta prohibida','Propiedad intelectual','Limitación de responsabilidad','Modificaciones','Contacto']},
+  en:{pageTitle:'Collexo — Terms & Conditions',heroEye:'Collexo · Terms & Conditions',heroTitle:'Rules of <em>fair</em> play.',heroSub:'Written in plain language — no fine print.',heroUpdated:'Last updated: May 2026',tocTitle:'Contents',navPrivacy:'Privacy',navHome:'← Home',fHome:'Home',fPrivacy:'Privacy',fMundial:'World Cup 2026',fNote:'© 2026 Collexo',
+  s1title:'Service description',s1p1:'Collexo is a digital platform to track your Panini 2026 World Cup album, trade stickers and buy/sell via protected escrow.',s1p2:'We act as a technology intermediary — we are not party to transactions.',
+  s2title:'Registration & account',agebox:'<strong>Minimum age:</strong> 18+ for the marketplace. Album tracking: 13+ with parental consent.',
+  s2list:['Provide accurate information and keep it updated','You are responsible for your password and account activity','Only one active account per person','We may suspend accounts that violate these terms'],
+  s3title:'Buying, selling & trading',s3p1:"When listing a sticker you guarantee it's yours and in acceptable condition.",s3p2:'Sticker-for-sticker trades are commission-free for all users.',s3p3:'Purchases require the protected escrow system (section 5).',
+  s4title:'Fees & payments',th1:'Plan',th2:'Commission',th3:'Minimum',td1a:'Free',td1b:'20% of sale price',td1c:'$0.50 USD',td2a:'Premium',td2b:'Processor cost + 0.5%',td2c:'$0.50 USD',td3a:'Trades',td3b:'No commission (all plans)',td3c:'—',
+  s4p2:'Commission deducted from seller. Buyers pay no extra. Processors: Stripe or Mercado Pago.',
+  s5title:'Escrow system',escbox:"<strong>How it works:</strong> Buyer's money is held until you confirm correct receipt.",
+  s5list:['On purchase confirmation, money goes into escrow','Seller ships the sticker','Buyer confirms receipt → funds released','No confirmation in 72h → auto-released','In dispute, Collexo mediates within 72h'],
+  s6title:'Disputes',s6p1:'You can open a dispute within 72 hours of delivery. Collexo issues a binding resolution.',s6p2:"Collexo's decision is final. Max liability: transaction amount.",
+  s7title:'Prohibited conduct',s7warn:'Violations may result in suspension without subscription refund.',
+  s7list:["Listing fake or stickers that aren't yours",'Creating multiple accounts to evade suspensions','Manipulating the reputation system','Off-platform transactions to avoid fees','Using the platform illegally or fraudulently','Harassing or discriminating against other users'],
+  s8title:'Intellectual property',s8p1:'Collexo has no affiliation with Panini or FIFA. Stickers are physical goods owned by users.',s8p2:'Uploaded photos are users responsibility. By uploading you grant Collexo a limited display license.',
+  s9title:'Limitation of liability',s9p1:"Collexo's maximum liability is limited to commissions paid in the last 3 months.",
+  s10title:'Modifications',s10p1:'We may modify these Terms with 14 days email notice. Continued use constitutes acceptance.',
+  s11title:'Contact',s11resp:'We respond within 30 business days.',
+  toc:['Service description','Registration & account','Buying, selling & trading','Fees & payments','Escrow system','Disputes','Prohibited conduct','Intellectual property','Limitation of liability','Modifications','Contact']},
+  pt:{pageTitle:'Collexo — Termos e Condições',heroEye:'Collexo · Termos e Condições',heroTitle:'Regras do <em>jogo</em> limpo.',heroSub:'Escritos em linguagem clara — sem letras miúdas.',heroUpdated:'Última atualização: Maio de 2026',tocTitle:'Conteúdo',navPrivacy:'Privacidade',navHome:'← Início',fHome:'Início',fPrivacy:'Privacidade',fMundial:'Copa 2026',fNote:'© 2026 Collexo',
+  s1title:'Descrição do serviço',s1p1:'Collexo é uma plataforma digital para rastrear seu álbum Panini da Copa 2026, trocar figurinhas e comprar/vender via escrow protegido.',s1p2:'Atuamos como intermediário tecnológico — não somos parte das transações.',
+  s2title:'Cadastro e conta',agebox:'<strong>Idade mínima:</strong> 18+ para o marketplace. Rastreamento do álbum: 13+ com consentimento parental.',
+  s2list:['Forneça informações verdadeiras e as mantenha atualizadas','Você é responsável pela sua senha e atividade na conta','Apenas uma conta ativa por pessoa','Podemos suspender contas que violem estes termos'],
+  s3title:'Compra, venda e troca',s3p1:'Ao publicar uma figurinha você garante que é sua e está em condições aceitáveis.',s3p2:'Trocas de figurinha por figurinha são sem comissão para todos.',s3p3:'Compras requerem o sistema de escrow protegido (seção 5).',
+  s4title:'Comissões e pagamentos',th1:'Plano',th2:'Comissão',th3:'Mínimo',td1a:'Free',td1b:'20% do preço de venda',td1c:'$0,50 USD',td2a:'Premium',td2b:'Custo processador + 0,5%',td2c:'$0,50 USD',td3a:'Trocas',td3b:'Sem comissão (todos os planos)',td3c:'—',
+  s4p2:'Comissão deduzida do vendedor. O comprador não paga extra. Processadores: Stripe ou Mercado Pago.',
+  s5title:'Sistema de escrow',escbox:'<strong>Como funciona:</strong> O dinheiro fica retido até você confirmar o recebimento correto.',
+  s5list:['Na confirmação da compra, o dinheiro vai para escrow','O vendedor envia a figurinha','O comprador confirma → fundos liberados','Sem confirmação em 72h → liberação automática','Em disputa, Collexo media em 72h'],
+  s6title:'Disputas',s6p1:'Você pode abrir uma disputa em até 72 horas após a entrega. Collexo emite uma resolução vinculante.',s6p2:'A decisão do Collexo é final. Responsabilidade máxima: valor da transação.',
+  s7title:'Conduta proibida',s7warn:'Violações podem resultar em suspensão sem reembolso de assinaturas.',
+  s7list:['Publicar figurinhas falsas ou que não sejam suas','Criar múltiplas contas para escapar de suspensões','Manipular o sistema de reputação','Transações fora da plataforma para evitar comissões','Uso para atividades ilegais ou fraudulentas','Assediar ou discriminar outros usuários'],
+  s8title:'Propriedade intelectual',s8p1:'Collexo não tem afiliação com Panini ou FIFA. As figurinhas são bens físicos dos usuários.',s8p2:'Fotos enviadas são responsabilidade do usuário. Ao enviá-las você concede ao Collexo uma licença limitada de exibição.',
+  s9title:'Limitação de responsabilidade',s9p1:'A responsabilidade máxima do Collexo se limita às comissões pagas nos últimos 3 meses.',
+  s10title:'Modificações',s10p1:'Podemos modificar estes Termos com 14 dias de aviso prévio. O uso continuado constitui aceitação.',
+  s11title:'Contato',s11resp:'Respondemos em até 30 dias úteis.',
+  toc:['Descrição do serviço','Cadastro e conta','Compra, venda e troca','Comissões e pagamentos','Sistema de escrow','Disputas','Conduta proibida','Propriedade intelectual','Limitação de responsabilidade','Modificações','Contato']},
+  fr:{pageTitle:"Collexo — Conditions d'utilisation",heroEye:"Collexo · Conditions d'utilisation",heroTitle:'Les règles du <em>jeu</em> équitable.',heroSub:"Rédigées en langage clair — sans petits caractères.",heroUpdated:'Dernière mise à jour : Mai 2026',tocTitle:'Sommaire',navPrivacy:'Confidentialité',navHome:'← Accueil',fHome:'Accueil',fPrivacy:'Confidentialité',fMundial:'Mondial 2026',fNote:'© 2026 Collexo',
+  s1title:'Description du service',s1p1:"Collexo est une plateforme numérique pour suivre votre album Panini Coupe du Monde 2026, échanger des vignettes et acheter/vendre via escrow protégé.",s1p2:"Nous agissons comme intermédiaire technologique — nous ne sommes pas partie aux transactions.",
+  s2title:'Inscription et compte',agebox:"<strong>Âge minimum :</strong> 18+ pour le marketplace. Suivi de l'album : 13+ avec consentement parental.",
+  s2list:["Fournissez des informations exactes et maintenez-les à jour","Vous êtes responsable de votre mot de passe et de l'activité du compte","Un seul compte actif par personne","Nous pouvons suspendre les comptes qui violent ces conditions"],
+  s3title:"Achat, vente et échange",s3p1:"En publiant une vignette vous garantissez qu'elle vous appartient et est en état acceptable.",s3p2:"Les échanges de vignettes contre vignettes sont sans commission pour tous.",s3p3:"Les achats nécessitent le système d'escrow protégé (section 5).",
+  s4title:"Commissions et paiements",th1:"Plan",th2:"Commission",th3:"Minimum",td1a:"Gratuit",td1b:"20% du prix de vente",td1c:"0,50 USD",td2a:"Premium",td2b:"Coût processeur + 0,5%",td2c:"0,50 USD",td3a:"Échanges",td3b:"Sans commission (tous les plans)",td3c:"—",
+  s4p2:"Commission déduite du vendeur. L'acheteur ne paie pas de frais supplémentaires. Processeurs : Stripe ou Mercado Pago.",
+  s5title:"Système d'escrow",escbox:"<strong>Comment ça marche :</strong> L'argent de l'acheteur est retenu jusqu'à confirmation de la bonne réception.",
+  s5list:["Lors de la confirmation, l'argent est mis en escrow","Le vendeur envoie la vignette","L'acheteur confirme → fonds libérés","Sans confirmation en 72h → libération automatique","En cas de litige, Collexo joue le médiateur en 72h"],
+  s6title:"Litiges",s6p1:"Vous pouvez ouvrir un litige dans les 72 heures suivant la livraison. Collexo rend une décision contraignante.",s6p2:"La décision de Collexo est définitive. Responsabilité maximale : montant de la transaction.",
+  s7title:"Comportements interdits",s7warn:"Les violations peuvent entraîner une suspension sans remboursement des abonnements.",
+  s7list:["Publier des vignettes fausses ou qui ne vous appartiennent pas","Créer plusieurs comptes pour contourner les suspensions","Manipuler le système de réputation","Transactions hors plateforme pour éviter les commissions","Utilisation illégale ou frauduleuse","Harceler ou discriminer d'autres utilisateurs"],
+  s8title:"Propriété intellectuelle",s8p1:"Collexo n'a aucune affiliation avec Panini ou la FIFA. Les vignettes sont des biens physiques des utilisateurs.",s8p2:"Les photos téléversées relèvent de la responsabilité de l'utilisateur. Vous accordez à Collexo une licence limitée d'affichage.",
+  s9title:"Limitation de responsabilité",s9p1:"La responsabilité maximale de Collexo est limitée aux commissions payées au cours des 3 derniers mois.",
+  s10title:"Modifications",s10p1:"Nous pouvons modifier ces Conditions avec un préavis de 14 jours. L'utilisation continue constitue une acceptation.",
+  s11title:"Contact",s11resp:"Nous répondons dans un délai de 30 jours ouvrables.",
+  toc:["Description du service","Inscription et compte","Achat, vente et échange","Commissions et paiements","Système d'escrow","Litiges","Comportements interdits","Propriété intellectuelle","Limitation de responsabilité","Modifications","Contact"]}
 };
-
-function setText(id,val){var el=document.getElementById(id);if(el)el.textContent=val;}
-
+var LFLAGS={en:'🇺🇸',es:'🇪🇸',pt:'🇧🇷',fr:'🇫🇷'};
+var LCODES={en:'EN',es:'ES',pt:'PT',fr:'FR'};
+var menuOpen=false;
 function applyLang(lang){
-  var u=UI[lang]||UI.en;
-  activeLang=lang;
+  var t=T[lang]||T.es;
   document.documentElement.lang=lang;
-  document.getElementById('langFlag').textContent=FLAGS[lang];
-  document.getElementById('langCode').textContent=CODES[lang];
-  document.querySelectorAll('.lang-item').forEach(function(el){
-    el.className=el.dataset.lang===lang?'lang-item cur':'lang-item';
-  });
-  setText('backLabel',u.back.replace('← ',''));
-  document.querySelector('.back').innerHTML='← <span id="backLabel">'+u.back.replace('← ','')+'</span>';
-  setText('heroEye',u.heroEye);
-  setText('heroTitle',u.heroTitle);
-  setText('heroSub',u.heroSub);
-  setText('heroDate',u.heroDate);
-  setText('footerNote',u.footerNote);
-  setText('fHome',u.fHome);
-  setText('fPrivacy',u.fPrivacy);
-  // Show correct panel
-  document.querySelectorAll('.terms-panel').forEach(function(p){
-    p.className=p.id==='panel-'+lang?'terms-panel on':'terms-panel';
-  });
+  document.title=t.pageTitle;
+  var f=document.getElementById('langFlag'),c=document.getElementById('langCode');
+  if(f)f.textContent=LFLAGS[lang];if(c)c.textContent=LCODES[lang];
+  document.querySelectorAll('.lang-item').forEach(function(el){el.className=el.dataset.lang===lang?'lang-item cur':'lang-item';});
+  function st(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  function sh(id,v){var e=document.getElementById(id);if(e)e.innerHTML=v;}
+  sh('heroEye',t.heroEye);sh('heroTitle',t.heroTitle);st('heroSub',t.heroSub);st('heroUpdated',t.heroUpdated);
+  st('tocTitle',t.tocTitle);st('navPrivacy',t.navPrivacy);st('navHome',t.navHome);
+  st('fHome',t.fHome);st('fPrivacy',t.fPrivacy);st('fMundial',t.fMundial);st('fNote',t.fNote);
+  for(var i=1;i<=11;i++){var e=document.getElementById('toc'+i);if(e&&t.toc)e.textContent=t.toc[i-1]||'';}
+  st('s1title',t.s1title);st('s1p1',t.s1p1);st('s1p2',t.s1p2);
+  st('s2title',t.s2title);sh('agebox',t.agebox);
+  var ul=document.getElementById('s2list');if(ul){ul.innerHTML='';t.s2list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});}
+  st('s3title',t.s3title);st('s3p1',t.s3p1);st('s3p2',t.s3p2);st('s3p3',t.s3p3);
+  st('s4title',t.s4title);st('th1',t.th1);st('th2',t.th2);st('th3',t.th3);
+  ['td1a','td1b','td1c','td2a','td2b','td2c','td3a','td3b','td3c'].forEach(function(k){st(k,t[k]);});
+  st('s4p2',t.s4p2);
+  st('s5title',t.s5title);sh('escbox',t.escbox);
+  var ul5=document.getElementById('s5list');if(ul5){ul5.innerHTML='';t.s5list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul5.appendChild(li);});}
+  st('s6title',t.s6title);st('s6p1',t.s6p1);st('s6p2',t.s6p2);
+  st('s7title',t.s7title);sh('s7warn',t.s7warn);
+  var ul7=document.getElementById('s7list');if(ul7){ul7.innerHTML='';t.s7list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul7.appendChild(li);});}
+  st('s8title',t.s8title);st('s8p1',t.s8p1);st('s8p2',t.s8p2);
+  st('s9title',t.s9title);st('s9p1',t.s9p1);
+  st('s10title',t.s10title);st('s10p1',t.s10p1);
+  st('s11title',t.s11title);st('s11resp',t.s11resp);
   try{localStorage.setItem('sm_lang',lang);}catch(e){}
 }
-
-function toggleLangMenu(){
-  menuOpen=!menuOpen;
-  document.getElementById('langMenu').className=menuOpen?'lang-menu show':'lang-menu';
-  document.getElementById('langCaret').style.transform=menuOpen?'rotate(180deg)':'';
-}
-function setLang(lang){
-  applyLang(lang);
-  menuOpen=false;
-  document.getElementById('langMenu').className='lang-menu';
-  document.getElementById('langCaret').style.transform='';
-}
-document.addEventListener('click',function(e){
-  if(!menuOpen)return;
-  var sel=document.getElementById('langSel');
-  if(sel&&!sel.contains(e.target)){
-    menuOpen=false;
-    document.getElementById('langMenu').className='lang-menu';
-    document.getElementById('langCaret').style.transform='';
-  }
-});
-document.getElementById('langTrigger').addEventListener('click',function(e){
-  e.stopPropagation();toggleLangMenu();
-});
-
-// Init
-function init(){
+function toggleLangMenu(){menuOpen=!menuOpen;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className=menuOpen?'lang-menu show':'lang-menu';if(c)c.style.transform=menuOpen?'rotate(180deg)':'';}
+function setLang(lang){applyLang(lang);menuOpen=false;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className='lang-menu';if(c)c.style.transform='';}
+document.addEventListener('DOMContentLoaded',function(){
+  var trigger=document.getElementById('langTrigger');
+  if(trigger)trigger.addEventListener('click',function(e){e.stopPropagation();toggleLangMenu();});
+  document.addEventListener('click',function(e){if(!menuOpen)return;var sel=document.getElementById('langSel');if(sel&&!sel.contains(e.target)){menuOpen=false;var m=document.getElementById('langMenu'),c=document.getElementById('langCaret');if(m)m.className='lang-menu';if(c)c.style.transform='';}});
   var lang='es';
-  try{var s=localStorage.getItem('sm_lang');if(s&&UI[s])lang=s;}catch(e){}
+  try{var s=localStorage.getItem('sm_lang');if(s&&T[s])lang=s;}catch(e){}
+  if(lang==='es'&&!localStorage.getItem('sm_lang')){var nav=(navigator.language||'es').toLowerCase();if(nav.indexOf('en')===0)lang='en';else if(nav.indexOf('pt')===0)lang='pt';else if(nav.indexOf('fr')===0)lang='fr';}
   applyLang(lang);
-}
-init();
+});
 </script>
 </body>
 </html>
