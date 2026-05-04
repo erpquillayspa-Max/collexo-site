@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T17:32:41.452Z",
+  "updated": "2026-05-04T19:26:52.447Z",
   "stories": [
     {
-      "category": "World Cup",
-      "title": "Extreme Heat Poses Threat to Players and Fans at 2026 FIFA World Cup",
-      "desc": "Researchers warn that rising temperatures could threaten athletes, fans, workers and officials during the World Cup games starting in June.",
+      "category": "Health & Safety",
+      "title": "Extreme Heat Warning for World Cup 2026",
+      "desc": "Researchers warn that extreme heat could pose threats to players and fans at the 2026 FIFA World Cup starting in June.",
       "source": "YouTube May 4, 2026",
       "tag": "World Cup",
       "icon": "🌡️"
     },
     {
-      "category": "World Cup",
-      "title": "FIFA Confirms Iran Will Play 2026 World Cup in USA Despite Tensions",
-      "desc": "FIFA President Gianni Infantino confirms Iran will participate in the tournament and play in the United States, staying in Group G with Belgium, New Zealand and Egypt despite security concerns.",
-      "source": "Open the Magazine May 1, 2026",
-      "tag": "World Cup",
-      "icon": "🇮🇷"
-    },
-    {
-      "category": "Match",
-      "title": "Saudi Arabia and Senegal to Play World Cup Friendly in San Antonio",
-      "desc": "Toyota Field will host an international friendly between Saudi Arabia and Senegal on June 9, serving as an appetizer before the 2026 FIFA World Cup kicks off on June 11.",
-      "source": "KSAT May 1, 2026",
-      "tag": "Match",
-      "icon": "⚽"
-    },
-    {
-      "category": "Market",
-      "title": "World Cup 2026 Drives Rising Tourism Demand Across North America",
-      "desc": "Hotel prices are soaring and connectivity gaps are emerging as the United States, Canada, and Mexico prepare for surging visitor demand driven by the World Cup.",
-      "source": "Travel and Tour World May 3, 2026",
+      "category": "Tourism & Economy",
+      "title": "World Cup Drives Rising Tourism Demand",
+      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico with rising demand and soaring hotel prices.",
+      "source": "Travel And Tour World May 3, 2026",
       "tag": "Market",
-      "icon": "🏨"
+      "icon": "✈️"
     },
     {
-      "category": "Album",
-      "title": "Panini Launches Biggest-Ever World Cup Sticker Album with 980 Stickers",
-      "desc": "The 2026 FIFA World Cup album features 980 stickers across 112 pages and launched on April 28 at Wembley Stadium with a special Coca-Cola partnership featuring 12 exclusive stickers.",
-      "source": "Sports Illustrated April 28, 2026",
+      "category": "Fan Transportation",
+      "title": "Scotland Fans Turn to School Buses",
+      "desc": "Scottish fans are using school buses to reach games at Gillette Stadium in Massachusetts to avoid escalating public transport costs.",
+      "source": "HuffPost May 1, 2026",
+      "tag": "World Cup",
+      "icon": "🚌"
+    },
+    {
+      "category": "Album Launch",
+      "title": "Panini Launches Historic 980-Sticker Album",
+      "desc": "Panini officially launched the largest FIFA World Cup sticker album ever with 980 stickers at Wembley Stadium on April 28.",
+      "source": "Sports Illustrated April 30, 2026",
       "tag": "Album",
-      "icon": "📚"
+      "icon": "📖"
     },
     {
-      "category": "Album",
-      "title": "48-Team World Cup Creates Biggest Challenge Yet for Panini Collectors",
-      "desc": "The decades-old football sticker craze comprises 980 unique stickers including 68 special ones in a 112-page album, with Panini hosting live swap shops across the UK in May.",
+      "category": "Exclusive Partnership",
+      "title": "Coca-Cola x Panini Stickers Launch",
+      "desc": "Coca-Cola partners with Panini for the first time in North America with 12 exclusive stickers hidden in specially marked bottles.",
+      "source": "Coca-Cola May 4, 2026",
+      "tag": "Album",
+      "icon": "🥤"
+    },
+    {
+      "category": "Collector Challenge",
+      "title": "48-Team World Cup Biggest Album Yet",
+      "desc": "The 2026 Panini album features 980 unique stickers across 112 pages, marking the biggest challenge for collectors in decades.",
       "source": "Al Jazeera April 29, 2026",
       "tag": "Album",
-      "icon": "✨"
+      "icon": "⚽"
     }
   ],
   "results": []
