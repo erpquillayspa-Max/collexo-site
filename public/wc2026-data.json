@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T17:06:03.710Z",
+  "updated": "2026-05-04T17:16:36.137Z",
   "stories": [
     {
-      "category": "Environment",
-      "title": "Extreme Heat Threat at 2026 World Cup",
-      "desc": "Researchers warn that extreme heat could pose serious threats to players and fans at the 2026 FIFA World Cup starting in June, with rising temperatures creating safety concerns.",
-      "source": "YouTube 6 hours ago",
+      "category": "Safety",
+      "title": "Extreme Heat Threatens Players and Fans at 2026 FIFA World Cup",
+      "desc": "Researchers warn that rising temperatures could pose significant threats to players and fans as the 2026 FIFA World Cup kicks off in June across North America.",
+      "source": "YouTube May 3, 2026",
       "tag": "World Cup",
       "icon": "🌡️"
     },
     {
-      "category": "Sticker Collection",
-      "title": "Panini Launches Record-Breaking 2026 World Cup Album",
-      "desc": "Panini launched its largest-ever FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers across 112 pages to accommodate all 48 teams.",
-      "source": "Sports Illustrated 4 days ago",
+      "category": "Broadcast",
+      "title": "FOX Sports Launches 'Dream Big' Campaign for World Cup 2026",
+      "desc": "FOX Sports debuts star-studded commercial featuring USMNT players, Tom Brady, and Zlatan Ibrahimović with Elvis Presley's 'The Impossible Dream' as the tournament approaches.",
+      "source": "FOX Sports May 4, 2026",
+      "tag": "Market",
+      "icon": "📺"
+    },
+    {
+      "category": "Tickets",
+      "title": "World Cup Group Stage Games Still Have Unsold Tickets at High Prices",
+      "desc": "With under 40 days to go, many group-stage matches including USA vs Paraguay opener still have tickets available, with prices ranging from $380 to over $6,000 amid fan complaints about dynamic pricing.",
+      "source": "Al Jazeera May 3, 2026",
+      "tag": "Market",
+      "icon": "🎟️"
+    },
+    {
+      "category": "Tourism",
+      "title": "World Cup 2026 Drives Rising Global Tourism Demand Across Host Nations",
+      "desc": "The FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico, with rising demand, soaring hotel prices, and connectivity challenges as host cities prepare for visitors.",
+      "source": "Travel And Tour World May 3, 2026",
+      "tag": "World Cup",
+      "icon": "✈️"
+    },
+    {
+      "category": "Collectibles",
+      "title": "Panini Launches Biggest-Ever World Cup Sticker Album with 980 Stickers",
+      "desc": "Panini officially launched its record-breaking 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special edition stickers and a Coca-Cola partnership section.",
+      "source": "Sports Illustrated April 30, 2026",
       "tag": "Album",
       "icon": "📖"
     },
     {
-      "category": "Politics",
-      "title": "FIFA Confirms Iran Will Play in USA Despite Tensions",
-      "desc": "FIFA President Gianni Infantino confirmed during FIFA Congress in Vancouver that Iran will participate in the 2026 World Cup in the USA, rejecting speculation of replacement.",
-      "source": "Open The Magazine 3 days ago",
-      "tag": "World Cup",
-      "icon": "🇮🇷"
-    },
-    {
-      "category": "Sticker Collection",
-      "title": "Coca-Cola Partners with Panini for Exclusive World Cup Stickers",
-      "desc": "Coca-Cola teams with Panini to offer 12 exclusive World Cup stickers hidden in specially marked 20-oz bottles, featuring stars like Harry Kane and Lamine Yamal starting mid-May.",
-      "source": "Coca-Cola USA 5 hours ago",
+      "category": "Collectibles",
+      "title": "World Cup Sticker Album Now Available at Major US Retailers",
+      "desc": "The 112-page Panini sticker album is now available at Walmart, Target, Amazon, and other retailers for $5, with individual 7-sticker packets costing $2, as collectors face the challenge of completing the largest edition ever.",
+      "source": "USA TODAY April 30, 2026",
       "tag": "Album",
-      "icon": "🥤"
-    },
-    {
-      "category": "Preparation",
-      "title": "Saudi Arabia and Senegal Schedule World Cup Friendly in San Antonio",
-      "desc": "Saudi Arabia and Senegal will play an international friendly on June 9 at Toyota Field in San Antonio as a warmup before the 2026 FIFA World Cup officially kicks off June 11.",
-      "source": "KSAT 1 day ago",
-      "tag": "Match",
-      "icon": "⚽"
-    },
-    {
-      "category": "Tourism",
-      "title": "World Cup 2026 Drives Uneven Tourism Demand Across Host Nations",
-      "desc": "The 2026 FIFA World Cup is reshaping tourism across the US, Canada, and Mexico with rising demand, soaring hotel prices, and connectivity gaps as destinations race to attract visitors.",
-      "source": "Travel And Tour World 1 day ago",
-      "tag": "Market",
-      "icon": "✈️"
+      "icon": "🛒"
     }
   ],
   "results": []
