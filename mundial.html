@@ -8,25 +8,27 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
+  --wc-dark:#0a0f1e;--wc-blue:#0033a0;--wc-red:#c8102e;--wc-gold:#f0a500;--wc-grass:#1a6b1a;
   --g:#2d7a00;--gl:#e8f5d8;--gb:#b0db80;
-  --o:#c94000;--ol:#fff0e8;--ob:#f0c0a0;
-  --b:#1a3a8a;--bl:#e8f0fd;
-  --ink:#0d0d0d;--ink2:#222;--ink3:#444;--ink4:#777;--ink5:#aaa;
-  --w:#fff;--bg:#f5f4f0;--bg2:#eeede8;--border:#ddddd6;--border2:#c8c8be;
-  --lime:#7ec800;--red:#c00030;
+  --o:#c8102e;--ol:rgba(200,16,46,.1);--ob:rgba(200,16,46,.3);
+  --b:#0033a0;--bl:rgba(0,51,160,.15);
+  --gold:#f0a500;--lime:#7ec800;--red:#c8102e;
+  --ink:#0a0f1e;--ink2:#1a2240;--ink3:#556;--ink4:#889;--ink5:#aab;
+  --w:#fff;--bg:#f5f6fa;--bg2:#eceef5;--border:#d8dae8;--border2:#b0b4cc;
 }
 html{scroll-behavior:smooth}
-body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;color:var(--ink)}
+body{background:var(--wc-dark);font-family:'Plus Jakarta Sans','Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px;line-height:1.6;color:#fff}
 
 /* LANG SELECTOR — standalone, no conflicts */
 .lang-sel{position:relative}
-.lang-trigger{display:flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--ink2);cursor:pointer;transition:all .2s;user-select:none}
-.lang-trigger:hover{border-color:var(--ink);background:#fff}
-.lang-caret{font-size:8px;color:var(--ink4);display:inline-block;transition:transform .2s}
+.lang-trigger{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 11px;font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;user-select:none}
+.lang-trigger:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15)}
+.lang-caret{font-size:8px;color:rgba(255,255,255,.5);display:inline-block;transition:transform .2s}
 .lang-menu{position:absolute;top:calc(100% + 6px);left:0;right:auto;background:#fff;border:1px solid var(--border2);border-radius:12px;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.12);min-width:155px;z-index:9999;visibility:hidden;opacity:0;transform:translateY(-6px);transition:all .15s;pointer-events:none}
 .lang-menu.show{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
-.lang-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .1s}
-.lang-item:hover{background:var(--bg)}
+.lang-item{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.9);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;transition:background .1s}
+.lang-item span{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif!important}
+.lang-item:hover{background:rgba(255,255,255,.04)}
 .lang-item.cur{background:var(--gl);color:var(--g)}
 
 
@@ -66,11 +68,11 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 
 
 /* ── NAV ── */
-.hub-nav-wrap{background:var(--w);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:100}
+.hub-nav-wrap{background:rgba(8,12,24,.99);border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;z-index:100}
 .hub-nav{max-width:1060px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0 8px}
 .hub-nav::-webkit-scrollbar{display:none}
-.hub-tab{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:16px 20px;white-space:nowrap;cursor:pointer;color:var(--ink4);border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .18s}
-.hub-tab:hover{color:var(--ink)}
+.hub-tab{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:16px 20px;white-space:nowrap;cursor:pointer;color:rgba(255,255,255,.45);border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .18s}
+.hub-tab:hover{color:#fff}
 .hub-tab.on{color:var(--gold);border-bottom-color:var(--gold)}
 
 /* ── PANELS ── */
@@ -80,27 +82,27 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 
 /* ── NEWS ── */
 .news-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px}
-.news-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink)}
-.news-refresh{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink4);background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:6px 14px;cursor:pointer;transition:all .2s;font-family:'Unbounded',sans-serif;letter-spacing:.5px}
-.news-refresh:hover{border-color:var(--ink);color:var(--ink)}
+.news-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff}
+.news-refresh{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.45);background:rgba(10,15,30,.98);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 14px;cursor:pointer;transition:all .2s;font-family:'Unbounded',sans-serif;letter-spacing:.5px}
+.news-refresh:hover{border-color:#fff;color:#fff}
 .nr-dot{width:6px;height:6px;border-radius:50%;background:var(--g);animation:pulse 1.8s ease-in-out infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:28px}
-.nc{background:var(--w);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;transition:all .22s;cursor:pointer;display:flex;flex-direction:column}
+.nc{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;transition:all .22s;cursor:pointer;display:flex;flex-direction:column}
 .nc:hover{border-color:var(--border2);box-shadow:0 6px 24px rgba(0,0,0,.08);transform:translateY(-3px)}
 .nc-img{height:120px;overflow:hidden;position:relative;flex-shrink:0}
 .nc-img svg{width:100%;height:100%}
 .nc-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:5px}
 .nc-cat{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--o)}
-.nc-title{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;flex:1}
-.nc-desc{font-size:12px;color:var(--ink3);line-height:1.55}
+.nc-title{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff;line-height:1.3;flex:1}
+.nc-desc{font-size:12px;color:rgba(255,255,255,.65);line-height:1.55}
 .nc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
-.nc-src{font-size:10px;color:var(--ink5)}
+.nc-src{font-size:10px;color:rgba(255,255,255,.25)}
 .nc-tag{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;font-family:'Unbounded',sans-serif;letter-spacing:.5px}
 .nt-wc{background:var(--gl);color:var(--g);border:1px solid var(--gb)}
 .nt-mk{background:var(--ol);color:var(--o);border:1px solid var(--ob)}
 .nt-new{background:var(--bl);color:var(--b);border:1px solid #a0b8f0}
-.ai-loading{display:none;text-align:center;padding:40px;color:var(--ink4)}
+.ai-loading{display:none;text-align:center;padding:40px;color:rgba(255,255,255,.45)}
 .ai-loading.show{display:block}
 .ai-spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--o);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -113,34 +115,34 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 .gc-name{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff}
 .gc-tag{font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:.5px;padding:3px 9px;border-radius:100px}
 .gt-host{background:rgba(126,200,0,.2);color:#9fda50;border:1px solid rgba(126,200,0,.35)}
-.gt-fire{background:rgba(200,16,46,.2);color:#ff8898;border:1px solid rgba(200,16,46,.35);}background:var(--ol);color:var(--o);border:1px solid var(--ob)}
+.gt-fire{background:rgba(200,16,46,.2);color:#ff8898;border:1px solid rgba(200,16,46,.35)}
 .gt-easy{background:rgba(126,200,0,.15);color:#9fda50;border:1px solid rgba(126,200,0,.3)}
 .gc-teams{padding:4px 0}
 .gc-team{display:flex;align-items:center;gap:9px;padding:7px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);transition:background .12s}
 .gc-team:hover{background:rgba(255,255,255,.06)}
-.gc-flag{font-size:16px;width:22px;flex-shrink:0}
+.gc-flag{font-size:18px;width:24px;flex-shrink:0;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
 .gc-star{margin-left:auto;font-family:'Bebas Neue',sans-serif;font-size:11px;color:var(--o);letter-spacing:.5px}
 
 /* ── SCHEDULE ── */
 .sched-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.sf{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:9px;border:1.5px solid var(--border2);color:var(--ink3);background:transparent;cursor:pointer;transition:all .15s}
-.sf:hover{border-color:var(--ink);color:var(--ink)}
+.sf{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:9px;border:1.5px solid var(--border2);color:rgba(255,255,255,.65);background:transparent;cursor:pointer;transition:all .15s}
+.sf:hover{border-color:#fff;color:#fff}
 .sf.on{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)}
 .md{margin-bottom:22px}
-.md-lbl{font-family:'Unbounded',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.md-lbl{font-family:'Unbounded',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;display:flex;align-items:center;gap:10px}
 .md-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
-.mr{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--w);border:1.5px solid var(--border);border-radius:12px;margin-bottom:7px;transition:all .18s;flex-wrap:wrap}
+.mr{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;margin-bottom:7px;transition:all .18s;flex-wrap:wrap}
 .mr:hover{border-color:var(--border2);box-shadow:0 3px 14px rgba(0,0,0,.06)}
 .mr-teams{display:flex;align-items:center;gap:8px;flex:1;min-width:210px}
 .mr-flag{font-size:19px;flex-shrink:0}
-.mr-name{font-size:13px;font-weight:700;color:var(--ink);min-width:70px}
-.mr-vs{font-family:'Unbounded',sans-serif;font-size:10px;color:var(--ink5);padding:0 3px}
+.mr-name{font-size:13px;font-weight:700;color:#fff;min-width:70px}
+.mr-vs{font-family:'Unbounded',sans-serif;font-size:10px;color:rgba(255,255,255,.25);padding:0 3px}
 .mr-info{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-left:auto}
-.mi-group{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink4);background:var(--bg2);border:1px solid var(--border);border-radius:5px;padding:3px 8px}
-.mi-date{font-size:11px;color:var(--ink3);white-space:nowrap}
-.mi-venue{font-size:11px;color:var(--ink4);max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mi-group{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:3px 8px}
+.mi-date{font-size:11px;color:rgba(255,255,255,.65);white-space:nowrap}
+.mi-venue{font-size:11px;color:rgba(255,255,255,.45);max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .opening-tag{font-family:'Unbounded',sans-serif;font-size:8px;color:var(--g);background:var(--gl);border:1px solid var(--gb);border-radius:5px;padding:3px 8px;letter-spacing:.5px;flex-shrink:0}
-.final-row{background:var(--ink)!important;border-color:var(--ink)!important}
+.final-row{background:var(--ink)!important;border-color:#fff!important}
 .final-row .mr-name,.final-row .mi-date{color:#fff}
 .final-row .mr-vs{color:#555}
 .final-row .mi-venue{color:#666}
@@ -148,15 +150,15 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 
 /* ── STADIUMS ── */
 .stad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.sc{background:var(--w);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;transition:all .22s}
+.sc{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;transition:all .22s}
 .sc:hover{border-color:var(--border2);box-shadow:0 6px 24px rgba(0,0,0,.08);transform:translateY(-3px)}
-.sc-img{height:130px;overflow:hidden;position:relative;background:var(--bg2)}
+.sc-img{height:130px;overflow:hidden;position:relative;background:rgba(255,255,255,.06)}
 .sc-img svg{width:100%;height:100%}
 .sc-body{padding:16px}
 .sc-nation{font-size:20px;margin-bottom:6px}
-.sc-name{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px;line-height:1.2}
-.sc-city{font-size:12px;color:var(--ink3);margin-bottom:8px}
-.sc-cap{font-size:11px;color:var(--ink4);display:flex;align-items:center;gap:5px}
+.sc-name{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2}
+.sc-city{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:8px}
+.sc-cap{font-size:11px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px}
 .sc-cap::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--o);flex-shrink:0}
 .sc-badge{font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;padding:3px 8px;border-radius:5px;letter-spacing:.5px}
 .sb-m{background:var(--gl);color:var(--g);border:1px solid var(--gb)}
@@ -168,28 +170,28 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 .flow::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 .fstage{flex-shrink:0;display:flex;flex-direction:column;align-items:center;min-width:115px}
 .farrow{flex-shrink:0;color:var(--border2);font-size:22px;padding:0 6px;margin-top:22px}
-.fstage-lbl{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink4);text-align:center;margin-bottom:8px;padding:4px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:5px;width:100%}
-.fstage-box{background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:16px 12px;text-align:center;width:100%}
-.fstage-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--ink);line-height:1;letter-spacing:.02em}
-.fstage-d{font-size:11px;color:var(--ink3);margin-top:2px;line-height:1.4}
+.fstage-lbl{font-family:'Unbounded',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center;margin-bottom:8px;padding:4px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:5px;width:100%}
+.fstage-box{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px;text-align:center;width:100%}
+.fstage-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:#fff;line-height:1;letter-spacing:.02em}
+.fstage-d{font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;line-height:1.4}
 .fstage-date{font-family:'Unbounded',sans-serif;font-size:9px;color:var(--o);margin-top:5px;letter-spacing:.5px}
-.fstage.final .fstage-box{background:var(--ink);border-color:var(--ink)}
+.fstage.final .fstage-box{background:var(--ink);border-color:#fff}
 .fstage.final .fstage-n{color:var(--lime)}
 .fstage.final .fstage-d{color:#777}
 .fstage.final .fstage-date{color:#c94000}
 .fstage.final .fstage-lbl{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:#555}
 .fact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:28px}
-.fact{background:var(--w);border:1.5px solid var(--border);border-radius:12px;padding:16px}
+.fact{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px}
 .fact-n{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;letter-spacing:.02em;margin-bottom:3px}
-.fact-l{font-size:12px;color:var(--ink3);line-height:1.4}
-.fn-g{color:var(--g)}.fn-o{color:var(--o)}.fn-b{color:var(--b)}.fn-r{color:var(--red)}.fn-k{color:var(--ink)}
-.rule-box{border-radius:14px;padding:18px 20px;margin-bottom:14px;font-size:13px;line-height:1.65}
-.rb-g{background:var(--gl);border:1px solid var(--gb);color:#1a4000}
+.fact-l{font-size:12px;color:rgba(255,255,255,.65);line-height:1.4}
+.fn-g{color:var(--g)}.fn-o{color:var(--o)}.fn-b{color:var(--b)}.fn-r{color:var(--red)}.fn-k{color:#fff}
+.rule-box{border-radius:14px;padding:18px 20px;margin-bottom:14px;font-size:13px;line-height:1.65;color:rgba(255,255,255,.8)}
+.rb-g{background:rgba(126,200,0,.1);border:1px solid rgba(126,200,0,.25);color:#1a4000}
 .rb-g strong{color:var(--g)}
-.rb-o{background:var(--ol);border:1px solid var(--ob);color:#5a2000}
+.rb-o{background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.25);color:#5a2000}
 .rb-o strong{color:var(--o)}
-.hub-credit{text-align:center;padding:20px;font-size:11px;color:var(--ink5);border-top:1px solid var(--border);background:var(--w)}
-.hub-credit a{color:var(--ink4)}
+.hub-credit{text-align:center;padding:20px;font-size:11px;color:rgba(255,255,255,.25);border-top:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.hub-credit a{color:rgba(255,255,255,.45)}
 
 @media(max-width:600px){
   .hero{padding:36px 16px 32px}
@@ -271,7 +273,7 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
   <div class="hub-topbar">
     <div class="lang-sel" id="langSel">
       <div class="lang-trigger" id="langTrigger">
-        <span id="langFlag">🇺🇸</span>
+        <span id="langFlag" style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif">🇺🇸</span>
         <span id="langCode">EN</span>
         <span class="lang-caret" id="langCaret">▾</span>
       </div>
@@ -544,8 +546,8 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 <!-- ══ GROUPS ══ -->
 <div class="hub-panel" id="tab-groups">
 <div class="panel-inner">
-  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink);margin-bottom:6px" id="groupsTitle">12 Groups · 48 Teams</div>
-  <div style="font-size:13px;color:var(--ink3);margin-bottom:22px" id="groupsRule">Top 2 from each group + 8 best third-placed teams → Round of 32</div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:6px" id="groupsTitle" style="color:#fff">12 Groups · 48 Teams</div>
+  <div style="font-size:13px;color:rgba(255,255,255,.65);margin-bottom:22px" id="groupsRule" style="color:rgba(255,255,255,.6)">Top 2 from each group + 8 best third-placed teams → Round of 32</div>
   <div class="groups-grid">
     <div class="gc"><div class="gc-hd"><div class="gc-name">Group A</div><div class="gc-tag gt-host">Host</div></div><div class="gc-teams"><div class="gc-team"><span class="gc-flag">🇲🇽</span>Mexico<span class="gc-star">HOST</span></div><div class="gc-team"><span class="gc-flag">🇰🇷</span>South Korea</div><div class="gc-team"><span class="gc-flag">🇿🇦</span>South Africa</div><div class="gc-team"><span class="gc-flag">🇨🇿</span>Czechia</div></div></div>
     <div class="gc"><div class="gc-hd"><div class="gc-name">Group B</div><div class="gc-tag gt-host">Host</div></div><div class="gc-teams"><div class="gc-team"><span class="gc-flag">🇨🇦</span>Canada<span class="gc-star">HOST</span></div><div class="gc-team"><span class="gc-flag">🇨🇭</span>Switzerland</div><div class="gc-team"><span class="gc-flag">🇶🇦</span>Qatar</div><div class="gc-team"><span class="gc-flag">🇧🇦</span>Bosnia & Herz.</div></div></div>
@@ -567,7 +569,7 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 <!-- ══ SCHEDULE ══ -->
 <div class="hub-panel" id="tab-schedule">
 <div class="panel-inner">
-  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink);margin-bottom:18px" id="schedTitle">Group Stage · Jun 11–27</div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:18px" id="schedTitle">Group Stage · Jun 11–27</div>
   <div class="sched-filters">
     <button class="sf on" onclick="filterM(this,'all')" id="sf-all" id="sfAll">All</button>
     <button class="sf" onclick="filterM(this,'mexico')" id="sfMex">🇲🇽 Mexico</button>
@@ -617,7 +619,7 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 <!-- ══ STADIUMS ══ -->
 <div class="hub-panel" id="tab-stadiums">
 <div class="panel-inner">
-  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink);margin-bottom:20px" id="stadTitle">16 Host Venues</div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:20px" id="stadTitle">16 Host Venues</div>
   <div class="stad-grid">
 
     <!-- Each stadium gets a custom SVG silhouette -->
@@ -854,7 +856,7 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
     </div>
 
   </div>
-  <div style="margin-top:12px;font-size:12px;color:var(--ink4);text-align:center">Also hosting: Lumen Field (Seattle), Gillette Stadium (Boston), Lincoln Financial (Philadelphia), Levi's Stadium (San Francisco), Arrowhead (Kansas City), BMO Field (Toronto), Estadio Akron (Guadalajara), Estadio BBVA (Monterrey)</div>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.45);text-align:center">Also hosting: Lumen Field (Seattle), Gillette Stadium (Boston), Lincoln Financial (Philadelphia), Levi's Stadium (San Francisco), Arrowhead (Kansas City), BMO Field (Toronto), Estadio Akron (Guadalajara), Estadio BBVA (Monterrey)</div>
 </div>
 </div>
 
@@ -862,31 +864,29 @@ body{background:var(--wc-dark);font-family:'Plus Jakarta Sans',sans-serif;font-s
 <!-- ══ FORMAT ══ -->
 <div class="hub-panel" id="tab-format">
 <div class="panel-inner">
-  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:var(--ink);margin-bottom:20px" id="formatTitle">Tournament Format · 2026</div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:20px" id="formatTitle">Tournament Format · 2026</div>
 
-  <div class="rule-box rb-g" style="margin-bottom:14px">
-    <strong>Group Stage (Jun 11–27):</strong> 48 teams in 12 groups of 4. Each team plays 3 matches. <strong>Top 2 from each group</strong> advance automatically (24 teams). The <strong>8 best third-placed teams</strong> also advance = <strong>32 teams total</strong> in the knockout stage.
+  <div class="rule-box rb-g" style="margin-bottom:14px" id="ruleG"><strong>Group Stage (Jun 11–27):</strong> 48 teams in 12 groups of 4. Each team plays 3 matches. <strong>Top 2 from each group</strong> advance automatically (24 teams). The <strong>8 best third-placed teams</strong> also advance = <strong>32 teams total</strong> in the knockout stage.
   </div>
-  <div class="rule-box rb-o">
-    🆕 <strong>New for 2026 — Round of 32:</strong> First time in World Cup history. Replaces the old Round of 16 as the first knockout stage. 32 teams, single elimination. Lose = go home. No second chances.
+  <div class="rule-box rb-o" id="ruleO">🆕 <strong>New for 2026 — Round of 32:</strong> First time in World Cup history. Replaces the old Round of 16 as the first knockout stage. 32 teams, single elimination. Lose = go home. No second chances.
   </div>
 
-  <div style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--ink3);margin:24px 0 14px;display:flex;align-items:center;gap:10px">Knockout bracket <span style="flex:1;height:1px;background:var(--border);display:block"></span></div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.65);margin:24px 0 14px;display:flex;align-items:center;gap:10px">Knockout bracket <span style="flex:1;height:1px;background:var(--border);display:block"></span></div>
   <div class="flow">
-    <div class="fstage"><div class="fstage-lbl">Group Stage</div><div class="fstage-box"><div class="fstage-n">48</div><div class="fstage-d">teams<br>12 groups</div><div class="fstage-date">Jun 11–27</div></div></div>
+    <div class="fstage"><div class="fstage-lbl">Group Stage</div><div class="fstage-box"><div class="fstage-n">48</div><div class="fstage-d" id="fsd0">teams<br>12 groups</div><div class="fstage-date">Jun 11–27</div></div></div>
     <div class="farrow">→</div>
-    <div class="fstage"><div class="fstage-lbl">Round of 32 🆕</div><div class="fstage-box"><div class="fstage-n">32</div><div class="fstage-d">teams<br>16 matches</div><div class="fstage-date">Jun 29–Jul 2</div></div></div>
+    <div class="fstage"><div class="fstage-lbl">Round of 32 🆕</div><div class="fstage-box"><div class="fstage-n">32</div><div class="fstage-d" id="fsd1">teams<br>16 matches</div><div class="fstage-date">Jun 29–Jul 2</div></div></div>
     <div class="farrow">→</div>
-    <div class="fstage"><div class="fstage-lbl">Round of 16</div><div class="fstage-box"><div class="fstage-n">16</div><div class="fstage-d">teams<br>8 matches</div><div class="fstage-date">Jul 4–6</div></div></div>
+    <div class="fstage"><div class="fstage-lbl">Round of 16</div><div class="fstage-box"><div class="fstage-n">16</div><div class="fstage-d" id="fsd2">teams<br>8 matches</div><div class="fstage-date">Jul 4–6</div></div></div>
     <div class="farrow">→</div>
-    <div class="fstage"><div class="fstage-lbl">Quarterfinals</div><div class="fstage-box"><div class="fstage-n">8</div><div class="fstage-d">teams<br>4 matches</div><div class="fstage-date">Jul 9–11</div></div></div>
+    <div class="fstage"><div class="fstage-lbl">Quarterfinals</div><div class="fstage-box"><div class="fstage-n">8</div><div class="fstage-d" id="fsd3">teams<br>4 matches</div><div class="fstage-date">Jul 9–11</div></div></div>
     <div class="farrow">→</div>
-    <div class="fstage"><div class="fstage-lbl">Semifinals</div><div class="fstage-box"><div class="fstage-n">4</div><div class="fstage-d">teams<br>2 matches</div><div class="fstage-date">Jul 14–15</div></div></div>
+    <div class="fstage"><div class="fstage-lbl">Semifinals</div><div class="fstage-box"><div class="fstage-n">4</div><div class="fstage-d" id="fsd4">teams<br>2 matches</div><div class="fstage-date">Jul 14–15</div></div></div>
     <div class="farrow">→</div>
-    <div class="fstage final"><div class="fstage-lbl">🏆 Final</div><div class="fstage-box"><div class="fstage-n">2</div><div class="fstage-d">MetLife<br>NY / NJ</div><div class="fstage-date">Jul 19</div></div></div>
+    <div class="fstage final"><div class="fstage-lbl">🏆 Final</div><div class="fstage-box"><div class="fstage-n">2</div><div class="fstage-d" id="fsd5">MetLife<br>NY / NJ</div><div class="fstage-date">Jul 19</div></div></div>
   </div>
 
-  <div style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--ink3);margin:24px 0 14px;display:flex;align-items:center;gap:10px">Key numbers <span style="flex:1;height:1px;background:var(--border);display:block"></span></div>
+  <div style="font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.65);margin:24px 0 14px;display:flex;align-items:center;gap:10px">Key numbers <span style="flex:1;height:1px;background:var(--border);display:block"></span></div>
   <div class="fact-grid">
     <div class="fact"><div class="fact-n fn-k">104</div><div class="fact-l">Total matches (up from 64 in 2022)</div></div>
     <div class="fact"><div class="fact-n fn-g">48</div><div class="fact-l">Teams for the first time in history</div></div>
@@ -929,6 +929,7 @@ var HUB_T = {
     bracketLabel:'Knockout bracket', factsLabel:'Key numbers',
     bsLabels:['Group Stage','Round of 32 🆕','Round of 16','Quarterfinals','Semifinals','🏆 Final'],
     bsDates:['Jun 11–27','Jun 29–Jul 2','Jul 4–6','Jul 9–11','Jul 14–15','Jul 19'],
+    bsDesc:['teams<br>12 groups', 'teams<br>16 matches', 'teams<br>8 matches', 'teams<br>4 matches', 'teams<br>2 matches', 'MetLife<br>NY / NJ'],
     factLabels:['Total matches (vs 64 in 2022)','Teams — first time in history','Host nations — first time ever','Days of tournament','Matches played by finalists','Italy absent — 3rd consecutive'],
     hubCredit:'Data: FIFA.com · NBC Sports · Yahoo Sports · Wikipedia · Stadium illustrations are original SVG art.',
     nc:['Panini 2026','Collectors','Market','Qualifying','Qualifying','World Cup'],
@@ -964,6 +965,7 @@ var HUB_T = {
     bracketLabel:'Cuadro eliminatorio', factsLabel:'Datos clave',
     bsLabels:['Fase de grupos','Ronda de 32 🆕','Octavos de final','Cuartos de final','Semifinales','🏆 Final'],
     bsDates:['11–27 Jun','29 Jun–2 Jul','4–6 Jul','9–11 Jul','14–15 Jul','19 Jul'],
+    bsDesc:['equipos<br>12 grupos', 'equipos<br>16 partidos', 'equipos<br>8 partidos', 'equipos<br>4 partidos', 'equipos<br>2 partidos', 'MetLife<br>NY / NJ'],
     factLabels:['Partidos totales (vs 64 en 2022)','Equipos — primera vez en la historia','Países anfitriones — primera vez','Días de torneo','Partidos de los finalistas','Italia ausente — 3ra vez seguida'],
     hubCredit:'Datos: FIFA.com · NBC Sports · Yahoo Sports · Wikipedia · Las ilustraciones de estadios son arte SVG original.',
     nc:['Panini 2026','Coleccionistas','Mercado','Clasificación','Clasificación','Mundial 2026'],
@@ -999,6 +1001,7 @@ var HUB_T = {
     bracketLabel:'Chaveamento eliminatório', factsLabel:'Dados-chave',
     bsLabels:['Fase de grupos','Rodada de 32 🆕','Oitavas de final','Quartas de final','Semifinais','🏆 Final'],
     bsDates:['11–27 Jun','29 Jun–2 Jul','4–6 Jul','9–11 Jul','14–15 Jul','19 Jul'],
+    bsDesc:['seleções<br>12 grupos', 'seleções<br>16 partidas', 'seleções<br>8 partidas', 'seleções<br>4 partidas', 'seleções<br>2 partidas', 'MetLife<br>NY / NJ'],
     factLabels:['Partidas totais (vs 64 em 2022)','Seleções — primeira vez na história','Países-sede — primeira vez','Dias de torneio','Partidas dos finalistas','Itália ausente — 3ª vez seguida'],
     hubCredit:'Dados: FIFA.com · NBC Sports · Yahoo Sports · Wikipedia · Ilustrações de estádios são arte SVG original.',
     nc:['Panini 2026','Colecionadores','Mercado','Classificação','Classificação','Copa 2026'],
@@ -1034,6 +1037,7 @@ var HUB_T = {
     bracketLabel:'Tableau éliminatoire', factsLabel:'Chiffres clés',
     bsLabels:['Phase de groupes','Tour de 32 🆕','Huitièmes de finale','Quarts de finale','Demi-finales','🏆 Finale'],
     bsDates:['11–27 juin','29 juin–2 juil.','4–6 juil.','9–11 juil.','14–15 juil.','19 juil.'],
+    bsDesc:['équipes<br>12 groupes', 'équipes<br>16 matchs', 'équipes<br>8 matchs', 'équipes<br>4 matchs', 'équipes<br>2 matchs', 'MetLife<br>NY / NJ'],
     factLabels:['Matchs au total (vs 64 en 2022)','Équipes — première fois','Nations hôtes — première fois','Jours de tournoi','Matchs des finalistes','Italie absente — 3e fois'],
     hubCredit:"Données : FIFA.com · NBC Sports · Yahoo Sports · Wikipédia · Les illustrations des stades sont des SVG originaux.",
     nc:['Panini 2026','Collectionneurs','Marché','Qualification','Qualification','Mondial 2026'],
@@ -1162,6 +1166,14 @@ function applyLang(lang) {
   var bsDts  = document.querySelectorAll('.fstage-date');
   for (var i=0; i<bsLbls.length && i<t.bsLabels.length; i++) bsLbls[i].textContent = t.bsLabels[i];
   for (var i=0; i<bsDts.length  && i<t.bsDates.length;  i++) bsDts[i].textContent  = t.bsDates[i];
+
+  // Bracket stage descriptions (fstage-d)
+  if (t.bsDesc) {
+    for (var i = 0; i < t.bsDesc.length; i++) {
+      var fd = document.getElementById('fsd' + i);
+      if (fd) fd.innerHTML = t.bsDesc[i];
+    }
+  }
 
   // Fact labels
   var facts = document.querySelectorAll('.fact-l');
