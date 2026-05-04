@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T13:14:25.370Z",
+  "updated": "2026-05-04T17:06:03.710Z",
   "stories": [
     {
-      "category": "Tickets & Market",
-      "title": "World Cup Ticket Sales Struggle Despite High Demand Claims",
-      "desc": "With under 40 days until kickoff, many group-stage games still have unsold tickets at exorbitant prices, with USA vs Paraguay opener tickets ranging from $1,120 to $6,050, contradicting FIFA's predicted demand.",
-      "source": "Al Jazeera May 3",
-      "tag": "Market",
-      "icon": "🎟️"
+      "category": "Environment",
+      "title": "Extreme Heat Threat at 2026 World Cup",
+      "desc": "Researchers warn that extreme heat could pose serious threats to players and fans at the 2026 FIFA World Cup starting in June, with rising temperatures creating safety concerns.",
+      "source": "YouTube 6 hours ago",
+      "tag": "World Cup",
+      "icon": "🌡️"
     },
     {
-      "category": "Panini Album",
-      "title": "Record-Breaking Panini Album Launches with 980 Stickers",
-      "desc": "Panini officially launched its biggest-ever World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers across 112 pages, including 68 special edition stickers with stars like Messi and Ronaldo.",
-      "source": "Sports Illustrated April 30",
+      "category": "Sticker Collection",
+      "title": "Panini Launches Record-Breaking 2026 World Cup Album",
+      "desc": "Panini launched its largest-ever FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers across 112 pages to accommodate all 48 teams.",
+      "source": "Sports Illustrated 4 days ago",
       "tag": "Album",
       "icon": "📖"
     },
     {
-      "category": "Panini Album",
-      "title": "Panini Album Goes On Sale With New 7-Sticker Packs",
-      "desc": "The 2026 sticker collection officially went on sale April 30 at major retailers including Walmart, Target and Amazon, with albums costing $5 and individual 7-sticker packets priced at $2.",
-      "source": "USA TODAY May 1",
-      "tag": "Album",
-      "icon": "🛒"
+      "category": "Politics",
+      "title": "FIFA Confirms Iran Will Play in USA Despite Tensions",
+      "desc": "FIFA President Gianni Infantino confirmed during FIFA Congress in Vancouver that Iran will participate in the 2026 World Cup in the USA, rejecting speculation of replacement.",
+      "source": "Open The Magazine 3 days ago",
+      "tag": "World Cup",
+      "icon": "🇮🇷"
     },
     {
-      "category": "Tournament Preparation",
+      "category": "Sticker Collection",
+      "title": "Coca-Cola Partners with Panini for Exclusive World Cup Stickers",
+      "desc": "Coca-Cola teams with Panini to offer 12 exclusive World Cup stickers hidden in specially marked 20-oz bottles, featuring stars like Harry Kane and Lamine Yamal starting mid-May.",
+      "source": "Coca-Cola USA 5 hours ago",
+      "tag": "Album",
+      "icon": "🥤"
+    },
+    {
+      "category": "Preparation",
+      "title": "Saudi Arabia and Senegal Schedule World Cup Friendly in San Antonio",
+      "desc": "Saudi Arabia and Senegal will play an international friendly on June 9 at Toyota Field in San Antonio as a warmup before the 2026 FIFA World Cup officially kicks off June 11.",
+      "source": "KSAT 1 day ago",
+      "tag": "Match",
+      "icon": "⚽"
+    },
+    {
+      "category": "Tourism",
       "title": "World Cup 2026 Drives Uneven Tourism Demand Across Host Nations",
-      "desc": "The FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico with rising demand, soaring hotel prices, and connectivity gaps as host nations prepare for the 48-team tournament.",
-      "source": "Travel And Tour World May 2",
+      "desc": "The 2026 FIFA World Cup is reshaping tourism across the US, Canada, and Mexico with rising demand, soaring hotel prices, and connectivity gaps as destinations race to attract visitors.",
+      "source": "Travel And Tour World 1 day ago",
       "tag": "Market",
       "icon": "✈️"
-    },
-    {
-      "category": "Panini Album",
-      "title": "Collectors Face Biggest Challenge Yet with 48-Team Album",
-      "desc": "Statistically, collectors may need more than 1,000 packets costing around £1,000 to complete the album. Panini is hosting live swap shop events across the UK in May to help fans trade duplicates.",
-      "source": "Al Jazeera April 29",
-      "tag": "Album",
-      "icon": "🔄"
-    },
-    {
-      "category": "Groups & Matchups",
-      "title": "Group C Features Brazil, Morocco, Scotland and Haiti",
-      "desc": "Tournament groups have been finalized following the December 2025 draw, with Group C featuring Brazil, Morocco, Scotland, and Haiti in what promises to be a competitive matchup.",
-      "source": "FOX Sports May 2",
-      "tag": "World Cup",
-      "icon": "⚽"
     }
   ],
   "results": []
