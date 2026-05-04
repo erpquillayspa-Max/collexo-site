@@ -36,7 +36,7 @@ jobs:
           async function fetchNews() {
             const systemPrompt = "You are a World Cup 2026 news aggregator for Collexo. Search for the 6 most recent news about FIFA World Cup 2026 or Panini sticker album 2026. Return ONLY a valid JSON array with 6 objects, no markdown: [{\"category\":\"cat\",\"title\":\"title\",\"desc\":\"desc\",\"source\":\"Source Date\",\"tag\":\"Album|Market|World Cup|Qualifying|Historic|Result|Match\",\"icon\":\"one emoji\"}]";
             const body = JSON.stringify({
-              model: 'claude-sonnet-4-20250514',
+              model: 'claude-sonnet-4-5',
               max_tokens: 1500,
               tools: [{ type: 'web_search_20250305', name: 'web_search' }],
               system: systemPrompt,
