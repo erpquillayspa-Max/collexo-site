@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T17:16:36.137Z",
+  "updated": "2026-05-04T17:32:41.452Z",
   "stories": [
     {
-      "category": "Safety",
-      "title": "Extreme Heat Threatens Players and Fans at 2026 FIFA World Cup",
-      "desc": "Researchers warn that rising temperatures could pose significant threats to players and fans as the 2026 FIFA World Cup kicks off in June across North America.",
-      "source": "YouTube May 3, 2026",
+      "category": "World Cup",
+      "title": "Extreme Heat Poses Threat to Players and Fans at 2026 FIFA World Cup",
+      "desc": "Researchers warn that rising temperatures could threaten athletes, fans, workers and officials during the World Cup games starting in June.",
+      "source": "YouTube May 4, 2026",
       "tag": "World Cup",
       "icon": "🌡️"
     },
     {
-      "category": "Broadcast",
-      "title": "FOX Sports Launches 'Dream Big' Campaign for World Cup 2026",
-      "desc": "FOX Sports debuts star-studded commercial featuring USMNT players, Tom Brady, and Zlatan Ibrahimović with Elvis Presley's 'The Impossible Dream' as the tournament approaches.",
-      "source": "FOX Sports May 4, 2026",
-      "tag": "Market",
-      "icon": "📺"
-    },
-    {
-      "category": "Tickets",
-      "title": "World Cup Group Stage Games Still Have Unsold Tickets at High Prices",
-      "desc": "With under 40 days to go, many group-stage matches including USA vs Paraguay opener still have tickets available, with prices ranging from $380 to over $6,000 amid fan complaints about dynamic pricing.",
-      "source": "Al Jazeera May 3, 2026",
-      "tag": "Market",
-      "icon": "🎟️"
-    },
-    {
-      "category": "Tourism",
-      "title": "World Cup 2026 Drives Rising Global Tourism Demand Across Host Nations",
-      "desc": "The FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico, with rising demand, soaring hotel prices, and connectivity challenges as host cities prepare for visitors.",
-      "source": "Travel And Tour World May 3, 2026",
+      "category": "World Cup",
+      "title": "FIFA Confirms Iran Will Play 2026 World Cup in USA Despite Tensions",
+      "desc": "FIFA President Gianni Infantino confirms Iran will participate in the tournament and play in the United States, staying in Group G with Belgium, New Zealand and Egypt despite security concerns.",
+      "source": "Open the Magazine May 1, 2026",
       "tag": "World Cup",
-      "icon": "✈️"
+      "icon": "🇮🇷"
     },
     {
-      "category": "Collectibles",
+      "category": "Match",
+      "title": "Saudi Arabia and Senegal to Play World Cup Friendly in San Antonio",
+      "desc": "Toyota Field will host an international friendly between Saudi Arabia and Senegal on June 9, serving as an appetizer before the 2026 FIFA World Cup kicks off on June 11.",
+      "source": "KSAT May 1, 2026",
+      "tag": "Match",
+      "icon": "⚽"
+    },
+    {
+      "category": "Market",
+      "title": "World Cup 2026 Drives Rising Tourism Demand Across North America",
+      "desc": "Hotel prices are soaring and connectivity gaps are emerging as the United States, Canada, and Mexico prepare for surging visitor demand driven by the World Cup.",
+      "source": "Travel and Tour World May 3, 2026",
+      "tag": "Market",
+      "icon": "🏨"
+    },
+    {
+      "category": "Album",
       "title": "Panini Launches Biggest-Ever World Cup Sticker Album with 980 Stickers",
-      "desc": "Panini officially launched its record-breaking 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special edition stickers and a Coca-Cola partnership section.",
-      "source": "Sports Illustrated April 30, 2026",
+      "desc": "The 2026 FIFA World Cup album features 980 stickers across 112 pages and launched on April 28 at Wembley Stadium with a special Coca-Cola partnership featuring 12 exclusive stickers.",
+      "source": "Sports Illustrated April 28, 2026",
       "tag": "Album",
-      "icon": "📖"
+      "icon": "📚"
     },
     {
-      "category": "Collectibles",
-      "title": "World Cup Sticker Album Now Available at Major US Retailers",
-      "desc": "The 112-page Panini sticker album is now available at Walmart, Target, Amazon, and other retailers for $5, with individual 7-sticker packets costing $2, as collectors face the challenge of completing the largest edition ever.",
-      "source": "USA TODAY April 30, 2026",
+      "category": "Album",
+      "title": "48-Team World Cup Creates Biggest Challenge Yet for Panini Collectors",
+      "desc": "The decades-old football sticker craze comprises 980 unique stickers including 68 special ones in a 112-page album, with Panini hosting live swap shops across the UK in May.",
+      "source": "Al Jazeera April 29, 2026",
       "tag": "Album",
-      "icon": "🛒"
+      "icon": "✨"
     }
   ],
   "results": []
