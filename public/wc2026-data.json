@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-05T02:49:53.139Z",
+  "updated": "2026-05-05T11:53:02.665Z",
   "stories": [
     {
-      "category": "Health & Safety",
-      "title": "Extreme Heat Threatens Players and Fans at 2026 World Cup",
-      "desc": "Researchers warn that rising temperatures could pose serious risks to players, fans, workers, and officials during World Cup matches starting in June.",
-      "source": "YouTube 16 hours ago",
+      "category": "World Cup",
+      "title": "Iran Confirmed to Participate Despite Political Tensions",
+      "desc": "FIFA President Gianni Infantino confirmed at Vancouver Congress that Iran will compete in World Cup 2026 and play all matches in the US, with Trump backing the decision despite ongoing geopolitical tensions.",
+      "source": "Time May 1, 2026",
       "tag": "World Cup",
-      "icon": "🌡️"
+      "icon": "🇮🇷"
     },
     {
-      "category": "Tourism",
-      "title": "World Cup 2026 Driving Uneven Tourism Demand Across Host Nations",
-      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico with rising demand, soaring hotel prices, and connectivity gaps.",
-      "source": "Travel And Tour World 2 days ago",
+      "category": "Album",
+      "title": "Panini Launches Record-Breaking Sticker Collection",
+      "desc": "Panini's 2026 World Cup sticker album features 980 stickers, the largest edition ever, launched at Wembley Stadium with former England stars. The collection went on sale April 30 with starter packs available at retailers.",
+      "source": "SI May 4, 2026",
+      "tag": "Album",
+      "icon": "📔"
+    },
+    {
+      "category": "Market",
+      "title": "Coca-Cola Partners with Panini for Special Stickers",
+      "desc": "Coca-Cola and Panini launched a first-of-its-kind partnership featuring 12 exclusive player stickers hidden behind labels on 20-oz bottles. The special stickers appear mid-May and include stars like Harry Kane and Lamine Yamal.",
+      "source": "Coca-Cola May 5, 2026",
       "tag": "Market",
-      "icon": "✈️"
-    },
-    {
-      "category": "Panini Collectibles",
-      "title": "Panini Launches Largest-Ever World Cup Sticker Album with 980 Stickers",
-      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special editions.",
-      "source": "Sports Illustrated 4 days ago",
-      "tag": "Album",
-      "icon": "📖"
-    },
-    {
-      "category": "Host City",
-      "title": "Los Angeles to Host 8 Matches Including USMNT Opener",
-      "desc": "Los Angeles will host eight matches for FIFA World Cup 26, featuring the USMNT opening match against Paraguay on June 12, 2026.",
-      "source": "Los Angeles FWC26 8 hours ago",
-      "tag": "Match",
-      "icon": "🏟️"
-    },
-    {
-      "category": "Panini Partnership",
-      "title": "Coca-Cola Partners with Panini for Exclusive World Cup Stickers",
-      "desc": "Coca-Cola and Panini America announce first-of-its-kind partnership featuring 12 exclusive stickers hidden in specially marked 20-oz bottles.",
-      "source": "Coca-Cola 15 hours ago",
-      "tag": "Album",
       "icon": "🥤"
     },
     {
-      "category": "Tournament Format",
-      "title": "World Cup 2026 Expands to 48 Teams with New Format",
-      "desc": "Starting with this edition, the FIFA World Cup expanded to 48 teams, with twelve groups of four teams and a new round of 32 knockout stage.",
-      "source": "Wikipedia 8 hours ago",
+      "category": "Historic",
+      "title": "FIFA Congress in Vancouver Addresses World Cup Preparations",
+      "desc": "The 76th FIFA Congress convened in Vancouver on April 30, focusing on the upcoming World Cup while dealing with geopolitical tensions. Prize pool increased to record $871 million and Afghanistan women's team cleared to compete.",
+      "source": "Inside FIFA May 5, 2026",
       "tag": "Historic",
-      "icon": "⚽"
+      "icon": "🏛️"
+    },
+    {
+      "category": "Market",
+      "title": "World Cup Tourism Drives Hotel Price Surge",
+      "desc": "Hotel prices across US, Canada, and Mexico host cities are rising dramatically as World Cup 2026 approaches. The tournament is reshaping tourism demand with connectivity gaps and capacity challenges emerging.",
+      "source": "Travel Tour World May 3, 2026",
+      "tag": "Market",
+      "icon": "🏨"
+    },
+    {
+      "category": "World Cup",
+      "title": "Extreme Heat Could Threaten Players and Fans",
+      "desc": "Researchers warn that extreme heat poses significant risks to players, fans, and officials during World Cup 2026 matches starting in June. Rising global temperatures create new safety concerns for the tournament.",
+      "source": "TSN May 4, 2026",
+      "tag": "World Cup",
+      "icon": "🌡️"
     }
   ],
   "results": []
