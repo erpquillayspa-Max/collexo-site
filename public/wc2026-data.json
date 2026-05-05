@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-05T01:16:10.819Z",
+  "updated": "2026-05-05T02:49:53.139Z",
   "stories": [
     {
-      "category": "World Cup",
-      "title": "FIFA Sets Record $871M Prize Pool for World Cup 2026",
-      "desc": "FIFA has announced a record total prize fund of $871 million for the FIFA World Cup 2026, marking the largest financial allocation in the history of the global football competition.",
-      "source": "24NewsHD May 4, 2026",
-      "tag": "Historic",
-      "icon": "💰"
-    },
-    {
-      "category": "Album",
-      "title": "Panini Launches Largest Ever World Cup Sticker Album",
-      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring a record 980 stickers including 68 special editions and a Coca-Cola partnership with 12 exclusive stickers.",
-      "source": "Sports Illustrated May 1, 2026",
-      "tag": "Album",
-      "icon": "📔"
-    },
-    {
-      "category": "World Cup",
-      "title": "Extreme Heat Could Threaten Players and Fans at 2026 World Cup",
-      "desc": "With the 2026 FIFA World Cup kicking off in June, researchers are warning that rising temperatures could pose a threat to both players and fans during the tournament.",
-      "source": "YouTube May 4, 2026",
+      "category": "Health & Safety",
+      "title": "Extreme Heat Threatens Players and Fans at 2026 World Cup",
+      "desc": "Researchers warn that rising temperatures could pose serious risks to players, fans, workers, and officials during World Cup matches starting in June.",
+      "source": "YouTube 16 hours ago",
       "tag": "World Cup",
       "icon": "🌡️"
     },
     {
-      "category": "World Cup",
-      "title": "USMNT to Reveal 26-Player Roster on May 26 in NYC",
-      "desc": "U.S. Soccer confirmed that the USMNT will officially unveil its 26-player World Cup roster on May 26 in New York City during a live fan event at The Rooftop at Pier 17, airing nationally on FOX at 3 p.m. ET.",
-      "source": "U.S. Soccer April 30, 2026",
-      "tag": "Historic",
-      "icon": "🇺🇸"
-    },
-    {
-      "category": "World Cup",
-      "title": "Brazil's Eder Militao Ruled Out of 2026 World Cup After Surgery",
-      "desc": "Real Madrid defender Eder Militao's 2026 World Cup dream is over following confirmation of a devastating thigh injury that required immediate surgery, with recovery not expected until October at the earliest.",
-      "source": "FOX Sports April 28, 2026",
-      "tag": "Result",
-      "icon": "🏥"
-    },
-    {
-      "category": "Market",
-      "title": "World Cup 2026 Drives Uneven Tourism Demand Across Host Nations",
-      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico, with rising demand, soaring hotel prices, and connectivity gaps defining the race to attract visitors.",
-      "source": "Travel And Tour World May 3, 2026",
+      "category": "Tourism",
+      "title": "World Cup 2026 Driving Uneven Tourism Demand Across Host Nations",
+      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico with rising demand, soaring hotel prices, and connectivity gaps.",
+      "source": "Travel And Tour World 2 days ago",
       "tag": "Market",
       "icon": "✈️"
+    },
+    {
+      "category": "Panini Collectibles",
+      "title": "Panini Launches Largest-Ever World Cup Sticker Album with 980 Stickers",
+      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special editions.",
+      "source": "Sports Illustrated 4 days ago",
+      "tag": "Album",
+      "icon": "📖"
+    },
+    {
+      "category": "Host City",
+      "title": "Los Angeles to Host 8 Matches Including USMNT Opener",
+      "desc": "Los Angeles will host eight matches for FIFA World Cup 26, featuring the USMNT opening match against Paraguay on June 12, 2026.",
+      "source": "Los Angeles FWC26 8 hours ago",
+      "tag": "Match",
+      "icon": "🏟️"
+    },
+    {
+      "category": "Panini Partnership",
+      "title": "Coca-Cola Partners with Panini for Exclusive World Cup Stickers",
+      "desc": "Coca-Cola and Panini America announce first-of-its-kind partnership featuring 12 exclusive stickers hidden in specially marked 20-oz bottles.",
+      "source": "Coca-Cola 15 hours ago",
+      "tag": "Album",
+      "icon": "🥤"
+    },
+    {
+      "category": "Tournament Format",
+      "title": "World Cup 2026 Expands to 48 Teams with New Format",
+      "desc": "Starting with this edition, the FIFA World Cup expanded to 48 teams, with twelve groups of four teams and a new round of 32 knockout stage.",
+      "source": "Wikipedia 8 hours ago",
+      "tag": "Historic",
+      "icon": "⚽"
     }
   ],
   "results": []
