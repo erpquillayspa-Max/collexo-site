@@ -283,17 +283,17 @@ h1.hero-h1{font-size:clamp(40px,7.5vw,88px);font-weight:900;line-height:.93;lett
 .tbtn-early:hover{box-shadow:0 9px 32px rgba(201,64,0,.4);transform:translateY(-2px)}
 
 /* POLICIES */
-.pol-wrap{background:#ffffff;border:1.5px solid #dde0f0;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.pol-tabs{display:flex;border-bottom:1.5px solid #e8eaf4;overflow-x:auto;background:#f8f9ff}
+.pol-wrap{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
+.pol-tabs{display:flex;border-bottom:1.5px solid rgba(255,255,255,.1);overflow-x:auto;background:rgba(255,255,255,.03)}
 .pol-tabs::-webkit-scrollbar{display:none}
 .ptab{font-family:'Unbounded',sans-serif;font-size:10px;letter-spacing:1px;padding:14px 18px;white-space:nowrap;cursor:pointer;color:#778;border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;transition:all .2s}
 .ptab:hover{color:#0a0f1e}.ptab.on{color:var(--wc-red);border-bottom-color:var(--wc-red)}
-.pol-body{padding:28px;border-top:1.5px solid #e8eaf4}
+.pol-body{padding:28px;border-top:1.5px solid rgba(255,255,255,.08)}
 .pp{display:none}.pp.on{display:block}
-.pol-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:#0a0f1e;margin-bottom:6px;margin-top:20px}
+.pol-h{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;margin-top:20px}
 .pol-h:first-child{margin-top:0}
-.pol-p{font-size:13px;color:#334;line-height:1.7;margin-bottom:10px}
-.pol-ul{font-size:13px;color:#334;line-height:1.7;padding-left:20px;margin-bottom:12px}
+.pol-p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:10px}
+.pol-ul{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;padding-left:20px;margin-bottom:12px}
 .pol-ul li{margin-bottom:5px}
 .pol-note{background:var(--ol);border-left:3px solid var(--o);padding:12px 16px;border-radius:0 10px 10px 0;font-size:12px;color:var(--ink2);margin-top:10px}
 
@@ -832,89 +832,10 @@ footer{background:var(--ink);padding:28px 32px;display:flex;align-items:center;j
     </div>
 
     <div style="margin-top:18px;padding:14px;background:var(--bg);border-radius:12px;border:1px solid var(--border);font-size:12px;color:var(--ink3);text-align:center">
-      <span id="priceFooter">All prices in USD · Mercado Pago, Apple Pay, Google Pay & Stripe accepted · <a href="terms.html" style="color:var(--o)" id="fullTermsLink">Full terms</a></span>
+      <span id="priceFooter">All prices in USD · Mercado Pago, Apple Pay, Google Pay & Stripe accepted · <a href="terms.html" style="color:var(--o)" id="fullTermsLink">Full terms</a> · <a href="policies.html" style="color:var(--o)">Policies</a></span>
     </div>
   </div>
 </div>
-
-<!-- POLICIES -->
-<div class="section reveal">
-  <span class="sec-eye" id="polEye" style="color:#c8102e">Policies</span>
-  <h2 class="sec-title" id="polTitle" style="color:#0a0f1e">How we<br>operate</h2>
-  <div class="pol-wrap">
-    <div class="pol-tabs">
-      <button class="ptab on" id="ptab1" onclick="showPol(this,'pt1')">Transactions</button>
-      <button class="ptab" id="ptab2" onclick="showPol(this,'pt2')">Escrow</button>
-      <button class="ptab" id="ptab3" onclick="showPol(this,'pt3')">Disputes</button>
-      <button class="ptab" onclick="showPol(this,'pt4')">Payments & plans</button>
-      <button class="ptab" id="ptab5" onclick="showPol(this,'pt5')">Sticker photos</button>
-    </div>
-    <div class="pol-body" id="polBody">
-      <div class="pp on" id="pt1">
-        <div class="pol-h">Collexo commission</div>
-        <p class="pol-p"><strong>Free users: 20% commission</strong> on each transaction, min $0.50. <strong>Premium users:</strong> payment processor cost + 0.5% Collexo fee, min $0.50.</p>
-        <div class="pol-h">What the commission covers</div>
-        <ul class="pol-ul">
-          <li>Escrow (money custody) system</li>
-          <li>Dispute resolution by our team</li>
-          <li>Payment processing costs</li>
-          <li>Reputation and verification system</li>
-        </ul>
-        <div class="pol-h">Free trades (no money)</div>
-        <p class="pol-p">Pure sticker-for-sticker exchanges between Premium users are commission-free. Both parties coordinate shipping and confirm receipt in the app.</p>
-      </div>
-      <div class="pp" id="pt2">
-        <div class="pol-h">How escrow works</div>
-        <p class="pol-p">When a buyer pays, money is held by Collexo. The seller has <strong>5 business days</strong> to ship and upload proof.</p>
-        <div class="pol-h">When money is released</div>
-        <ul class="pol-ul">
-          <li>Buyer confirms receipt → immediate release</li>
-          <li>Buyer doesn't confirm within 72h of estimated delivery → automatic release</li>
-          <li>Seller doesn't ship in 5 days → automatic refund to buyer</li>
-        </ul>
-        <div class="pol-h">Open disputes</div>
-        <p class="pol-p">If a dispute is opened, money is held until resolved, max <strong>7 business days</strong>.</p>
-      </div>
-      <div class="pp" id="pt3">
-        <div class="pol-h">How to open a dispute</div>
-        <p class="pol-p">Buyer can open a dispute within <strong>72 hours</strong> of receiving the sticker (or before confirming). Must upload photo or evidence of the issue.</p>
-        <div class="pol-h">Valid dispute reasons</div>
-        <ul class="pol-ul">
-          <li>Received sticker doesn't match the listing</li>
-          <li>Sticker arrived damaged</li>
-          <li>Nothing received within the agreed timeframe</li>
-          <li>Seller didn't respond to chat</li>
-        </ul>
-        <div class="pol-h">Sanctions for fraud</div>
-        <p class="pol-p">Confirmed fraud results in <strong>permanent ban</strong>. More than 2 disputes in 30 days triggers automatic preventive suspension.</p>
-      </div>
-      <div class="pp" id="pt4">
-        <div class="pol-h">Monthly Premium</div>
-        <p class="pol-p">Monthly billing. First <strong>3 days are free</strong>; cancel before and no charge.</p>
-        <div class="pol-h">World Cup Pass</div>
-        <p class="pol-p">One-time payment covering Jun–Dec 2026 (7 months). 40% OFF vs monthly ($18.90 vs $31.50).</p>
-        <div class="pol-h">Early Bird pre-order</div>
-        <p class="pol-p">We securely save your card details <strong>without charging anything</strong> until launch day. You'll be notified 48 hours before. The Early Bird 55% OFF applies to the 1st month only (monthly) or the full pass (World Cup).</p>
-        <div class="pol-note">⚠️ If you cancel and want to return, you pay the current price at that time.</div>
-        <div class="pol-h">Cancellation</div>
-        <p class="pol-p">Cancel anytime from the app, no penalties. Access continues until end of paid period.</p>
-      </div>
-      <div class="pp" id="pt5">
-        <div class="pol-h">Status — pending legal review</div>
-        <p class="pol-p">The crowdsourced sticker photo system is <strong>under evaluation with an IP specialist</strong> before implementation.</p>
-        <div class="pol-h">Proposed model</div>
-        <ul class="pol-ul">
-          <li>Users upload photos only of their own physical stickers</li>
-          <li>By uploading, they declare ownership of the photographed sticker</li>
-          <li>Photos used exclusively to identify the sticker in a listing</li>
-          <li>Best photos, with explicit consent, may improve the visual catalog</li>
-        </ul>
-        <div class="pol-note">📋 Final definition subject to legal approval. Implementation after initial launch.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <!-- NEWS & RESULTS SECTION -->
 <!-- MUNDIAL COUNTDOWN BANNER -->
@@ -2107,5 +2028,7 @@ function updateWCBanner(lang) {
 }
 updateWCBanner(activeLang);
 </script>
+
+
 </body>
 </html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collexo — Políticas</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --wc-dark:#0a0f1e;--o:#c8102e;--ol:rgba(200,16,46,.1);--g:#2d7a00;--gl:#e8f5d8;--gb:#b0db80;
+  --gold:#f0a500;--lime:#7ec800;--b:#0033a0;
+  --ink:#0a0f1e;--ink2:#1a2240;--ink3:#556;
+  --bg:#f5f6fa;--border2:#b0b4cc;--border:#d8dae8;
+}
+html{scroll-behavior:smooth}
+body{background:var(--wc-dark);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(10,15,30,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:.5px}
+.logo em{font-style:normal;color:var(--lime)}
+.logo-sub{display:block;font-size:8px;letter-spacing:1.5px;font-weight:400;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:1px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.5);text-decoration:none;padding:5px 10px;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:var(--lime)}
+.nav-back{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 14px;text-decoration:none;transition:all .2s}
+.nav-back:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+
+/* HERO */
+.page-hero{padding:100px 28px 56px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08);background:#0d2010}
+.page-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 160% 80% at 50% 140%,rgba(18,110,18,.7),transparent 52%)}
+.page-eyebrow{display:inline-block;font-family:'Unbounded',sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.3);border-radius:100px;padding:6px 16px;margin-bottom:18px}
+.page-title{font-family:'Unbounded',sans-serif;font-size:clamp(32px,6vw,64px);font-weight:900;color:#fff;line-height:1;margin-bottom:14px;position:relative;z-index:1}
+.page-title em{font-style:normal;color:var(--lime)}
+.page-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;position:relative;z-index:1}
+
+/* BODY */
+.page-body{max-width:860px;margin:0 auto;padding:52px 28px 80px}
+
+/* POL STYLES */
+.pol-wrap{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
+.pol-tabs{display:flex;border-bottom:1.5px solid rgba(255,255,255,.1);overflow-x:auto;background:rgba(255,255,255,.03)}
+.pol-tabs::-webkit-scrollbar{display:none}
+.ptab{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.45);border:none;cursor:pointer;padding:14px 18px;white-space:nowrap;background:transparent;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .18s}
+.ptab:hover{color:#fff}
+.ptab.on{color:#fff;border-bottom-color:var(--o);background:rgba(255,255,255,.05)}
+.pol-body{padding:28px;border-top:1.5px solid rgba(255,255,255,.08)}
+.pol-h{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;margin-top:22px}
+.pol-h:first-child{margin-top:0}
+.pol-p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:10px}
+.pol-ul{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;padding-left:20px;margin-bottom:12px}
+.pol-ul li{margin-bottom:5px}
+.pol-note{background:rgba(200,16,46,.08);border-left:3px solid var(--o);padding:12px 16px;border-radius:0 10px 10px 0;font-size:12px;color:rgba(255,255,255,.7);margin-top:10px}
+
+/* FOOTER */
+footer{text-align:center;padding:24px;font-size:11px;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.08)}
+footer a{color:rgba(255,255,255,.45);text-decoration:none}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Colle<em>xo</em><span class="logo-sub">The Sticker Exchange</span></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="privacy.html" id="navPrivacy">Privacidad</a>
+      <a href="terms.html" id="navTerms">Términos</a>
+      <a href="policies.html" class="active" id="navPolicies">Políticas</a>
+      <a href="index.html#contact" id="navContact">Contacto</a>
+    </div>
+    <a href="index.html" class="nav-back">← Collexo</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-eyebrow" id="pgEye">Políticas</div>
+  <h1 class="page-title" id="pgTitle">Cómo <em>funcionamos</em></h1>
+  <p class="page-sub" id="pgSub">Transparencia total sobre comisiones, pagos, disputas y más.</p>
+</div>
+
+<div class="page-body">
+  <div class="pol-wrap">
+    <div class="pol-tabs">
+      <button class="ptab on" id="ptab1" onclick="showPol(1)">Transacciones</button>
+      <button class="ptab" id="ptab2" onclick="showPol(2)">Escrow</button>
+      <button class="ptab" id="ptab3" onclick="showPol(3)">Disputas</button>
+      <button class="ptab" id="ptab4" onclick="showPol(4)">Pagos y planes</button>
+      <button class="ptab" id="ptab5" onclick="showPol(5)">Fotos de láminas</button>
+    </div>
+    <div class="pol-body" id="polBody">
+      <div id="pol1">
+        <div class="pol-h" id="ph1a">Comisión de Collexo</div>
+        <p class="pol-p" id="pp1a"><strong>Usuarios Free: 20% de comisión</strong> por transacción, mínimo $0.50. <strong>Usuarios Premium:</strong> costo del procesador + 0.5% fee Collexo, mínimo $0.50.</p>
+        <div class="pol-h" id="ph1b">Qué cubre la comisión</div>
+        <ul class="pol-ul" id="pu1b">
+          <li>Sistema de custodia de dinero (escrow)</li>
+          <li>Mediación en disputas por nuestro equipo</li>
+          <li>Costos de procesamiento de pagos</li>
+          <li>Sistema de reputación y verificación</li>
+        </ul>
+        <div class="pol-h" id="ph1c">Intercambios gratuitos (sin dinero)</div>
+        <p class="pol-p" id="pp1c">Los intercambios puros lámina-por-lámina entre usuarios Premium son sin comisión. Ambas partes coordinan el envío y confirman recepción en la app.</p>
+      </div>
+      <div id="pol2" style="display:none">
+        <div class="pol-h" id="ph2a">Cómo funciona el Escrow</div>
+        <p class="pol-p" id="pp2a">El dinero del comprador queda retenido hasta que confirmás la recepción correcta de la lámina.</p>
+        <ul class="pol-ul" id="pu2a">
+          <li>Al confirmar una compra, el dinero queda retenido en escrow</li>
+          <li>El vendedor envía la lámina según lo acordado</li>
+          <li>El comprador confirma recepción → fondos liberados al vendedor</li>
+          <li>Sin confirmación en 72hs → liberación automática</li>
+          <li>Ante disputa, Collexo media con resolución en 72hs</li>
+        </ul>
+      </div>
+      <div id="pol3" style="display:none">
+        <div class="pol-h" id="ph3a">Proceso de disputas</div>
+        <p class="pol-p" id="pp3a">Si hay un problema con una transacción, Collexo actúa como mediador neutral.</p>
+        <ul class="pol-ul" id="pu3a">
+          <li>Abrís una disputa desde la app dentro de 72hs de recibir</li>
+          <li>Enviás fotos y evidencia del problema</li>
+          <li>Collexo revisa y decide en 72hs hábiles</li>
+          <li>Resolución: reembolso total, parcial, o liberación al vendedor</li>
+        </ul>
+        <div class="pol-note" id="pn3">Las disputas por envíos internacionales pueden tomar hasta 7 días hábiles.</div>
+      </div>
+      <div id="pol4" style="display:none">
+        <div class="pol-h" id="ph4a">Plan Free</div>
+        <p class="pol-p" id="pp4a">Sin costo mensual. Comisión 20% por venta. Acceso a marketplace, intercambios y álbum digital.</p>
+        <div class="pol-h" id="ph4b">Plan Premium</div>
+        <p class="pol-p" id="pp4b"><strong>$4.50/mes</strong> o <strong>$18.90 Pase Mundial</strong> (junio–diciembre 2026). Comisión reducida: solo costo del procesador + 0.5%. Intercambios sin comisión.</p>
+        <div class="pol-h" id="ph4c">Métodos de pago aceptados</div>
+        <ul class="pol-ul" id="pu4c">
+          <li>Mercado Pago (LATAM) — tarjeta, transferencia, cuotas</li>
+          <li>Apple Pay / Google Pay</li>
+          <li>Stripe — tarjetas internacionales</li>
+        </ul>
+      </div>
+      <div id="pol5" style="display:none">
+        <div class="pol-h" id="ph5a">Requisitos de fotos</div>
+        <p class="pol-p" id="pp5a">Toda lámina publicada debe tener al menos una foto real tomada por vos.</p>
+        <ul class="pol-ul" id="pu5a">
+          <li>Foto clara, bien iluminada, sin filtros que oculten daños</li>
+          <li>Mostrar el estado real: bordes, superficie, reverso si hay daño</li>
+          <li>No se permiten fotos de catálogo ni imágenes de internet</li>
+          <li>Fotos engañosas = suspensión de cuenta</li>
+        </ul>
+        <div class="pol-note" id="pn5">Nos reservamos el derecho de remover publicaciones con fotos que no cumplan estos requisitos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Collexo · The Sticker Exchange Community &nbsp;·&nbsp;
+    <a href="privacy.html">Privacidad</a> &nbsp;·&nbsp;
+    <a href="terms.html">Términos</a> &nbsp;·&nbsp;
+    <a href="policies.html">Políticas</a> &nbsp;·&nbsp;
+    <a href="index.html#contact">Contacto</a>
+  </p>
+</footer>
+
+<script>
+function showPol(n){
+  for(var i=1;i<=5;i++){
+    var d=document.getElementById('pol'+i);
+    var t=document.getElementById('ptab'+i);
+    if(d) d.style.display = i===n ? '' : 'none';
+    if(t) t.className = i===n ? 'ptab on' : 'ptab';
+  }
+}
+</script>
+</body>
+</html>
