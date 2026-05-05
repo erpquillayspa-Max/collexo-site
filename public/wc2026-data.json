@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T19:26:52.447Z",
+  "updated": "2026-05-05T01:16:10.819Z",
   "stories": [
     {
-      "category": "Health & Safety",
-      "title": "Extreme Heat Warning for World Cup 2026",
-      "desc": "Researchers warn that extreme heat could pose threats to players and fans at the 2026 FIFA World Cup starting in June.",
+      "category": "World Cup",
+      "title": "FIFA Sets Record $871M Prize Pool for World Cup 2026",
+      "desc": "FIFA has announced a record total prize fund of $871 million for the FIFA World Cup 2026, marking the largest financial allocation in the history of the global football competition.",
+      "source": "24NewsHD May 4, 2026",
+      "tag": "Historic",
+      "icon": "💰"
+    },
+    {
+      "category": "Album",
+      "title": "Panini Launches Largest Ever World Cup Sticker Album",
+      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring a record 980 stickers including 68 special editions and a Coca-Cola partnership with 12 exclusive stickers.",
+      "source": "Sports Illustrated May 1, 2026",
+      "tag": "Album",
+      "icon": "📔"
+    },
+    {
+      "category": "World Cup",
+      "title": "Extreme Heat Could Threaten Players and Fans at 2026 World Cup",
+      "desc": "With the 2026 FIFA World Cup kicking off in June, researchers are warning that rising temperatures could pose a threat to both players and fans during the tournament.",
       "source": "YouTube May 4, 2026",
       "tag": "World Cup",
       "icon": "🌡️"
     },
     {
-      "category": "Tourism & Economy",
-      "title": "World Cup Drives Rising Tourism Demand",
-      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico with rising demand and soaring hotel prices.",
+      "category": "World Cup",
+      "title": "USMNT to Reveal 26-Player Roster on May 26 in NYC",
+      "desc": "U.S. Soccer confirmed that the USMNT will officially unveil its 26-player World Cup roster on May 26 in New York City during a live fan event at The Rooftop at Pier 17, airing nationally on FOX at 3 p.m. ET.",
+      "source": "U.S. Soccer April 30, 2026",
+      "tag": "Historic",
+      "icon": "🇺🇸"
+    },
+    {
+      "category": "World Cup",
+      "title": "Brazil's Eder Militao Ruled Out of 2026 World Cup After Surgery",
+      "desc": "Real Madrid defender Eder Militao's 2026 World Cup dream is over following confirmation of a devastating thigh injury that required immediate surgery, with recovery not expected until October at the earliest.",
+      "source": "FOX Sports April 28, 2026",
+      "tag": "Result",
+      "icon": "🏥"
+    },
+    {
+      "category": "Market",
+      "title": "World Cup 2026 Drives Uneven Tourism Demand Across Host Nations",
+      "desc": "FIFA World Cup 2026 is reshaping tourism across the US, Canada, and Mexico, with rising demand, soaring hotel prices, and connectivity gaps defining the race to attract visitors.",
       "source": "Travel And Tour World May 3, 2026",
       "tag": "Market",
       "icon": "✈️"
-    },
-    {
-      "category": "Fan Transportation",
-      "title": "Scotland Fans Turn to School Buses",
-      "desc": "Scottish fans are using school buses to reach games at Gillette Stadium in Massachusetts to avoid escalating public transport costs.",
-      "source": "HuffPost May 1, 2026",
-      "tag": "World Cup",
-      "icon": "🚌"
-    },
-    {
-      "category": "Album Launch",
-      "title": "Panini Launches Historic 980-Sticker Album",
-      "desc": "Panini officially launched the largest FIFA World Cup sticker album ever with 980 stickers at Wembley Stadium on April 28.",
-      "source": "Sports Illustrated April 30, 2026",
-      "tag": "Album",
-      "icon": "📖"
-    },
-    {
-      "category": "Exclusive Partnership",
-      "title": "Coca-Cola x Panini Stickers Launch",
-      "desc": "Coca-Cola partners with Panini for the first time in North America with 12 exclusive stickers hidden in specially marked bottles.",
-      "source": "Coca-Cola May 4, 2026",
-      "tag": "Album",
-      "icon": "🥤"
-    },
-    {
-      "category": "Collector Challenge",
-      "title": "48-Team World Cup Biggest Album Yet",
-      "desc": "The 2026 Panini album features 980 unique stickers across 112 pages, marking the biggest challenge for collectors in decades.",
-      "source": "Al Jazeera April 29, 2026",
-      "tag": "Album",
-      "icon": "⚽"
     }
   ],
   "results": []
