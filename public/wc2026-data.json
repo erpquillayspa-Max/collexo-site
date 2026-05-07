@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-05T11:53:02.665Z",
+  "updated": "2026-05-07T15:56:30.025Z",
   "stories": [
     {
-      "category": "World Cup",
-      "title": "Iran Confirmed to Participate Despite Political Tensions",
-      "desc": "FIFA President Gianni Infantino confirmed at Vancouver Congress that Iran will compete in World Cup 2026 and play all matches in the US, with Trump backing the decision despite ongoing geopolitical tensions.",
-      "source": "Time May 1, 2026",
+      "category": "Tournament Format",
+      "title": "World Cup 2026 Expands to 48 Teams with New Knockout Format",
+      "desc": "The FIFA World Cup expands to 48 teams for the first time, featuring 12 groups with 104 total matches across a 39-day tournament from June 11 to July 19, 2026.",
+      "source": "Al Jazeera May 7",
       "tag": "World Cup",
-      "icon": "🇮🇷"
+      "icon": "⚽"
     },
     {
-      "category": "Album",
-      "title": "Panini Launches Record-Breaking Sticker Collection",
-      "desc": "Panini's 2026 World Cup sticker album features 980 stickers, the largest edition ever, launched at Wembley Stadium with former England stars. The collection went on sale April 30 with starter packs available at retailers.",
-      "source": "SI May 4, 2026",
+      "category": "Squad Announcements",
+      "title": "Teams Must Submit Preliminary Squads by May 11",
+      "desc": "FIFA requires teams to submit preliminary lists of 35-55 players by May 11, with final 23-26 player rosters due between May 25 and June 1 ahead of the tournament kickoff.",
+      "source": "Olympics.com May 7",
+      "tag": "World Cup",
+      "icon": "📋"
+    },
+    {
+      "category": "Sticker Collection",
+      "title": "Panini Launches Record 980-Sticker World Cup Album",
+      "desc": "Panini officially launched its largest-ever FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special editions across 112 pages.",
+      "source": "SI.com May 6",
       "tag": "Album",
-      "icon": "📔"
+      "icon": "🎴"
     },
     {
-      "category": "Market",
-      "title": "Coca-Cola Partners with Panini for Special Stickers",
-      "desc": "Coca-Cola and Panini launched a first-of-its-kind partnership featuring 12 exclusive player stickers hidden behind labels on 20-oz bottles. The special stickers appear mid-May and include stars like Harry Kane and Lamine Yamal.",
-      "source": "Coca-Cola May 5, 2026",
-      "tag": "Market",
+      "category": "Exclusive Collectibles",
+      "title": "14 Panini Stickers Only Available Outside Standard Packs",
+      "desc": "The 2026 Panini album includes 14 exclusive stickers unavailable in standard packs, with 12 hidden inside specially marked Coca-Cola bottles starting mid-May.",
+      "source": "ColombiaOne May 6",
+      "tag": "Album",
       "icon": "🥤"
     },
     {
-      "category": "Historic",
-      "title": "FIFA Congress in Vancouver Addresses World Cup Preparations",
-      "desc": "The 76th FIFA Congress convened in Vancouver on April 30, focusing on the upcoming World Cup while dealing with geopolitical tensions. Prize pool increased to record $871 million and Afghanistan women's team cleared to compete.",
-      "source": "Inside FIFA May 5, 2026",
+      "category": "Historic Debuts",
+      "title": "Four Nations Make World Cup Debut in 2026",
+      "desc": "Cape Verde, Curacao, Jordan, and Uzbekistan will make their FIFA World Cup debuts, while DR Congo and Haiti return after 52 years since their last appearance in 1974.",
+      "source": "Wikipedia May 7",
       "tag": "Historic",
-      "icon": "🏛️"
+      "icon": "🌍"
     },
     {
-      "category": "Market",
-      "title": "World Cup Tourism Drives Hotel Price Surge",
-      "desc": "Hotel prices across US, Canada, and Mexico host cities are rising dramatically as World Cup 2026 approaches. The tournament is reshaping tourism demand with connectivity gaps and capacity challenges emerging.",
-      "source": "Travel Tour World May 3, 2026",
-      "tag": "Market",
-      "icon": "🏨"
-    },
-    {
-      "category": "World Cup",
-      "title": "Extreme Heat Could Threaten Players and Fans",
-      "desc": "Researchers warn that extreme heat poses significant risks to players, fans, and officials during World Cup 2026 matches starting in June. Rising global temperatures create new safety concerns for the tournament.",
-      "source": "TSN May 4, 2026",
-      "tag": "World Cup",
-      "icon": "🌡️"
+      "category": "Tournament Opening",
+      "title": "Mexico to Host Opening Match vs South Africa on June 11",
+      "desc": "Mexico opens the 2026 World Cup on June 11 at Estadio Azteca in Mexico City against South Africa, with USA facing Paraguay in Los Angeles the following day.",
+      "source": "Yahoo Sports May 7",
+      "tag": "Match",
+      "icon": "🏟️"
     }
   ],
   "results": []
