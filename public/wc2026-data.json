@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-07T15:56:30.025Z",
+  "updated": "2026-05-08T12:16:55.239Z",
   "stories": [
     {
-      "category": "Tournament Format",
-      "title": "World Cup 2026 Expands to 48 Teams with New Knockout Format",
-      "desc": "The FIFA World Cup expands to 48 teams for the first time, featuring 12 groups with 104 total matches across a 39-day tournament from June 11 to July 19, 2026.",
-      "source": "Al Jazeera May 7",
+      "category": "World Cup",
+      "title": "France Fan Favorite but AI Predicts Spain for World Cup Glory",
+      "desc": "France leads in BofA fan survey with 40% betting on Les Bleus, but Microsoft's Copilot AI predicts Spain equally likely to win. Tournament kicks off June 11 with 48 teams.",
+      "source": "CNBC May 7",
       "tag": "World Cup",
-      "icon": "⚽"
+      "icon": "🏆"
     },
     {
-      "category": "Squad Announcements",
-      "title": "Teams Must Submit Preliminary Squads by May 11",
-      "desc": "FIFA requires teams to submit preliminary lists of 35-55 players by May 11, with final 23-26 player rosters due between May 25 and June 1 ahead of the tournament kickoff.",
-      "source": "Olympics.com May 7",
-      "tag": "World Cup",
+      "category": "World Cup",
+      "title": "World Cup 2026 Squad Deadlines Announced",
+      "desc": "Teams must submit preliminary lists by May 11 with 35-55 players. Final 23-26 player squads due May 25-June 1. FIFA announces official rosters June 2.",
+      "source": "Al Jazeera May 8",
+      "tag": "Qualifying",
       "icon": "📋"
     },
     {
-      "category": "Sticker Collection",
-      "title": "Panini Launches Record 980-Sticker World Cup Album",
-      "desc": "Panini officially launched its largest-ever FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers including 68 special editions across 112 pages.",
-      "source": "SI.com May 6",
-      "tag": "Album",
-      "icon": "🎴"
+      "category": "Historic",
+      "title": "Shakira Releases World Cup 2026 Anthem 'Dai Dai'",
+      "desc": "Colombian superstar teases official anthem featuring Burna Boy, filmed at Maracaná Stadium. Her second World Cup anthem after 2010's Waka Waka.",
+      "source": "Olympics.com May 8",
+      "tag": "Historic",
+      "icon": "🎵"
     },
     {
-      "category": "Exclusive Collectibles",
-      "title": "14 Panini Stickers Only Available Outside Standard Packs",
-      "desc": "The 2026 Panini album includes 14 exclusive stickers unavailable in standard packs, with 12 hidden inside specially marked Coca-Cola bottles starting mid-May.",
+      "category": "Album",
+      "title": "Panini Launches Biggest World Cup Sticker Album Ever",
+      "desc": "Record 980 stickers across 112 pages for 48 teams. Launched April 28 at Wembley Stadium. Seven stickers per pack, priced at £1.25.",
+      "source": "SI May 6",
+      "tag": "Album",
+      "icon": "⚽"
+    },
+    {
+      "category": "Album",
+      "title": "14 Exclusive Panini Stickers Only in Coca-Cola Bottles",
+      "desc": "Special Coca-Cola x Panini partnership features 12 exclusive stickers hidden in 20-oz bottle labels from mid-May, including Kane, Yamal, and Martínez.",
       "source": "ColombiaOne May 6",
       "tag": "Album",
       "icon": "🥤"
     },
     {
-      "category": "Historic Debuts",
-      "title": "Four Nations Make World Cup Debut in 2026",
-      "desc": "Cape Verde, Curacao, Jordan, and Uzbekistan will make their FIFA World Cup debuts, while DR Congo and Haiti return after 52 years since their last appearance in 1974.",
-      "source": "Wikipedia May 7",
-      "tag": "Historic",
-      "icon": "🌍"
-    },
-    {
-      "category": "Tournament Opening",
-      "title": "Mexico to Host Opening Match vs South Africa on June 11",
-      "desc": "Mexico opens the 2026 World Cup on June 11 at Estadio Azteca in Mexico City against South Africa, with USA facing Paraguay in Los Angeles the following day.",
-      "source": "Yahoo Sports May 7",
-      "tag": "Match",
-      "icon": "🏟️"
+      "category": "Market",
+      "title": "World Cup Prize Pool Reaches $871 Million",
+      "desc": "Each of 48 teams receives minimum $12.5M. Preparation payments rise to $2.5M, qualification to $10M. Tournament expected to generate $80B in global output.",
+      "source": "CNBC May 7",
+      "tag": "Market",
+      "icon": "💰"
     }
   ],
   "results": []
