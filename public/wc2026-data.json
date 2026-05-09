@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-08T12:16:55.239Z",
+  "updated": "2026-05-09T11:13:53.270Z",
   "stories": [
     {
-      "category": "World Cup",
-      "title": "France Fan Favorite but AI Predicts Spain for World Cup Glory",
-      "desc": "France leads in BofA fan survey with 40% betting on Les Bleus, but Microsoft's Copilot AI predicts Spain equally likely to win. Tournament kicks off June 11 with 48 teams.",
-      "source": "CNBC May 7",
-      "tag": "World Cup",
-      "icon": "🏆"
-    },
-    {
-      "category": "World Cup",
-      "title": "World Cup 2026 Squad Deadlines Announced",
-      "desc": "Teams must submit preliminary lists by May 11 with 35-55 players. Final 23-26 player squads due May 25-June 1. FIFA announces official rosters June 2.",
+      "category": "Tickets",
+      "title": "Trump Criticizes $1,000 World Cup Ticket Prices",
+      "desc": "President Trump said he wouldn't pay $1,000 for World Cup tickets amid criticism of FIFA's pricing, though FIFA defended costs as aligned with major US sporting events.",
       "source": "Al Jazeera May 8",
-      "tag": "Qualifying",
-      "icon": "📋"
+      "tag": "Market",
+      "icon": "🎟️"
     },
     {
-      "category": "Historic",
-      "title": "Shakira Releases World Cup 2026 Anthem 'Dai Dai'",
-      "desc": "Colombian superstar teases official anthem featuring Burna Boy, filmed at Maracaná Stadium. Her second World Cup anthem after 2010's Waka Waka.",
-      "source": "Olympics.com May 8",
-      "tag": "Historic",
+      "category": "Music",
+      "title": "Shakira Unveils World Cup 2026 Anthem 'Dai Dai'",
+      "desc": "Shakira released a teaser for her FIFA World Cup 2026 anthem called 'Dai Dai' (Go Go), set to release May 14, making her the first Latin American singer to compose 4 official WC anthems.",
+      "source": "India.com May 8",
+      "tag": "World Cup",
       "icon": "🎵"
     },
     {
-      "category": "Album",
-      "title": "Panini Launches Biggest World Cup Sticker Album Ever",
-      "desc": "Record 980 stickers across 112 pages for 48 teams. Launched April 28 at Wembley Stadium. Seven stickers per pack, priced at £1.25.",
-      "source": "SI May 6",
-      "tag": "Album",
-      "icon": "⚽"
+      "category": "Tickets",
+      "title": "FIFA Triples World Cup Final Ticket Price to $33K",
+      "desc": "FIFA has increased the best available World Cup final ticket to $33,000, tripling the previous pricing tier as part of controversial ticketing strategy.",
+      "source": "ESPN May 8",
+      "tag": "Market",
+      "icon": "💰"
     },
     {
-      "category": "Album",
-      "title": "14 Exclusive Panini Stickers Only in Coca-Cola Bottles",
-      "desc": "Special Coca-Cola x Panini partnership features 12 exclusive stickers hidden in 20-oz bottle labels from mid-May, including Kane, Yamal, and Martínez.",
-      "source": "ColombiaOne May 6",
+      "category": "Stickers",
+      "title": "Panini to Lose FIFA Rights After 2030",
+      "desc": "After 50 years, Panini will lose FIFA World Cup sticker rights to Fanatics from 2031 onwards. The 2026 and 2030 albums will be Panini's final editions.",
+      "source": "Football Blog May 8",
+      "tag": "Album",
+      "icon": "📘"
+    },
+    {
+      "category": "Stickers",
+      "title": "Coca-Cola x Panini Exclusive Stickers Launch",
+      "desc": "12 exclusive Coca-Cola x Panini stickers featuring stars like Harry Kane and Lamine Yamal are hidden in specially marked 20-oz bottles, marking first time this promotion comes to North America.",
+      "source": "Coca-Cola May 9",
       "tag": "Album",
       "icon": "🥤"
     },
     {
-      "category": "Market",
-      "title": "World Cup Prize Pool Reaches $871 Million",
-      "desc": "Each of 48 teams receives minimum $12.5M. Preparation payments rise to $2.5M, qualification to $10M. Tournament expected to generate $80B in global output.",
-      "source": "CNBC May 7",
-      "tag": "Market",
-      "icon": "💰"
+      "category": "Stickers",
+      "title": "Panini 2026 Album Features 980 Stickers",
+      "desc": "The largest Panini World Cup album ever launched April 28 with 980 stickers across 112 pages, featuring all 48 teams with 7 stickers per pack instead of 5.",
+      "source": "Sports Illustrated May 6",
+      "tag": "Album",
+      "icon": "⭐"
     }
   ],
   "results": []
