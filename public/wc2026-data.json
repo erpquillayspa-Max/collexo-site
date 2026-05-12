@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-11T17:14:20.385Z",
+  "updated": "2026-05-12T16:33:44.884Z",
   "stories": [
     {
-      "category": "World Cup 2026",
-      "title": "Shakira Teases 2026 FIFA World Cup Anthem 'Dai Dai'",
-      "desc": "The Colombian superstar unveiled a teaser for the official 2026 World Cup anthem featuring Nigerian singer Burna Boy, set to release on May 14.",
-      "source": "Olympics.com May 9",
+      "category": "Team News",
+      "title": "Messi Named in Argentina's Preliminary World Cup Squad",
+      "desc": "Lionel Messi has been named in Argentina's initial roster for their title defense, set for a record sixth World Cup tournament at age 38.",
+      "source": "Olympics.com May 12",
+      "tag": "Historic",
+      "icon": "⚽"
+    },
+    {
+      "category": "Tournament Prep",
+      "title": "One Month Until World Cup 2026 Kickoff",
+      "desc": "FIFA World Cup 2026 begins June 11 with 48 teams competing across the USA, Canada, and Mexico in the largest edition ever.",
+      "source": "Fox News May 11",
       "tag": "World Cup",
-      "icon": "🎵"
+      "icon": "🏆"
     },
     {
-      "category": "World Cup 2026",
-      "title": "Star-Studded Opening Ceremony Set for Mexico City",
-      "desc": "FIFA announced performers including J Balvin, Maná, Los Ángeles Azules, and Tyla for the opening ceremony 90 minutes before the Mexico vs South Africa match on June 11.",
-      "source": "FIFA.com May 8",
-      "tag": "World Cup",
-      "icon": "🎤"
+      "category": "Injuries",
+      "title": "Key Stars Face World Cup Doubt Due to Injuries",
+      "desc": "Canada captain Alphonso Davies out for several weeks after Champions League injury, threatening his World Cup participation starting June 12.",
+      "source": "ESPN May 11",
+      "tag": "Match",
+      "icon": "🏥"
     },
     {
-      "category": "World Cup 2026",
-      "title": "Trump Comments on High World Cup Ticket Prices",
-      "desc": "President Trump said he wouldn't pay $1,000 for a group stage match, expressing concern about accessibility for his voters as FIFA defends pricing.",
-      "source": "Al Jazeera May 8",
-      "tag": "Market",
-      "icon": "💰"
-    },
-    {
-      "category": "World Cup 2026",
-      "title": "Kansas City Hotels See Weak World Cup Bookings",
-      "desc": "Tourism leaders expect late booking surge from Argentina, Ecuador, and Netherlands fans despite lower-than-expected hotel reservations for the tournament.",
-      "source": "Travel & Tour World May 9",
-      "tag": "Market",
-      "icon": "🏨"
-    },
-    {
-      "category": "Panini Album 2026",
-      "title": "Panini Launches Largest World Cup Sticker Album Ever",
-      "desc": "The 2026 album features 980 stickers across 112 pages, covering all 48 teams. Officially launched April 28 at Wembley Stadium with 7-sticker packs now available.",
-      "source": "Sports Illustrated May 6",
+      "category": "Sticker Album",
+      "title": "Panini's Largest World Cup Album Features 980 Stickers",
+      "desc": "The 2026 Panini sticker album, launched April 28 at Wembley Stadium, is the biggest ever with 980 stickers across 112 pages for all 48 teams.",
+      "source": "Sports Illustrated May 5",
       "tag": "Album",
-      "icon": "📘"
+      "icon": "📚"
     },
     {
-      "category": "Panini Album 2026",
-      "title": "Coca-Cola Partnership Brings Exclusive Panini Stickers",
-      "desc": "12 special stickers featuring stars like Lamine Yamal and Harry Kane are hidden in Coca-Cola bottle labels, marking the first North American Coca-Cola x Panini collaboration.",
-      "source": "Coca-Cola.com May 9",
+      "category": "Collectibles",
+      "title": "Coca-Cola Partners with Panini for Exclusive Stickers",
+      "desc": "12 exclusive Panini stickers featuring World Cup stars like Kane and Yamal are hidden inside specially marked Coca-Cola bottles from mid-May.",
+      "source": "Coca-Cola May 9",
       "tag": "Album",
       "icon": "🥤"
+    },
+    {
+      "category": "Tourism",
+      "title": "Kansas City Expects Late World Cup Booking Surge",
+      "desc": "Kansas City tourism leaders anticipate a surge in hotel reservations from Argentina, Ecuador, and Netherlands fans as the tournament approaches.",
+      "source": "Travel Tour World May 9",
+      "tag": "Market",
+      "icon": "✈️"
     }
   ],
   "results": []
