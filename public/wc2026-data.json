@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-12T16:33:44.884Z",
+  "updated": "2026-05-13T16:35:12.693Z",
   "stories": [
     {
-      "category": "Team News",
-      "title": "Messi Named in Argentina's Preliminary World Cup Squad",
-      "desc": "Lionel Messi has been named in Argentina's initial roster for their title defense, set for a record sixth World Cup tournament at age 38.",
-      "source": "Olympics.com May 12",
-      "tag": "Historic",
+      "category": "World Cup",
+      "title": "Messi Named in Argentina's 55-Man Provisional World Cup Squad",
+      "desc": "Lionel Messi was included in Argentina's preliminary 55-player roster for the 2026 World Cup, setting up a record sixth tournament appearance for the 38-year-old captain as Argentina looks to defend their title.",
+      "source": "ESPN May 12",
+      "tag": "World Cup",
       "icon": "⚽"
     },
     {
-      "category": "Tournament Prep",
-      "title": "One Month Until World Cup 2026 Kickoff",
-      "desc": "FIFA World Cup 2026 begins June 11 with 48 teams competing across the USA, Canada, and Mexico in the largest edition ever.",
-      "source": "Fox News May 11",
+      "category": "World Cup",
+      "title": "BLACKPINK's Lisa to Headline 2026 World Cup Opening Ceremony",
+      "desc": "Thai singer Lisa from BLACKPINK will perform at the FIFA World Cup 2026 opening ceremony in Los Angeles on June 12, joining Katy Perry, Future, and others in one of three opening shows across North America.",
+      "source": "Korea Herald May 9",
       "tag": "World Cup",
-      "icon": "🏆"
+      "icon": "🎤"
     },
     {
-      "category": "Injuries",
-      "title": "Key Stars Face World Cup Doubt Due to Injuries",
-      "desc": "Canada captain Alphonso Davies out for several weeks after Champions League injury, threatening his World Cup participation starting June 12.",
-      "source": "ESPN May 11",
-      "tag": "Match",
-      "icon": "🏥"
-    },
-    {
-      "category": "Sticker Album",
-      "title": "Panini's Largest World Cup Album Features 980 Stickers",
-      "desc": "The 2026 Panini sticker album, launched April 28 at Wembley Stadium, is the biggest ever with 980 stickers across 112 pages for all 48 teams.",
-      "source": "Sports Illustrated May 5",
+      "category": "Album",
+      "title": "Panini Launches Biggest-Ever World Cup Sticker Album with 980 Stickers",
+      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers across 112 pages—the largest collection in history covering all 48 teams.",
+      "source": "SI May 6",
       "tag": "Album",
-      "icon": "📚"
+      "icon": "📘"
     },
     {
-      "category": "Collectibles",
-      "title": "Coca-Cola Partners with Panini for Exclusive Stickers",
-      "desc": "12 exclusive Panini stickers featuring World Cup stars like Kane and Yamal are hidden inside specially marked Coca-Cola bottles from mid-May.",
-      "source": "Coca-Cola May 9",
+      "category": "Album",
+      "title": "14 Exclusive Panini Stickers Only Available Through Coca-Cola Bottles",
+      "desc": "The 2026 Panini album includes 14 exclusive stickers unavailable in standard packs, with 12 hidden inside specially marked Coca-Cola bottles featuring stars like Lamine Yamal and Harry Kane.",
+      "source": "Colombia One May 10",
       "tag": "Album",
       "icon": "🥤"
     },
     {
-      "category": "Tourism",
-      "title": "Kansas City Expects Late World Cup Booking Surge",
-      "desc": "Kansas City tourism leaders anticipate a surge in hotel reservations from Argentina, Ecuador, and Netherlands fans as the tournament approaches.",
-      "source": "Travel Tour World May 9",
-      "tag": "Market",
-      "icon": "✈️"
+      "category": "World Cup",
+      "title": "48-Team World Cup Expands to 104 Matches with New Round of 32",
+      "desc": "The 2026 World Cup marks the first expansion to 48 teams, with 12 groups of four and a new round of 32 format. The tournament runs June 11-July 19 across 16 cities in USA, Canada, and Mexico.",
+      "source": "Al Jazeera May 7",
+      "tag": "Historic",
+      "icon": "🏆"
+    },
+    {
+      "category": "Album",
+      "title": "Coca-Cola Partners with Panini for First-Ever North American Sticker Promotion",
+      "desc": "Coca-Cola is making history with its first partnership with Panini America, placing 12 exclusive FIFA World Cup stickers on specially marked 20-oz bottles available from mid-May across North America.",
+      "source": "Coca-Cola May 9",
+      "tag": "Album",
+      "icon": "🎁"
     }
   ],
   "results": []
