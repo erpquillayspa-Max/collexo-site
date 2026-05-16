@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-13T16:35:12.693Z",
+  "updated": "2026-05-16T11:33:04.702Z",
   "stories": [
     {
-      "category": "World Cup",
-      "title": "Messi Named in Argentina's 55-Man Provisional World Cup Squad",
-      "desc": "Lionel Messi was included in Argentina's preliminary 55-player roster for the 2026 World Cup, setting up a record sixth tournament appearance for the 38-year-old captain as Argentina looks to defend their title.",
-      "source": "ESPN May 12",
+      "category": "Music",
+      "title": "Shakira & Burna Boy Release Official World Cup 2026 Song 'Dai Dai'",
+      "desc": "Colombian superstar Shakira and Nigerian singer Burna Boy unveiled 'Dai Dai' as the official FIFA World Cup 2026 song, blending Afrobeats, reggaeton and world beats with a multilingual anthem celebrating unity.",
+      "source": "ESPN May 15, 2026",
       "tag": "World Cup",
+      "icon": "🎵"
+    },
+    {
+      "category": "Tournament",
+      "title": "Lionel Messi Named in Argentina's World Cup 2026 Preliminary Squad",
+      "desc": "Argentina announced its preliminary roster for the World Cup title defense on May 11, with Lionel Messi included as Bosnia and Herzegovina became the first team to announce their full squad the same day.",
+      "source": "Olympics.com May 16, 2026",
+      "tag": "Qualifying",
       "icon": "⚽"
     },
     {
-      "category": "World Cup",
-      "title": "BLACKPINK's Lisa to Headline 2026 World Cup Opening Ceremony",
-      "desc": "Thai singer Lisa from BLACKPINK will perform at the FIFA World Cup 2026 opening ceremony in Los Angeles on June 12, joining Katy Perry, Future, and others in one of three opening shows across North America.",
-      "source": "Korea Herald May 9",
-      "tag": "World Cup",
-      "icon": "🎤"
+      "category": "Squads",
+      "title": "France Announces World Cup Squad: Camavinga and Kolo Muani Miss Out",
+      "desc": "France coach Didier Deschamps revealed his final World Cup squad with notable omissions including Real Madrid's Eduardo Camavinga and PSG's Kolo Muani, as Les Bleus prepare for the tournament.",
+      "source": "ESPN May 15, 2026",
+      "tag": "Qualifying",
+      "icon": "🇫🇷"
     },
     {
       "category": "Album",
-      "title": "Panini Launches Biggest-Ever World Cup Sticker Album with 980 Stickers",
-      "desc": "Panini officially launched its 2026 FIFA World Cup sticker album on April 28 at Wembley Stadium, featuring 980 stickers across 112 pages—the largest collection in history covering all 48 teams.",
-      "source": "SI May 6",
+      "title": "Panini's Record-Breaking 2026 World Cup Sticker Album Launches",
+      "desc": "Panini released its biggest FIFA World Cup sticker album ever with 980 stickers across 112 pages, featuring all 48 teams. The collection launched April 28 at Wembley Stadium with exclusive Coca-Cola partnership stickers.",
+      "source": "Sports Illustrated May 2026",
       "tag": "Album",
-      "icon": "📘"
+      "icon": "📚"
     },
     {
-      "category": "Album",
-      "title": "14 Exclusive Panini Stickers Only Available Through Coca-Cola Bottles",
-      "desc": "The 2026 Panini album includes 14 exclusive stickers unavailable in standard packs, with 12 hidden inside specially marked Coca-Cola bottles featuring stars like Lamine Yamal and Harry Kane.",
-      "source": "Colombia One May 10",
-      "tag": "Album",
-      "icon": "🥤"
+      "category": "Market",
+      "title": "Completing Panini World Cup 2026 Album Could Cost Over $2,000",
+      "desc": "Collectors may need more than 1,000 packs to complete the record 980-sticker Panini album without swapping duplicates, potentially costing over $2,000 according to Reuters estimates.",
+      "source": "Sports Illustrated May 14, 2026",
+      "tag": "Market",
+      "icon": "💰"
     },
     {
-      "category": "World Cup",
-      "title": "48-Team World Cup Expands to 104 Matches with New Round of 32",
-      "desc": "The 2026 World Cup marks the first expansion to 48 teams, with 12 groups of four and a new round of 32 format. The tournament runs June 11-July 19 across 16 cities in USA, Canada, and Mexico.",
-      "source": "Al Jazeera May 7",
+      "category": "Regulations",
+      "title": "FIFA Amends Tournament Rules, Exempts Players from Qualifying Suspensions",
+      "desc": "On May 8, FIFA's Council Bureau amended regulations so pending suspensions from qualifying red cards won't carry forward to the tournament, exempting Argentina's Otamendi, Ecuador's Caicedo and Qatar's Salman.",
+      "source": "Wikipedia May 16, 2026",
       "tag": "Historic",
-      "icon": "🏆"
-    },
-    {
-      "category": "Album",
-      "title": "Coca-Cola Partners with Panini for First-Ever North American Sticker Promotion",
-      "desc": "Coca-Cola is making history with its first partnership with Panini America, placing 12 exclusive FIFA World Cup stickers on specially marked 20-oz bottles available from mid-May across North America.",
-      "source": "Coca-Cola May 9",
-      "tag": "Album",
-      "icon": "🎁"
+      "icon": "⚖️"
     }
   ],
   "results": []
