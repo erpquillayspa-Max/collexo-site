@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-17T11:43:26.204Z",
+  "updated": "2026-05-18T17:34:44.416Z",
   "stories": [
     {
-      "category": "Entertainment",
-      "title": "Madonna, Shakira, and BTS to Headline World Cup Final Halftime Show",
-      "desc": "FIFA announces its first-ever World Cup final halftime show featuring Madonna, Shakira, and BTS on July 19, 2026 at MetLife Stadium in New Jersey.",
-      "source": "May 15, 2026",
-      "tag": "Historic",
-      "icon": "🎤"
-    },
-    {
-      "category": "Music",
-      "title": "Shakira and Burna Boy Release Official 2026 World Cup Song 'Dai Dai'",
-      "desc": "FIFA unveils 'Dai Dai' as the official World Cup 2026 song, marking Shakira's fourth World Cup song contribution, with Burna Boy joining forces.",
-      "source": "May 15, 2026",
+      "category": "World Cup",
+      "title": "Iran and FIFA hold talks as participation still uncertain",
+      "desc": "FIFA and Iranian officials discuss Iran's participation in the tournament with just weeks remaining before the opening match",
+      "source": "HuffPost May 17, 2026",
       "tag": "World Cup",
-      "icon": "🎵"
+      "icon": "🇮🇷"
     },
     {
-      "category": "Teams",
-      "title": "World Cup Rosters: Bosnia First to Announce Squad, Messi Named for Argentina",
-      "desc": "Bosnia and Herzegovina became the first team to announce their full squad on May 11, while Lionel Messi was named in Argentina's roster for title defense.",
-      "source": "May 16, 2026",
-      "tag": "Result",
-      "icon": "⚽"
+      "category": "Qualifying",
+      "title": "World Cup qualifying playoffs complete - 48-team field confirmed",
+      "desc": "All qualifying playoffs have concluded and the full 48-team roster for this summer's tournament in USA, Canada and Mexico is now finalized",
+      "source": "Yahoo Sports May 17, 2026",
+      "tag": "Qualifying",
+      "icon": "✅"
     },
     {
-      "category": "Logistics",
-      "title": "World Cup Base Camps Revealed for All 48 Nations",
-      "desc": "FIFA announces training and accommodation locations for all participating teams as tournament approaches with 30 days remaining until kickoff on June 11.",
-      "source": "May 15, 2026",
-      "tag": "World Cup",
-      "icon": "🏨"
-    },
-    {
-      "category": "Collecting",
-      "title": "Panini 2026 Sticker Album Features Record-Breaking 980 Stickers",
-      "desc": "Panini's largest World Cup sticker album ever launched with 980 stickers for all 48 teams, plus exclusive Coca-Cola partnership with 12 special stickers.",
-      "source": "May 14, 2026",
+      "category": "Album",
+      "title": "Panini 2026 sticker album features record 980 stickers",
+      "desc": "The largest World Cup sticker collection ever includes all 48 teams with special edition stickers and Coca-Cola exclusive partnership",
+      "source": "Sports Illustrated May 2026",
       "tag": "Album",
-      "icon": "📖"
+      "icon": "🎴"
     },
     {
-      "category": "Market",
-      "title": "Completing Panini Album Could Cost Over $2,000 Without Trading",
-      "desc": "Analysis reveals collectors may need over 1,000 sticker packs costing $2,000+ to complete the album, though swapping duplicates can reduce costs significantly.",
-      "source": "May 14, 2026",
-      "tag": "Market",
+      "category": "Album",
+      "title": "Completing Panini album could cost over $2,000",
+      "desc": "Estimates suggest collectors may need more than 1,000 packs to complete the 980-sticker album without trading duplicates with other fans",
+      "source": "Sports Illustrated May 13, 2026",
+      "tag": "Album",
       "icon": "💰"
+    },
+    {
+      "category": "World Cup",
+      "title": "Squad deadline approaches as teams finalize rosters",
+      "desc": "National teams must submit their final squads of 23-26 players by June 2, with club release date set for May 25",
+      "source": "Sky Sports May 18, 2026",
+      "tag": "World Cup",
+      "icon": "📋"
+    },
+    {
+      "category": "Historic",
+      "title": "Shakira and Burna Boy release official World Cup song",
+      "desc": "FIFA announces 'Dai Dai' as the official 2026 World Cup anthem with Shakira returning to World Cup song duty alongside Burna Boy",
+      "source": "NPR May 16, 2026",
+      "tag": "Historic",
+      "icon": "🎵"
     }
   ],
   "results": []
